@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'homes#top'
 
+  root to: 'homes#top'
   get 'homes/about'
-  get 'posts/index'
-  get 'posts/show'
-  get 'posts/create'
-  get 'posts/new'
-  get 'camps/index'
-  get 'camps/show'
+
+  resources :camps, only: [:index, :show]
+  resources :users, only: [:show, :edit, :update]
+  resources :posts, only: [:index, :new, :crate, :show]
+  resources :post_images, only: [:new, :create, :index, :show, :destroy]
 
 end
