@@ -1,2 +1,36 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+
+ <div class="container">
+
+   <div class="row">
+      <div class="col-md-6 offset-md-1">
+        <h5 class="font-weight-bold text-center">みんなのキャンプ</h5>
+      </div>
+      <div class="col-md-2 offset-md-3">
+        <%= link_to "", new_post_path, class:"fas fa-plus-circle fa-3x new_btn_color" %>
+      </div>
+    </div>
+
+    <% @posts.each do |post| %>
+        <div class="row mt-5">
+            <div class="col-md-3 text-center">
+              <%= link_to (attachment_image_tag post, :image,  :fill, 200, 200, format: 'jpeg'), post_path(post.id) %>
+            </div>
+        <div class="col-md-8 ml-5">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><p>タイトル</p></td>
+                <td><%= post.title %></td>
+              </tr>
+              <tr>
+                <td><p>本文</p></td>
+                <td><%= post.review %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+     <% end %>
+    </div>
+
+  </div>

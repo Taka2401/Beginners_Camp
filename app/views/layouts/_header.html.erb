@@ -2,8 +2,8 @@
 <header class="sticky-top">
   <nav class="navbar navbar-expand-lg navbar-dark ">
     <div class="container">
-      <h1 class="navbar-brand logo">
-        <%= link_to "Beginner'sCamp", root_path %>
+      <h1 class="navbar-brand font-weight-bold">
+        <%= link_to "Beginner'sCamp", root_path, class:"navbar-brand text-dark ml-lg-1" %>
       </h1>
       <ul class="navbar-nav">
         <% if user_signed_in? %>
@@ -20,7 +20,7 @@
         <% else %>
 
           <!-- ログインしていない時 -->
-          <li class="nav-item"><%= link_to "About", about_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to "Beginner'sCampとは", about_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "ログイン", new_user_session_path, class: 'nav-link' %></li>
 
