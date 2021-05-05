@@ -6,22 +6,35 @@
       </div>
     </div>
 
-    <% @posts.each do |f| %>
+    <% @post.each do |post| %>
         <div class="row mt-5">
             <div class="col-md-3 text-center">
-              <%= link_to (attachment_image_tag f, :image,  :fill, 200, 200, format: 'jpeg'), post_path(f.id) %>
+              <%= link_to (attachment_image_tag post, :image, :fill, 200, 200, format: 'jpeg'), post_path(post.id) %>
             </div>
         <div class="col-md-8 ml-5">
           <table class="table">
             <tbody>
               <tr>
                 <td><p>タイトル</p></td>
-                <td><%= f.title %></td>
+                <td><%= post.title %></td>
               </tr>
               <tr>
                 <td><p>本文</p></td>
-                <td><%= f.review %></td>
+                <td><%= post.review %></td>
               </tr>
+              <% if post.favorited_by?(current_user) %>
+                <p>
+                  <%= link_to post_favorites_path(post), method: :delete do %>
+                    ♥<%= post.favorites.count %> いいね
+                  <% end %>
+                </p>
+                <% else %>
+                <p>
+                  <%= link_to post_favorites_path(post), method: :post do %>
+                    ♡<%= post.favorites.count %> いいね
+                  <% end %>
+                </p>
+              <% end %>
             </tbody>
           </table>
         </div>

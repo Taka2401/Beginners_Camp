@@ -4,11 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         has_many :favorites, dependent: :destroy
-         has_many :comments, dependent: :destroy
-         has_many :post_images, dependent: :destroy
-         has_many :posts, dependent: :destroy
-
          attachment :image
          attachment :profile_image
+
+         has_many :post_images, dependent: :destroy
+         has_many :posts, dependent: :destroy
+         has_many :favorites, dependent: :destroy
+         has_many :comments, dependent: :destroy
+
+         def favorited_by?(user)
+          favorites.where(user_id: user.id).exists?
+         end
+
 end
