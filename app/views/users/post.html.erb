@@ -1,0 +1,31 @@
+<div class="container">
+
+   <div class="row">
+      <div class="col-md-8 offset-md-1">
+        <h5 class="font-weight-bold text-center">投稿履歴一覧</h5>
+      </div>
+    </div>
+
+    <% @posts.each do |f| %>
+        <div class="row mt-5">
+            <div class="col-md-3 text-center">
+              <%= link_to (attachment_image_tag f, :image,  :fill, 200, 200, format: 'jpeg'), post_path(f.id) %>
+            </div>
+        <div class="col-md-8 ml-5">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><p>タイトル</p></td>
+                <td><%= f.title %></td>
+              </tr>
+              <tr>
+                <td><p>本文</p></td>
+                <td><%= f.review %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+     <% end %>
+
+  </div>
