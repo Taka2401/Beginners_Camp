@@ -15,8 +15,8 @@
             <div class="col-md-3 text-center">
               <%= link_to (attachment_image_tag post, :image,  :fill, 200, 200, format: 'jpeg'), post_path(post.id) %>
             </div>
-        <div class="col-md-8 ml-5">
-          <table class="table">
+        <div class="col-8 ml-3">
+          <table class="table table-borderless">
             <tbody>
               <tr>
                 <td><p>タイトル</p></td>
@@ -26,6 +26,19 @@
                 <td><p>本文</p></td>
                 <td><%= post.review %></td>
               </tr>
+               <% if post.favorited_by?(current_user) %>
+                <p>
+                  <%= link_to post_favorites_path(post), method: :delete do %>
+                    ♥<%= post.favorites.count %> いいね
+                  <% end %>
+                </p>
+                <% else %>
+                <p>
+                  <%= link_to post_favorites_path(post), method: :post do %>
+                    ♡<%= post.favorites.count %> いいね
+                  <% end %>
+                </p>
+              <% end %>
             </tbody>
           </table>
         </div>
