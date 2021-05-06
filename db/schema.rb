@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_04_061245) do
-
-  create_table "comments", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "comment"
-  end
+ActiveRecord::Schema.define(version: 2021_05_05_103043) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "post_comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "comment"
   end
 
   create_table "post_images", force: :cascade do |t|

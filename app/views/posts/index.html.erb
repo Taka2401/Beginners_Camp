@@ -13,9 +13,9 @@
     <% @posts.each do |post| %>
         <div class="row mt-5">
             <div class="col-md-3 text-center">
-              <%= link_to (attachment_image_tag post, :image,  :fill, 200, 200, format: 'jpeg'), post_path(post.id) %>
+              <%= link_to (attachment_image_tag post, :image,  :fill, 300, 300, format: 'jpeg'), post_path(post.id) %>
             </div>
-        <div class="col-8 ml-3">
+        <div class="col-8 offset-md-1">
           <table class="table table-borderless">
             <tbody>
               <tr>
@@ -44,5 +44,14 @@
         </div>
       </div>
      <% end %>
-
   </div>
+
+
+
+
+
+
+
+
+
+
