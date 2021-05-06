@@ -5,7 +5,7 @@
           <div class="col-md-3 text-center">
             <%= attachment_image_tag @post, :image,  :fill, 300, 300, format: 'jpeg' %>
           </div>
-      <div class="col-md-8 ml-5">
+      <div class="col-md-6 offset-md-1">
         <table class="table">
           <tbody>
             <tr>
@@ -24,47 +24,19 @@
     <div class="row">
        <div class="col-md-3 text-center mt-5">
           <% if user_signed_in? && current_user.id == @post.user_id %>
-      　  　<%= link_to '削除する', post_path(@post.id), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'btn btn-sm btn-danger' %>
-      　　<% end %>
+            <%= link_to '削除する', post_path(@post.id), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'btn btn-sm btn-danger' %>
+          <% end %>
        </div>
-       <div class="col-md-8 ml-5">
+       <div class="col-md-4 offset-md-1 mt-5">
           <div class="new-comment">
-            <%= form_with(model:[@post, @post_comment], local: true) do |f| %>
-              <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに", :size =>'70x4' %>
-                <p>コメント件数：<%= @post.post_comments.count %></p>
-
-                <% if @post.favorited_by?(current_user) %>
-                  <p>
-                    <%= link_to post_favorites_path(@post), method: :delete do %>
-                      ♥<%= @post.favorites.count %> いいね
-                    <% end %>
-                  </p>
-                <% else %>
-                  <p>
-                    <%= link_to post_favorites_path(@post), method: :post do %>
-                      ♡<%= @post.favorites.count %> いいね
-                    <% end %>
-                  </p>
-                <% end %>
-
-                <%= f.submit "送信する" %>
-            <% end %>
+            <div id="comment_buttons_<%= @post.id %>">
+              <%= render partial: 'post_comments/comment', locals: {post: @post, post_comment: @post_comment} %>
+            </div>
           </div>
         </div>
-   　 </div>
+      </div>
 
-    <div class="row mt-5 offset-md-1">
-      <div class="col-mx-auto text-center">
-        <div class="comments">
-          <% @post.post_comments.each do |post_comment| %>
-            <p><%= image_tag('camp_image.9.jpg', :size =>'150x150') %></p>
-            <%= post_comment.user.name %>
-            <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
-          <% end %>
-        </div>
-       </div>
-    </div>
-</div>
+ </div>
 
 
 
