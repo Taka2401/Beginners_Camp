@@ -1,0 +1,7 @@
+
+<% if post.favorited_by?(current_user) %>
+  <%= link_to "♥#{post.favorites.count}いいね", post_favorites_path(post), method: :delete, remote: true %>
+<% else %>
+  <%= link_to "♡#{post.favorites.count}いいね", post_favorites_path(post), method: :post, remote: true %>
+<% end %>
+
