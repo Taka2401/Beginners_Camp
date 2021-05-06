@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'post_comments/create'
-  get 'post_comments/destroy'
-  get 'favorites/create'
-  get 'favorites/destroy'
   devise_for :users
 
   root to: 'homes#top'
