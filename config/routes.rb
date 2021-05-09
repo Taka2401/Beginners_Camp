@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
    # ========= 管理者(admin)のルーティング ================
    namespace :admin do
-    resources :camps, only: [:index, :show]
+    resources :camps, only: [:index, :show, :new, :edit, :create, :update, :destroy]
     resources :users, only: [:show, :edit, :update]
     get 'user/post/:id' => 'users#post', as: 'user_post'
   end
