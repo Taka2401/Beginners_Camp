@@ -1,0 +1,39 @@
+
+<div class="container">
+
+   <div class="row">
+      <div class="col-md-6 offset-md-1">
+        <h5 class="font-weight-bold text-center">投稿履歴一覧</h5>
+      </div>
+      <div class="col-md-2 offset-md-3">
+        <%= link_to "", new_admin_camp_path, class:"fas fa-plus-circle fa-3x new_btn_color" %>
+      </div>
+    </div>
+
+    <% @camps.each do |camp| %>
+        <div class="row mt-5">
+            <div class="col-md-3 text-center">
+              <%= link_to (attachment_image_tag camp, :image, :fill, 180, 180, format: 'jpeg'), admin_camp_path(camp.id) %>
+            </div>
+        <div class="col-8 offset-md-1">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td></td>
+                <td><p>キャンプ場</p><%= camp.name %></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><p>住所</p><%= camp.address %></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><p>キャンプ場紹介</p><%= camp.introduction %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+     <% end %>
+  </div>
+
