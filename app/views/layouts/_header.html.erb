@@ -7,7 +7,6 @@
       </h1>
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-
           <!--ユーザーがログインしている時 -->
           <li class="nav-item mr-5 pt-2">
             ようこそ、<span class="text-success mr-1"><%= current_user.name %></span>さん！
@@ -17,14 +16,18 @@
           <li class="nav-item ml-1"><%= link_to "みんなのキャンプ", posts_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
 
+        <% elsif admin_signed_in? %>
+          <!--アドミンがログインしている時 -->
+          <li class="nav-item ml-1"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link' %></li>
+          
         <% else %>
-
           <!-- ログインしていない時 -->
           <li class="nav-item"><%= link_to "Beginner'sCampとは", about_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "ログイン", new_user_session_path, class: 'nav-link' %></li>
 
         <% end %>
+
       </ul>
     </div>
   </nav>

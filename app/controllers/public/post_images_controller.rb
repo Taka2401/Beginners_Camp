@@ -1,4 +1,4 @@
-class PostImagesController < ApplicationController
+class Public::PostImagesController < ApplicationController
   
   def new
   end

@@ -1,11 +1,6 @@
+<h2>管理者ログイン</h2>
 
-<% if resource_name == :admin %>
- <h2>管理者ログイン</h2>
- <% else %>
- <h2>ユーザーログイン</h2>
- <% end %>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_with model: @user, url: admin_session_path, local: true do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

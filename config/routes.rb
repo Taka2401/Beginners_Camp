@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
 
+  devise_for :admin
+  devise_for :users,
+    path: '',
+    path_names: {
+      sign_up: '',
+      sign_in: 'login',
+      sign_out: 'logout',
+      registration: "signup",
+    }
+
+  # ========= ユーザー(public)のルーティング ================
+  scope module: :public do
   root to: 'homes#top'
   get '/about' => 'homes#about'
 
@@ -14,5 +25,14 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update]
   get 'user/post/:id' => 'users#post', as: 'user_post'
+
+  end
+
+   # ========= 管理者(admin)のルーティング ================
+   namespace :admin do
+    resources :camps, only: [:index, :show]
+    resources :users, only: [:show, :edit, :update]
+    get 'user/post/:id' => 'users#post', as: 'user_post'
+  end
 
 end
