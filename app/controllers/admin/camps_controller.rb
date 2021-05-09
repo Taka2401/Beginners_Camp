@@ -1,5 +1,5 @@
-class PostsController < ApplicationController
-
+class Admin::CampsController < ApplicationController
+  
   def index
     @posts = Post.all
   end
@@ -32,4 +32,6 @@ class PostsController < ApplicationController
     params.require(:post).permit(:image, :title, :review)
   end
 
+  
+  
 end
