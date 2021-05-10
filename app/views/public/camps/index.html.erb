@@ -1,1 +1,20 @@
-camp
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-lg-12 mt-2">
+      <h3>キャンプ場一覧</h3>
+    </div>
+    <div class="d-flex flex-wrap mt-4">
+      <% @camps.first(8).each do |camp| %>
+        <div class="col-lg-3 camp__image">
+          <%= link_to camp_path(camp), style: "color: #494848;" do %>
+            <%= attachment_image_tag(camp, :image, :fill, 220, 220, format: 'jpeg', class: "rounded") %> <br />
+            <div class="col-md-12">
+              <%= camp.name %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

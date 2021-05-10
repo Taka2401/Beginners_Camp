@@ -3,7 +3,7 @@
 
     <div class="row mt-5">
           <div class="col-md-3 text-center">
-            <%= attachment_image_tag @camp, :image, :fill, 180, 180, format: 'jpeg' %>
+            <%= attachment_image_tag @camp, :image, :fill, 200, 200, format: 'jpeg' %>
           </div>
       <div class="col-md-6 offset-md-1">
         <table class="table">
@@ -25,11 +25,13 @@
       </div>
     </div>
 
-    <div class="row">
-       <div class="col-md-3 text-center mt-5">
+    <div class="row mt-5">
+       <div class="col-md-12 text-center">
           <% if admin_signed_in? && current_admin.id == @camp.admin_id %>
             <%= link_to '編集する', edit_admin_camp_path(@camp), class: 'glyphicon glyphicon-home btn btn-success' %>
             <%= link_to '削除する', admin_camp_path(@camp), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'glyphicon glyphicon-home btn btn-danger' %>
           <% end %>
        </div>
- </div>
+   </div>
+
+</div>
