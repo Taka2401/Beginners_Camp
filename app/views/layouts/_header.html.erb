@@ -8,8 +8,11 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <!--ユーザーがログインしている時 -->
-          <li class="nav-item mr-5 pt-2">
-            ようこそ、<span class="text-success mr-1"><%= current_user.name %></span>さん！
+          <!--<li class="nav-item mr-5 pt-2">-->
+            <!--ようこそ、<span class="text-success mr-1"><%#= current_user.name %></span>さん！-->
+          <!--</li>-->
+          <li class="nav-item text-center">
+          <%= render 'layouts/search' %>
           </li>
           <li class="nav-item"><%= link_to "マイページ", user_path(current_user.id), class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to "キャンプ場一覧", camps_path, class: 'nav-link' %></li>
