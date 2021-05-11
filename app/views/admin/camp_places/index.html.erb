@@ -6,29 +6,29 @@
         <h5 class="font-weight-bold text-center">投稿履歴一覧</h5>
       </div>
       <div class="col-md-2 offset-md-3">
-        <%= link_to "", new_admin_camp_path, class:"fas fa-plus-circle fa-3x new_btn_color" %>
+        <%= link_to "", new_admin_camp_place_path, class:"fas fa-plus-circle fa-3x new_btn_color" %>
       </div>
     </div>
 
-    <% @camps.each do |camp| %>
+    <% @camp_places.each do |camp_place| %>
         <div class="row mt-5">
             <div class="col-md-3 text-center mt-3">
-              <%= link_to (attachment_image_tag camp, :image, :fill, 200, 200, format: 'jpeg'), admin_camp_path(camp.id) %>
+              <%= link_to (attachment_image_tag camp_place, :image, :fill, 200, 200, format: 'jpeg'), admin_camp_place_path(camp_place) %>
             </div>
         <div class="col-8 offset-md-1">
           <table class="table table-borderless">
             <tbody>
               <tr>
                 <td></td>
-                <td><p><strong>キャンプ場</strong></p><%= camp.name %></td>
+                <td><p><strong>キャンプ場</strong></p><%= camp_place.name %></td>
               </tr>
               <tr>
                 <td></td>
-                <td><p><strong>住所</strong></p><%= camp.address %></td>
+                <td><p><strong>住所</strong></p><%= camp_place.address %></td>
               </tr>
               <tr>
                 <td></td>
-                <td><p><strong>キャンプ場紹介</strong></p><%= camp.introduction %></td>
+                <td><p><strong>キャンプ場紹介</strong></p><%= camp_place.introduction %></td>
               </tr>
             </tbody>
           </table>

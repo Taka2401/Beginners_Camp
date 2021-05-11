@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/about' => 'homes#about'
 
   resources :camps, only: [:index, :show]
+  resources :camp_places, only: [:index, :show]
   resources :post_images, only: [:new, :create, :index, :show, :destroy]
 
   resources :posts, only: [:index, :new, :create, :show, :destroy] do
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
 
    # ========= 管理者(admin)のルーティング ================
    namespace :admin do
-    resources :camps, only: [:index, :show, :new, :edit, :create, :update, :destroy]
+    resources :camp_places, only: [:index, :show, :new, :edit, :create, :update, :destroy]
     resources :users, only: [:show, :edit, :update]
     get 'user/post/:id' => 'users#post', as: 'user_post'
   end

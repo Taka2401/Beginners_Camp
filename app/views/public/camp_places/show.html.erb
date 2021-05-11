@@ -1,24 +1,24 @@
 
 <div class="container">
 
-    <div class="row mt-5">
-          <div class="col-md-3 text-center">
-            <%= attachment_image_tag @camp, :image, :fill, 200, 200, format: 'jpeg' %>
+    <div class="row mx-auto mt-5">
+          <div class="col-md-5 text-center">
+            <%= attachment_image_tag @camp_place, :image, :fill, 350, 300, format: 'jpeg' %>
           </div>
       <div class="col-md-6 offset-md-1">
         <table class="table">
           <tbody>
             <tr>
               <td></td>
-              <td><p>キャンプ場</p><%= @camp.name %></td>
+              <td><p>キャンプ場</p><%= @camp_place.name %></td>
             </tr>
             <tr>
               <td></td>
-              <td><p>住所</p><%= @camp.address %></td>
+              <td><p>住所</p><%= @camp_place.address %></td>
             </tr>
             <tr>
               <td></td>
-              <td><p>キャンプ場紹介</p><%= @camp.introduction %></td>
+              <td><p>キャンプ場紹介</p><%= @camp_place.introduction %></td>
             </tr>
           </tbody>
         </table>
@@ -27,8 +27,8 @@
 
     <script type="text/javascript">
       function initMap() {
-    #latitude,longitudeから位置を特定
-        var test ={lat: <%= @camp.latitude %>, lng: <%= @camp.longitude %>};
+        //latitude,longitudeから位置を特定
+        var test = {lat: <%= @camp_place.latitude %>, lng: <%= @camp_place.longitude %>};
         var map = new google.maps.Map(document.getElementById('map'), {
                   zoom: 15,
                   center: test
@@ -36,12 +36,12 @@
         var transitLayer = new google.maps.TransitLayer();
         transitLayer.setMap(map);
 
-        var contentString = '住所：<%= @camp.address %>';
+        var contentString = '住所：<%= @camp_place.address %>';
         var infowindow = new google.maps.InfoWindow({
           content: contentString
         });
 
-     #Map上の指定した位置にピンを挿して表示する
+        //Map上の指定した位置にピンを挿して表示する
         var marker = new google.maps.Marker({
                       position:test,
                       map: map,
@@ -54,15 +54,14 @@
       }
    </script>
 
-   <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+   <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
    </script>
    <style type="text/css">
-      #map { height: 200px;
-             width: 70%;}
+      #map { height: 300px;
+             width: 100%;
+      }
    </style>
 
     <div id="map"></div>
 </div>
-
-
 

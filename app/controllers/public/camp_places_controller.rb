@@ -1,4 +1,4 @@
-class Public::CampsController < ApplicationController
+class Public::CampPlacesController < ApplicationController
 
   def index
     @camp_places = Camp_place.all
@@ -7,6 +7,4 @@ class Public::CampsController < ApplicationController
   def show
     @camp_place= Camp_place.find(params[:id])
   end
-
-
 end
