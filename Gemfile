@@ -81,3 +81,4 @@ gem "geocoder"
 gem "dotenv-rails"
 
 gem 'ransack'
+gem 'jquery-bgswitcher-rails'

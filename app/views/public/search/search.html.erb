@@ -1,6 +1,0 @@
-
-<% if @camp_place == Camp_place.where('name LIKE ?', '%'+@keyword+'%') %>
-
-  <%= render 'camp_places/index', camp_places: @records %>
-  
-<% end %>
