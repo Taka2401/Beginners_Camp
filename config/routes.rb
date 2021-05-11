@@ -27,8 +27,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   get 'user/post/:id' => 'users#post', as: 'user_post'
 
-  get '/search', to: 'search#search', as: 'search'
-
   end
 
    # ========= 管理者(admin)のルーティング ================
