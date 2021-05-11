@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
    if resource.instance_of?(Admin)
-     new_admin_camp_path
+     admin_camp_places_path
    elsif resource.instance_of?(User)
      camps_path
    else

@@ -3,7 +3,7 @@
 
     <div class="row">
      <div class="col-md-8 offset-md-2 mt-4 pl-5">
-      <%= form_with model:  [:admin, @camp], local:true do |f| %>
+      <%= form_with model:  [:admin, @camp_place], local:true do |f| %>
         <div class="form-group">
           <%= f.label :キャンプ場の写真 %>
           <%= f.attachment_field :image, class: "form-control-file user_image" %>

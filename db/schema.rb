@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_012710) do
+ActiveRecord::Schema.define(version: 2021_05_10_094332) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_012710) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "camps", force: :cascade do |t|
+  create_table "camp_places", force: :cascade do |t|
     t.integer "admin_id"
     t.string "name"
     t.text "introduction"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_012710) do
   create_table "post_images", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
-    t.integer "camp_id"
+    t.integer "camp_place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_id"
