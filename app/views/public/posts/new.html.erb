@@ -1,0 +1,36 @@
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6 offset-md-2">
+      <h5 class="font-weight-bold mt-5">新規投稿</h5>
+    </div>
+  </div>
+
+ <%= form_with model:@post, local:true do |f| %>
+
+ <div class="row">
+  <div class="col-md-8 offset-md-1 mt-4 pl-5">
+      <div class="form-group form-inline pl-3">
+        <p class="mr-2">キャンプ画像</p>
+        <div class="ml-5"><%= f.attachment_field :image %></div>
+      </div>
+      <div class="form-group form-inline">
+      　<p class="mr-2">タイトル</p>
+        <div class="ml-5"><%= f.text_field :title, size: "30", class: "form-control" %></div>
+      </div>
+      <div class="form-group form-inline">
+      　<p class="mr-4">本文</p>
+        <div class="ml-5"><%= f.text_area :review, size: "50x5", class: "form-control" %></div>
+      </div>
+    </div>
+   </div>
+
+  <div class="row">
+    <div class="col-md-3 offset-md-4 mt-3">
+      <%= f.submit '投稿する', class:"glyphicon glyphicon-home btn btn-success" %>
+    </div>
+  </div>
+
+  <% end %>
+</div>
