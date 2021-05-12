@@ -1,0 +1,20 @@
+
+<div class="container">
+
+  <div class="bg-slider">
+   <h1 class="bg-slider__title">BGSWITCHER DEMO PAGE</h1>
+  </div>
+
+  <script>
+  jQuery(function($) {
+      $('.bg-slider').bgSwitcher({
+          images: ['img/camp_image.1.jpg','img/camp_image.2.jpg','img/camp_image.5.jpg'], // 切り替える背景画像を指定
+      });
+  });
+  </script>
+
+  <%= render 'camp_places', camp_places: @camp_places %>
+
+  <%= render 'recent_posts', posts: @posts %>
+
+</div>

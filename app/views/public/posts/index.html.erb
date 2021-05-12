@@ -1,0 +1,42 @@
+
+ <div class="container">
+
+   <div class="row">
+      <div class="col-md-6 offset-md-1">
+        <h5 class="font-weight-bold text-center">みんなのキャンプ</h5>
+      </div>
+      <div class="col-md-2 offset-md-3">
+        <%= link_to "", new_post_path, class:"fas fa-plus-circle fa-3x new_btn_color" %>
+      </div>
+    </div>
+
+    <% @posts.each do |post| %>
+        <div class="row mt-5">
+            <div class="col-md-3 text-center">
+             <%= link_to  post_path(post.id) do %>
+               <%= attachment_image_tag post, :image, :fill, 180, 180, format: 'jpeg' %>
+             <% end %>
+            </div>
+        <div class="col-8 offset-md-1">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td></td>
+                <td><p>タイトル</p><%= post.title %></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><p>本文</p><%= post.review %></td>
+              </tr>
+              <tr>
+                <td></td>
+                  <td id="favorites_buttons_<%= post.id %>">
+                   <%= render partial: 'favorites/favorite', locals: {post: post} %>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+     <% end %>
+  </div>
