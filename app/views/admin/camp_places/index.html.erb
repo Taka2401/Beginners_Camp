@@ -3,7 +3,7 @@
 
    <div class="row">
       <div class="col-md-6 offset-md-1">
-        <h5 class="font-weight-bold text-center">投稿履歴一覧</h5>
+        <h5 class="font-weight-bold text-center">キャンプ場投稿履歴</h5>
       </div>
       <div class="col-md-2 offset-md-3">
         <%= link_to "", new_admin_camp_place_path, class:"fas fa-plus-circle fa-3x new_btn_color" %>
@@ -20,15 +20,15 @@
             <tbody>
               <tr>
                 <td></td>
-                <td><p><strong>キャンプ場</strong></p><%= camp_place.name %></td>
+                <td><%= camp_place.name %></td>
               </tr>
               <tr>
                 <td></td>
-                <td><p><strong>住所</strong></p><%= camp_place.address %></td>
+                <td><%= camp_place.address %></td>
               </tr>
               <tr>
                 <td></td>
-                <td><p><strong>キャンプ場紹介</strong></p><%= camp_place.introduction %></td>
+                <td></p><%= camp_place.introduction %></td>
               </tr>
             </tbody>
           </table>

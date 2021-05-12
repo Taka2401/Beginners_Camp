@@ -7,4 +7,5 @@ class Admin < ApplicationRecord
          attachment :image
 
          has_many :camp_places, dependent: :destroy
+         has_many :camp_items, dependent: :destroy
 end
