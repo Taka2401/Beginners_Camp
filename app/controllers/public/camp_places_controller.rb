@@ -5,7 +5,7 @@ class Public::CampPlacesController < ApplicationController
   end
 
   def show
-    @camp_place= Camp_place.find(params[:id])
+    @camp_place = Camp_place.find(params[:id])
   end
 
 end

@@ -1,9 +1,10 @@
 class Camp_place < ApplicationRecord
 
-  attachment :image
-
   belongs_to :admin
   has_many :post_images, dependent: :destroy
+
+  attachment :image
+  accepts_attachments_for :post_images, attachment: :image
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
