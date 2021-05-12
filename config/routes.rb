@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :camps, only: [:index, :show]
   resources :camp_places, only: [:index, :show]
+  resources :camp_items, only: [:index, :show]
   resources :post_images, only: [:new, :create, :index, :show, :destroy]
 
   resources :posts, only: [:index, :new, :create, :show, :destroy] do
