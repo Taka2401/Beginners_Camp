@@ -2,10 +2,14 @@
 <div class="container">
 
     <div class="row mt-5">
-          <div class="col-md-3 text-center">
-            <%= attachment_image_tag @camp_place, :image, :fill, 200, 200, format: 'jpeg' %>
+      <% @camp_place.post_images.each  do |post_image| %>
+       <div class="d-flex flex-wrap mt-4">
+         <div class="col-md-6 offset-md-11">
+           <%= attachment_image_tag post_image, :image, :fill, 200, 200, format: 'jpeg' %>
           </div>
-      <div class="col-md-6 offset-md-1">
+        </div>
+      <% end %>
+      <div class="col-md-8 offset-md-2 mt-4">
         <table class="table">
           <tbody>
             <tr>

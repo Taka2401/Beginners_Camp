@@ -1,30 +1,28 @@
 
 <div class="container">
 
-    <div class="row mx-auto mt-5">
-       <div class="col-md-5 text-center">
-          <% if @camp_place.post_images.present? %>
-            <% @camp_place.post_images.each do |camp_place| %>
-              <%= attachment_image_tag camp_place, :image, :fill, 350, 300, format: 'jpeg' %>
-            <% end %>
-            <% else %>
-              <%= image_tag 'no_image.jpg', size: '200x200' %>
-          <% end %>
-  　    </div>
-      <div class="col-md-6 offset-md-1">
+  <div class="row mt-5">
+      <% @camp_place.post_images.each  do |post_image| %>
+       <div class="d-flex flex-wrap mt-4">
+         <div class="col-md-6 offset-md-11">
+           <%= attachment_image_tag post_image, :image, :fill, 200, 200, format: 'jpeg' %>
+          </div>
+        </div>
+      <% end %>
+      <div class="col-md-8 offset-md-2 mt-4">
         <table class="table">
           <tbody>
             <tr>
               <td></td>
-              <td><p>キャンプ場</p><%= @camp_place.name %></td>
+              <td><%= @camp_place.name %></td>
             </tr>
             <tr>
               <td></td>
-              <td><p>住所</p><%= @camp_place.address %></td>
+              <td><%= @camp_place.address %></td>
             </tr>
             <tr>
               <td></td>
-              <td><p>キャンプ場紹介</p><%= @camp_place.introduction %></td>
+              <td><%= @camp_place.introduction %></td>
             </tr>
           </tbody>
         </table>
@@ -64,10 +62,12 @@
    </script>
    <style type="text/css">
       #map { height: 300px;
-             width: 100%;
+             width: 80%;
       }
    </style>
 
+   <div class="row offset-md-2 mt-5">
     <div id="map"></div>
+   </div>
 </div>
 

@@ -9,7 +9,7 @@ class CampPlace < ApplicationRecord
   after_validation :geocode, if: :address_changed?
 
   def self.search(search)
-      return CampPPlace.all unless search
+      return CampPlace.all unless search
       CampPlace.where(['name LIKE ?', "%#{search}%"])
   end
 
