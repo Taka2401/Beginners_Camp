@@ -1,11 +1,11 @@
 class Public::CampPlacesController < ApplicationController
 
   def index
-    @camp_places = Camp_place.search(params[:search])
+    @camp_places = CampPlace.search(params[:search])
   end
 
   def show
-    @camp_place = Camp_place.find(params[:id])
+    @camp_place = CampPlace.find(params[:id])
   end
 
 end

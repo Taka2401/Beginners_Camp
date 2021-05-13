@@ -1,9 +1,9 @@
 class PostImage < ApplicationRecord
 
-  belongs_to :user
-  belongs_to :post
-  belongs_to :camp_place
-  belongs_to :camp_item
+  belongs_to :user, optional: true
+  belongs_to :post, optional: true
+  belongs_to :camp_place, optional: true
+  belongs_to :camp_item, optional: true
 
   attachment :image
 
