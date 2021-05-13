@@ -1,4 +1,4 @@
-class Camp_item < ApplicationRecord
+class CampItem < ApplicationRecord
 
   attachment :image
 

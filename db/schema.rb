@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2021_05_12_085616) do
     t.integer "admin_id"
     t.string "name"
     t.text "introduction"
-    t.string "image_id"
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
