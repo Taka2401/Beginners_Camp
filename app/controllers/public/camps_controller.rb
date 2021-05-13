@@ -2,12 +2,12 @@ class Public::CampsController < ApplicationController
 
   def index
     @posts = Post.all
-    @camp_places = Camp_place.all
-    @camp_items = Camp_item.all
+    @camp_places = CampPlace.all
+    @camp_items = CampItem.all
   end
 
   def show
-    @camp_place= Camp_place.find(params[:id])
+    @camp_place= CampPlace.find(params[:id])
   end
 
 
