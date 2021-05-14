@@ -15,6 +15,7 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery.bgswitcher
+//= require jquery.raty.js
 //= require_tree .
 
 
