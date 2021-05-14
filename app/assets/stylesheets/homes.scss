@@ -1,3 +1,25 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#box{
+  height: 400px;
+  width: 80%;
+  margin-left: 120px;
+}
+
+.image1 {
+  background-image: iamge-url(camp_image.8.jpg);
+}
+.image2 {
+  background-image: iamge-url(camp_image.9.jpg);
+}
+.image3 {
+  background-image: iamge-url(camp_image.10.jpg);
+}
+.image4 {
+  background-image: iamge-url(camp_image.4.jpg.jfif);
+}
+.image5 {
+  background-image: iamge-url(camp_image.5.jpg);
+}

@@ -1,0 +1,75 @@
+
+<div class="container">
+
+  <div class="row mt-5">
+      <% @camp_place.post_images.each  do |post_image| %>
+       <div class="d-flex flex-wrap mt-4">
+         <div class="col-md-6 offset-md-11">
+           <%= attachment_image_tag post_image, :image, :fill, 200, 200, format: 'jpeg' %>
+          </div>
+        </div>
+      <% end %>
+      <div class="col-md-8 offset-md-2 mt-4">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td></td>
+              <td><%= @camp_place.name %></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><%= @camp_place.address %></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><%= @camp_place.introduction %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <%= link_to "評価する", new_camp_place_value_path, style: "color: #494848;" %>
+
+    <script type="text/javascript">
+      function initMap() {
+        //latitude,longitudeから位置を特定
+        var test = {lat: <%= @camp_place.latitude %>, lng: <%= @camp_place.longitude %>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+                  zoom: 15,
+                  center: test
+                  });
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
+
+        var contentString = '住所：<%= @camp_place.address %>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        //Map上の指定した位置にピンを挿して表示する
+        var marker = new google.maps.Marker({
+                      position:test,
+                      map: map,
+                      title: contentString
+                     });
+
+         marker.addListener('click', function() {
+           infowindow.open(map, marker);
+         });
+      }
+   </script>
+
+   <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+   </script>
+   <style type="text/css">
+      #map { height: 300px;
+             width: 80%;
+      }
+   </style>
+
+   <div class="row offset-md-2 mt-5">
+    <div id="map"></div>
+   </div>
+</div>
+
