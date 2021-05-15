@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_13_114501) do
+ActiveRecord::Schema.define(version: 2021_05_15_062606) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -54,17 +54,24 @@ ActiveRecord::Schema.define(version: 2021_05_13_114501) do
   end
 
   create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "post_comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "comment"
   end
 
   create_table "post_images", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.integer "camp_place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_id"
@@ -72,8 +79,9 @@ ActiveRecord::Schema.define(version: 2021_05_13_114501) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.integer "user_id"
     t.string "title"
-    t.text "thought"
+    t.text "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_id"
