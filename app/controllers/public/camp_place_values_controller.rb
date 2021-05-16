@@ -10,7 +10,6 @@ class Public::CampPlaceValuesController < ApplicationController
     camp_place_value = CampPlaceValue.new
     camp_place_value = current_user.camp_place_values.new(camp_place_value_params)
     camp_place_value.camp_place_id = camp_place.id
-        byebug
     camp_place_value.save
     redirect_to camp_place_path(camp_place)
   end
