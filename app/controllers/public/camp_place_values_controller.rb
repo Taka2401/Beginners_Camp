@@ -5,9 +5,6 @@ class Public::CampPlaceValuesController < ApplicationController
     @camp_place = CampPlace.find(params[:camp_place_id])
   end
 
-  def edit
-  end
-
   def create
     camp_place = CampPlace.find(params[:camp_place_id])
     camp_place_value = CampPlaceValue.new
@@ -16,12 +13,6 @@ class Public::CampPlaceValuesController < ApplicationController
         byebug
     camp_place_value.save
     redirect_to camp_place_path(camp_place)
-  end
-
-  def update
-  end
-
-  def destroy
   end
 
   private
