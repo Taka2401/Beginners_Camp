@@ -1,8 +1,8 @@
 class CampPlace < ApplicationRecord
 
   belongs_to :admin
-  has_many :camp_place_values, dependent: :destroy
   has_many :post_images, dependent: :destroy
+  has_many :camp_place_values, dependent: :destroy
 
   accepts_attachments_for :post_images, attachment: :image
 
