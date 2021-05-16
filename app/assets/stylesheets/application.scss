@@ -1,0 +1,78 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+*{
+  font-family: 'メイリオ', sans-serif;
+  color : #494848;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+  color: rgba(73, 72, 72, 1.0);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
+  color: rgba(73, 72, 72, 1.0);
+}
+
+header{
+  width: 100%;
+  height: 100px;
+  background-color: #FFFFFF;
+  opacity: 0.9;
+}
+
+main {
+  margin-bottom: 200px;
+}
+
+footer{
+  width: 100%;
+  background-color: #ffb6bb;
+  height: 100px;
+  line-height: 50px;
+}
+
+#container{
+  height: 300px;
+}
+
+.slider {
+    width: 50%;
+    height: 50vw;
+    object-fit: cover;
+}
+
+.bg-slider {
+    width: 100%;
+    height: 100vh;
+    background-position:center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg-slider__title{
+    color: #fff;
+    font-size: 48px;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align:center;
+    text-shadow: 1px 1px 1px #000;
+}

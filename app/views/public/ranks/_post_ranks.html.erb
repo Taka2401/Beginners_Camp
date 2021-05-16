@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="row offset-md-1 mt-5">
+      <div class="col-12">
+        <h3 strong>みんなのキャンプ投稿TOP3</strong></h3>
+      </div>
+      <% post_ranks.first(3).each.with_index(1) do |post, i| %>
+        <div class="d-flex flex-wrap mt-4">
+          <div class="col-12">
+            <H3>第<%= i %>位</H3>
+          </div>
+          <div class="col-12">
+            <%= link_to post_path(post), style: "color: #494848;" do %>
+              <%= attachment_image_tag(post, :image, :fill, 200, 200, format: 'jpeg', class: "rounded") %> <br />
+              <div class="col-12 mt-1">
+                <%= post.title %>
+              </div>
+            <% end %>
+            <div class="col-12 ext-center">
+              <div id="favorites_buttons_<%= post.id %>">
+               <%= render partial: 'favorites/favorite', locals: {post: post} %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-5 offset-md-6  mt-3">
+       <%= link_to "みんなの投稿を見る>>", posts_path, style: "color: #494848;", class: "float-right" %>
+      </div>
+   </div>
+ </div>

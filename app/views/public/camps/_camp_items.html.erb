@@ -1,0 +1,37 @@
+
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-12 mt-2">
+        <h3>キャンプ用品一覧</h3>
+      </div>
+       <% camp_items.first(3).each do |camp_item| %>
+        <div class="d-flex flex-wrap mt-4">
+          <div class="col-12">
+            <%= link_to camp_item_path(camp_item), style: "color: #494848;" do %>
+              <%= attachment_image_tag(camp_item, :image, :fill, 150, 150, format: 'jpeg', class: "rounded") %> <br />
+              <div class="col-12 text-center">
+                <%= camp_item.name %>
+              </div>
+          <div class="row col-12 offset-md-1" id="star-rate2-<%= camp_item.id %>"></div>
+            <script>
+            $('#star-rate2-<%= camp_item.id %>').raty({
+              size: 30,
+              starOn: "<%= asset_path('star-on.png') %>",
+              starOff: "<%= asset_path('star-off.png') %>",
+              starHalf: "<%= asset_path('star-half.png') %>",
+              half: true,
+              readOnly: true,
+              score: "<%= camp_item.camp_item_values.average(:rate).to_f.round(1) %>",
+            });
+            </script>
+           </div>
+          </div>
+         <% end %>
+       <% end %>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-5 offset-md-1">
+       <%= link_to "全てのキャンプ用品を見る>>", camp_items_path, style: "color: #494848;", class: "float-right" %>
+      </div>
+    </div>
+  </div>

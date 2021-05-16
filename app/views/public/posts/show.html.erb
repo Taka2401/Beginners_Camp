@@ -1,0 +1,50 @@
+
+<div class="container">
+
+    <div class="row mt-5">
+          <div class="col-md-3 text-center">
+            <%= attachment_image_tag @post, :image,  :fill, 250, 250, format: 'jpeg' %>
+          </div>
+      <div class="col-md-6 offset-md-1">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td><p>タイトル</p></td>
+              <td><%= @post.title %></td>
+            </tr>
+            <tr>
+              <td><p>本文</p></td>
+              <td><%= @post.review %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+       <div class="col-md-3 text-center mt-5">
+          <% if user_signed_in? && current_user.id == @post.user_id %>
+            <%= link_to '削除する', post_path(@post.id), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'btn btn-sm btn-danger' %>
+          <% end %>
+       </div>
+       <div class="col-md-4 offset-md-1 mt-5">
+          <div class="new-comment">
+            <div id="comment_buttons_<%= @post.id %>">
+              <%= render partial: 'post_comments/comment', locals: {post: @post, post_comment: @post_comment} %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+

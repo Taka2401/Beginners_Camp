@@ -1,0 +1,26 @@
+
+ <div class="container">
+
+    <div class="row">
+     <div class="col-md-8 offset-md-2 mt-4 pl-5">
+      <%= form_with model:  [:admin, @camp_item], local:true do |f| %>
+        <div class="form-group">
+          <%= f.label :キャンプ用品の写真 %>
+          <%= f.attachment_field :image, class: "form-control-file user_image" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :キャンプ用品 %>
+          <%= f.text_field :name, class: "form-control name" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :キャンプ用品紹介 %>
+          <%= f.text_area :introduction, class: "form-control introduction", size: "80x6" %>
+        </div>
+        <div class="form-group text-center mt-5">
+          <%= f.submit "投稿する", class: 'glyphicon glyphicon-home btn btn-success' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+ </div>
