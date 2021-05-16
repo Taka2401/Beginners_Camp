@@ -4,20 +4,11 @@ class Public::CampPlaceValuesController < ApplicationController
     @Camp_place_value = CampPlaceValue.new
   end
 
-  def edit
-  end
-
   def create
     @Camp_place_value = CampPlace.new(camp_place_params)
     @Camp_place_value.user_id = current_user.id
     @Camp_place_value.save
     redirect_to camps_path
-  end
-
-  def update
-  end
-
-  def destroy
   end
 
   private

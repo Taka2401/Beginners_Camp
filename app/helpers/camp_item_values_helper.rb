@@ -1,0 +1,2 @@
+module CampItemValuesHelper
+end
