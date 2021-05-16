@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get '/about' => 'homes#about'
 
+  resources :ranks, only: [:index]
   resources :camps, only: [:index, :show]
   resources :camp_items, only: [:index, :show]
   resources :camp_places, only: [:index, :show]

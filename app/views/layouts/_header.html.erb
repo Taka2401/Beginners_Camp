@@ -12,6 +12,7 @@
           </li>
           <li class="nav-item"><%= link_to "マイページ", user_path(current_user.id), class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to "キャンプ場一覧", camps_path, class: 'nav-link' %></li>
+          <li class="nav-item ml-1"><%= link_to "ランキング", ranks_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "みんなのキャンプ", posts_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
 
