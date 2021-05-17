@@ -82,6 +82,8 @@ gem "geocoder"
 gem 'ransack'
 gem 'jquery-bgswitcher-rails'
 
+gem 'devise-i18n'
+
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
