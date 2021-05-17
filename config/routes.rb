@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
 
-  devise_for :admin
+  devise_for :admin,
+    controllers: {
+      sessions:      'admins/sessions',
+      passwords:     'admins/passwords',
+      registrations: 'admins/registrations'
+    }
   devise_for :users,
-    path: '',
-    path_names: {
-      sign_up: '',
-      sign_in: 'login',
-      sign_out: 'logout',
-      registration: "signup",
+    controllers: {
+      sessions:      'users/sessions',
+      passwords:     'users/passwords',
+      registrations: 'users/registrations'
     }
 
   devise_scope :user do
@@ -46,7 +49,7 @@ Rails.application.routes.draw do
   end
 
    # ========= 管理者(admin)のルーティング ================
-   namespace :admin do
+   namespace :admins do
     resources :camp_places
     resources :camp_items
     resources :users, only: [:show, :edit, :update]

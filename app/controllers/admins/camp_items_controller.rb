@@ -1,4 +1,4 @@
-class Admin::CampItemsController < ApplicationController
+class Admins::CampItemsController < ApplicationController
 
   def index
     @camp_items = CampItem.all
@@ -20,19 +20,19 @@ class Admin::CampItemsController < ApplicationController
     @camp_item = CampItem.new(camp_item_params)
     @camp_item.admin_id = current_admin.id
     @camp_item.save
-    redirect_to admin_camp_items_path
+    redirect_to admins_camp_items_path
   end
 
   def update
     @camp_item = CampItem.find(params[:id])
     @camp_item.update(camp_item_params)
-    redirect_to admin_camp_item_path(@camp_item)
+    redirect_to admins_camp_item_path(@camp_item)
   end
 
   def destroy
     @camp_item = CampItem.find(params[:id])
     @camp_item.destroy
-    redirect_to admin_camp_items_path
+    redirect_to admins_camp_items_path
   end
 
   private
