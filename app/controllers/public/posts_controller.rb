@@ -1,4 +1,5 @@
 class Public::PostsController < ApplicationController
+
   def index
     @posts = Post.all
   end
@@ -15,8 +16,13 @@ class Public::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.save
-    redirect_to posts_path
+    tag_list = params[:post][:tag_ids].split(',')
+    if @post.save
+      @post.save_tags(tag_list)
+      redirect_to @post
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -28,7 +34,8 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:image, :title, :review)
+    params.require(:post).permit(:image, :title, :review, :tag_list
+    )
   end
 
 end
