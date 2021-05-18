@@ -1,0 +1,10 @@
+
+<div class="container">
+  <div class="tags-inner">
+    <% @tags.each do |tag| %>
+      <div class="btn-tag"><%= link_to tag_path(tag.id) do %>
+        <i class="fas fa-hashtag"></i> <%= tag.name %>
+      <% end %></div>
+    <% end %>
+  </div>
+</div>

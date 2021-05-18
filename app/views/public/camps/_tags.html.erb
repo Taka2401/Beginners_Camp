@@ -1,0 +1,17 @@
+
+
+<div class="posts-wrapper">
+  <div class="posts-heading">
+    <h2><i class="fas fa-tags"></i>タグから探す</h2>
+    <%= link_to 'もっと見る', tags_path %>
+  </div>
+  <ul class="index-tags">
+    <% tags.each do |tag| %>
+      <li>
+        <%= link_to tag_path(tag.id), class: "btn index-tags-btn" do %>
+          <i class="fas fa-hashtag"></i> <%= tag.name %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

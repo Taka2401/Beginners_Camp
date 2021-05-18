@@ -10,7 +10,7 @@
  <%= form_with model:@post, local:true do |f| %>
 
  <div class="row">
-  <div class="col-md-8 offset-md-1 mt-4 pl-5">
+   <div class="col-md-8 offset-md-1 mt-4 pl-5">
       <div class="form-group form-inline pl-3">
         <p class="mr-2">キャンプ画像</p>
         <div class="ml-5"><%= f.attachment_field :image %></div>
@@ -23,8 +23,12 @@
       　<p class="mr-4">本文</p>
         <div class="ml-5"><%= f.text_area :review, size: "50x5", class: "form-control" %></div>
       </div>
+      <div class="form-group form-inline">
+        <%= f.label :tag_ids, "タグ" %><span class="form-required form-auto">カンマ【 , 】で区切ると複数登録可能</span>
+        <%= f.text_field :tag_ids, value: @tag_list, class:"post-fields post-title"%>
+      </div>
     </div>
-   </div>
+  </div>
 
   <div class="row">
     <div class="col-md-3 offset-md-4 mt-3">
