@@ -1,17 +1,22 @@
 
-
-<div class="posts-wrapper">
-  <div class="posts-heading">
+<div class="row col-md-7 offset-md-1">
+  <div class="row mt-2">
     <h2><i class="fas fa-tags"></i>タグから探す</h2>
-    <%= link_to 'もっと見る', tags_path %>
   </div>
-  <ul class="index-tags">
+  <div class="row mt-2">
     <% tags.each do |tag| %>
-      <li>
-        <%= link_to tag_path(tag.id), class: "btn index-tags-btn" do %>
-          <i class="fas fa-hashtag"></i> <%= tag.name %>
-        <% end %>
-      </li>
+      <%= link_to tag_path(tag.id), class: "btn index-tags-btn" do %>
+        <i class="fas fa-hashtag"></i> <%= tag.name %>
+      <% end %>
     <% end %>
-  </ul>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-12 offset-md-4">
+      <%= link_to "もっと見る>>", tags_path, style: "color: #494848;", class: "float-right" %>
+    </div>
+  </div>
 </div>
+
+
+
+
