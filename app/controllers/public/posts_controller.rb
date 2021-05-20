@@ -19,7 +19,7 @@ class Public::PostsController < ApplicationController
     tag_list = params[:post][:tag_ids].split(',')
     if @post.save
       @post.save_tags(tag_list)
-      redirect_to @post
+      redirect_to posts_path
     else
       render :new
     end
