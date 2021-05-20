@@ -12,12 +12,12 @@
 
     <% @posts.includes([:favorites]).each do |post| %>
         <div class="row mt-5">
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 offset-md-1">
              <%= link_to  post_path(post.id) do %>
                <%= attachment_image_tag post, :image, :fill, 180, 180, format: 'jpeg' %>
              <% end %>
             </div>
-        <div class="col-8 offset-md-1">
+        <div class="col-6">
           <table class="table table-borderless">
             <tbody>
               <tr>
@@ -26,17 +26,26 @@
               </tr>
               <tr>
                 <td></td>
-                <td><p>本文</p><%= post.review %></td>
-              </tr>
-              <tr>
-                <td></td>
                   <td id="favorites_buttons_<%= post.id %>">
                    <%= render partial: 'favorites/favorite', locals: {post: post} %>
                   </td>
               </tr>
+              <tr>
+                <td></td>
+                  <td id="comment_buttons_<%= post.id %>">
+                   コメント件数：<%= post.post_comments.count %>
+                  </td>
+                </td>
+              </tr>
             </tbody>
           </table>
+         </div>
         </div>
-      </div>
      <% end %>
   </div>
+
+
+
+
+
+
