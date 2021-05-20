@@ -19,7 +19,6 @@
 //= require_tree .
 
 
-
 $(document).ready(function () {
   $("#slider").skippr({
     // スライドショーの変化 ("fade" or "slide")
@@ -39,10 +38,15 @@ $(document).ready(function () {
     // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
     hidePrevious : false
   });
+  $('#post_image').on('change', function (e) {
+    console.log("aaaaaa")
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $("#preview").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
 });
-
-
-
 
 
 
