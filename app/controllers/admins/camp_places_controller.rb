@@ -1,4 +1,5 @@
 class Admins::CampPlacesController < ApplicationController
+  before_action :authenticate_admin!
 
   def index
     @camp_places = CampPlace.all
