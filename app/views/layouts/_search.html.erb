@@ -1,17 +1,17 @@
 
-<div>
+<div class="input-group">
   <%= form_tag(camp_places_path,:method => 'get') do %>
     <%= text_field_tag :search, '', placeholder:"検索ワード" %>
+    <span class="input-group-btn">
       <i class="fa fa-search", onclick="checkText()"></i>
+    </span>
   <% end %>
 </div>
 
 <script>
 function checkText() {
-
   // document.search.submit();
   $('form').submit();
 // trigger('submit');
-
 }
 </script>
