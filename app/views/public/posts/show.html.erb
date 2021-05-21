@@ -6,16 +6,18 @@
       <%= link_to  user_path(@post.user) do %>
         <%= attachment_image_tag @post, :image,  :fill, 250, 250, format: 'jpeg' %>
       <% end %>
+      <div class="col-md-12 text-center mt-5">
+        <% if user_signed_in? && current_user.id == @post.user_id %>
+          <%= link_to '削除する', post_path(@post.id), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'btn btn-sm btn-danger' %>
+        <% end %>
+      </div>
     </div>
     <div class="col-md-6 offset-md-1">
       <table class="table">
         <tbody>
           <tr>
-            <td><p>タイトル</p></td>
             <td><%= @post.title %></td>
-          </tr>
           <tr>
-            <td><p>本文</p></td>
             <td><%= @post.review %></td>
           </tr>
         </tbody>
@@ -24,12 +26,7 @@
   </div>
 
   <div class="row">
-     <div class="col-md-3 text-center mt-5">
-        <% if user_signed_in? && current_user.id == @post.user_id %>
-          <%= link_to '削除する', post_path(@post.id), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'btn btn-sm btn-danger' %>
-        <% end %>
-     </div>
-     <div class="col-md-6 offset-md-1 mt-5">
+     <div class="col-md-6 offset-md-4 mt-5">
        <div class="new-comment">
           <div id="comment_buttons_<%= @post.id %>">
             <%= render partial: 'post_comments/comment', locals: {post: @post, post_comment: @post_comment} %>

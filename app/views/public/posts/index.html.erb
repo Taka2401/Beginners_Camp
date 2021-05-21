@@ -2,11 +2,13 @@
  <div class="container">
 
    <div class="row">
-      <div class="col-md-6 offset-md-1">
-        <h5 class="font-weight-bold text-center">みんなのキャンプ</h5>
+      <div class="col-md-7 offset-md-2">
+        <h3><i class="fas fa-feather-alt"></i>みんなのキャンプ</h3>
       </div>
-      <div class="col-md-2 offset-md-3">
-        <%= link_to "", new_post_path, class:"fas fa-plus-circle fa-3x new_btn_color" %>
+      <div class="col-md-2 offset-md-1">
+        <%= link_to new_post_path do %>
+          <i class="far fa-edit fa-3x new_btn_color"></i>
+        <% end %>
       </div>
     </div>
 
