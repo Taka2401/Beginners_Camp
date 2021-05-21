@@ -1,4 +1,5 @@
 class Admins::CampItemsController < ApplicationController
+  before_action :authenticate_admin!
 
   def index
     @camp_items = CampItem.all
