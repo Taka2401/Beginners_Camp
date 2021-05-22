@@ -2,6 +2,7 @@
 <div class="container">
   <div class="col-12">
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|%>
+      <%= render 'layouts/error_messages', object: f.object %>
        <div class="col-md-6 offset-md-3 mt-2">
          <div class="row offset-md-4">
            <strong><%= f.label :ユーザー名 %></strong>

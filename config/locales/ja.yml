@@ -1,0 +1,36 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: 名前
+      post:
+        title: タイトル
+        image_id: 画像
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              format: '%{message}'
+              blank: を入力してください。
+            email:
+              format: '%{message}'
+              blank: を入力してください。
+            password:
+              format: '%{message}'
+              blank: を入力してください。
+            password_confirmation:
+              confirmation: とパスワードが一致しません
+        post:
+          attributes:
+            title:
+              format: '%{message}'
+              blank: を入力してください。
+            image_id:
+              format: '%{message}'
+              blank: を入力してください。
+
+
+
