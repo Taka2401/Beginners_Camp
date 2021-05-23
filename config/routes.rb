@@ -52,8 +52,7 @@ Rails.application.routes.draw do
    namespace :admins do
     resources :camp_places
     resources :camp_items
-    resources :users, only: [:show, :edit, :update]
-    get 'user/post/:id' => 'users#post', as: 'user_post'
+    resources :users, only: [:index, :show,]
   end
 
 end
