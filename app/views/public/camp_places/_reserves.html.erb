@@ -1,0 +1,24 @@
+　<%= form_with(model:[camp_place, reservation]) do |f| %>
+　  <div class="col-6 mx-auto">
+      <div class="form-group">
+        <div class="input-group-append" data-target="#start_date" data-toggle="datetimepicker">
+          <%= f.text_field :start_date, id: "start_date", class: "form-control datepicker", placeholder: "Check in", data: { target: '#start_date'} %>
+          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mx-auto">
+      <div class="form-group">
+        <div class="input-group-append" data-target="#end_date" data-toggle="datetimepicker">
+          <%= f.text_field :end_date, id: "end_date", class: "form-control datepicker", placeholder: "Check out", data: { target: '#end_date'} %>
+          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="mx-auto">
+        <%= f.submit "この日程で予約する", class: "btn btn-danger btn-wide" %>
+        <%= link_to "評価する", new_camp_place_camp_place_value_path(@camp_place,), class: 'glyphicon glyphicon-home btn btn-success' %>
+      </div>
+    </div>
+  <% end %>
