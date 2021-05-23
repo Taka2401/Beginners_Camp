@@ -18,7 +18,8 @@
     <div class="row mt-4">
       <div class="mx-auto">
         <%= f.submit "この日程で予約する", class: "btn btn-danger btn-wide" %>
-        <%= link_to "評価する", new_camp_place_camp_place_value_path(@camp_place,), class: 'glyphicon glyphicon-home btn btn-success' %>
+        <%= link_to "評価する", new_camp_place_camp_place_value_path(camp_place), class: 'glyphicon glyphicon-home btn btn-success' %>
+        <%= link_to "クチコミを見る", camp_place_camp_place_values_path(camp_place), class: 'glyphicon glyphicon-home btn btn-primary' %>
       </div>
     </div>
   <% end %>

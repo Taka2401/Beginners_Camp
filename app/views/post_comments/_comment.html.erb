@@ -13,17 +13,17 @@
 
 <div class="row">
   <% post.post_comments.each do |post_comment| %>
-    <div class="col-md-5 mt-5">
+    <div class="col-md-3 mt-5">
       <%= link_to  user_path(post.user) do %>
-        <p><%= image_tag('camp_image.9.jpg', :size =>'85x85') %></p>
+        <%= attachment_image_tag(post_comment.user, :profile_image, :fill, 85, 85, fallback: "no_image.jpg") %><br />
+        <%= post_comment.user.name %>
       <% end %>
-      <%= post_comment.user.name %>
     </div>
-    <div class="col-md-7 mt-5">
+    <div class="col-md-9 mt-5">
       <%= post_comment.comment %>
       <div class="float-right">
         <% if post_comment.user == current_user %>
-            <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete, remote: true, class: 'btn btn-sm btn-danger' %><br>
+          <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete, remote: true, class: 'btn btn-sm btn-danger' %><br>
         <% end %>
       </div>
     </div>

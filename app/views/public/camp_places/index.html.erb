@@ -4,19 +4,19 @@
     <div class="col-lg-12 mt-2">
       <h3>キャンプ場一覧</h3>
     </div>
-      <% @camp_places.each do |camp_place| %>
-        <% camp_place.post_images.first(1).each  do |post_image| %>
-        <div class="d-flex flex-wrap mt-4">
-          <div class="col-lg-4 camp__image">
-            <%= link_to camp_place_path(camp_place), style: "color: #494848;" do %>
-              <%= attachment_image_tag(post_image, :image, :fill, 200, 200, format: 'jpeg', class: "rounded") %> <br />
-             <% end %>
-            <div class="col-md-12">
-              <%= camp_place.name %>
-            </div>
+    <% @camp_places.each do |camp_place| %>
+      <% camp_place.post_images.first(1).each  do |post_image| %>
+      <div class="d-flex flex-wrap mt-4">
+        <div class="col-lg-4 camp__image">
+          <%= link_to camp_place_path(camp_place), style: "color: #494848;" do %>
+            <%= attachment_image_tag(post_image, :image, :fill, 200, 200, format: 'jpeg', class: "rounded") %> <br />
+           <% end %>
+          <div class="col-md-12">
+            <%= camp_place.name %>
           </div>
-         </div>
-        <% end %>
-   　  <% end %>
-    </div>
+        </div>
+       </div>
+      <% end %>
+ 　  <% end %>
   </div>
+</div>

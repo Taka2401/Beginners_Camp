@@ -1,5 +1,13 @@
 class Public::CampPlaceValuesController < ApplicationController
 
+  def index
+    @camp_place = CampPlace.find(params[:camp_place_id])
+  end
+
+  def show
+    @camp_place_value = CampPlaceValue.find(params[:id])
+  end
+
   def new
     @camp_place_value = CampPlaceValue.new
     @camp_place = CampPlace.find(params[:camp_place_id])
@@ -17,7 +25,7 @@ class Public::CampPlaceValuesController < ApplicationController
   private
 
   def camp_place_value_params
-    params.require(:camp_place_value).permit(:rate, :camp_place_id)
+    params.require(:camp_place_value).permit(:camp_place_id, :title, :review, :rate)
   end
 
 end
