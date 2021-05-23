@@ -6,6 +6,7 @@ class Public::CampPlacesController < ApplicationController
 
   def show
     @camp_place = CampPlace.find(params[:id])
+    @reservation = Reservation.new
   end
 
 end

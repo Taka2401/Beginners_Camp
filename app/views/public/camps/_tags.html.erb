@@ -2,7 +2,7 @@
 <div class="row mt-2">
   <h3><i class="fas fa-tags"></i> タグから探す</h3>
 </div>
-<div class="row mt-2">
+<div class="row mt-5">
   <% tags.each do |tag| %>
     <%= link_to tag_path(tag.id), class: "btn index-tags-btn" do %>
       <i class="fas fa-hashtag"></i> <%= tag.name %>

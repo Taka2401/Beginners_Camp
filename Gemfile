@@ -79,7 +79,6 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 gem 'kaminari', '~> 0.17.0'
 gem "geocoder"
-gem 'ransack'
 gem 'jquery-bgswitcher-rails'
 
 gem 'devise-i18n'
@@ -88,3 +87,7 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+
+gem 'momentjs-rails'
+gem "bootstrap4-datetime-picker-rails"
+gem "font-awesome-rails"

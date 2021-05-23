@@ -1,6 +1,5 @@
 
 <div class="container">
-
   <div class="row mt-5">
     <div class="col-md-3 text-center">
       <%= link_to  user_path(@post.user) do %>
@@ -24,9 +23,8 @@
       </table>
     </div>
   </div>
-
   <div class="row">
-     <div class="col-md-6 offset-md-4 mt-5">
+     <div class="col-md-6 offset-md-4 mt-2">
        <div class="new-comment">
           <div id="comment_buttons_<%= @post.id %>">
             <%= render partial: 'post_comments/comment', locals: {post: @post, post_comment: @post_comment} %>
@@ -34,8 +32,7 @@
         </div>
      </div>
   </div>
-
- </div>
+</div>
 
 
 
