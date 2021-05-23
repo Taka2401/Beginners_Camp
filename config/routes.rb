@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
   resources :camp_places, only: [:index, :show] do
     resources :reservations, only: [:create]
-    resources :camp_place_values, only: [:new, :edit, :create, :update, :destroy]
+    resources :camp_place_values, only: [:index, :show, :new, :create, :destroy]
   end
 
   resources :camp_items, only: [:index, :show] do

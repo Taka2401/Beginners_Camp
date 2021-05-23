@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-3">
+      <h5 class="d-inline-flex bg-light my-4"><%= @camp_place_value.user.name %>さんの口コミ</h5>
+    </div>
+    <div class="col-7 offset-md-2 mt-4">
+      <h4>タイトル</h4>
+      <div class="col-7 mt-3">
+         <%= @camp_place_value.title %>
+      </div>
+    </div>
+    <div class="col-12 offset-md-2 mt-5">
+      <h4>内容</h4>
+      <div class="col-7 mt-3">
+       <%= @camp_place_value.review %>
+      </div>
+    </div>
+  </div>
+</div>
