@@ -40,12 +40,14 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: [:index, :new, :create, :show, :destroy] do
-  resource :favorites, only: [:create, :destroy]
-  resources :post_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
+    resources :post_comments, only: [:create, :destroy]
   end
 
-  resources :users, only: [:show, :edit, :update]
-  get 'user/post/:id' => 'users#post', as: 'user_post'
+  resources :users, only: [:show, :edit, :update] do
+    resources :reservations, only: [:index]
+  end
+  get 'user/:id/post' => 'users#post', as: 'user_post'
 
   end
 

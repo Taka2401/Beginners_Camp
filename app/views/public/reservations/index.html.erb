@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-md-3">
+      <h5><%= @user.name %>さんの予約履歴一覧</h5>
+    </div>
+    <div class="col-10 offset-md-1">
+      <table class="table table-hover mt-5">
+        <thead>
+          <tr>
+            <th>キャンプ場</th>
+            <th>チェックイン</th>
+            <th>チェックアウト</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @user.reservations.each do |reservation| %>
+            <tr>
+              <td>
+                <%= link_to camp_place_path(reservation.camp_place), style: "color: #494848;" do %>
+                  <%= reservation.camp_place.name %>
+                <% end %>
+              </td>
+              <td><%= reservation.start_date.strftime('%Y/%m/%d %H:%M') %></td>
+              <td><%= reservation.end_date.strftime('%Y/%m/%d %H:%M') %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

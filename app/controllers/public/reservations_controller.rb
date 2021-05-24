@@ -1,5 +1,9 @@
 class Public::ReservationsController < ApplicationController
 
+  def index
+    @user = User.find(params[:user_id])
+  end
+
   def create
     @camp_place = CampPlace.find(params[:camp_place_id])
     @reservation = Reservation.new
