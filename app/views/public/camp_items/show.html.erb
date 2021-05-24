@@ -1,31 +1,36 @@
 
 <div class="container">
-
-    <div class="row mx-auto mt-5">
-      <div class="col-md-5 text-center">
-        <%= attachment_image_tag @camp_item, :image, :fill, 250, 250, format: 'jpeg' %>
-      </div>
-      <div class="col-md-6">
-        <table class="table">
-          <tbody>
-            <tr>
-              <td></td>
-              <td><%= @camp_item.name %></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><%= @camp_item.introduction %></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="row mx-auto mt-5">
+    <div class="col-md-5 text-center">
+      <%= attachment_image_tag @camp_item, :image, :fill, 250, 250, format: 'jpeg' %>
     </div>
-
-    <div class="row mt-5">
-      <div class="col-md-6 offset-md-7">
-        <%= link_to "評価する", new_camp_item_camp_item_value_path(@camp_item), class: 'glyphicon glyphicon-home btn btn-success' %>
-      </div>
+    <div class="col-md-6">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td></td>
+            <td><%= @camp_item.name %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><%= @camp_item.introduction %></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-6 offset-md-7">
+      <%= link_to "レビューを見る", camp_item_camp_item_values_path(@camp_item), class: 'glyphicon glyphicon-home btn btn-primary' %>
+      <%= link_to "レビューを投稿する", new_camp_item_camp_item_value_path(@camp_item), class: 'glyphicon glyphicon-home btn btn-success' %>
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
+
 

@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   end
 
   resources :camp_items, only: [:index, :show] do
-    resources :camp_item_values, only: [:new, :create]
+    resources :camp_item_values, only: [:index, :show, :new, :create]
   end
 
   resources :posts, only: [:index, :new, :create, :show, :destroy] do

@@ -1,8 +1,7 @@
-
 <div class="container">
   <div class="row">
     <div class="col-md-8 offset-md-3">
-      <h5 class="d-inline-flex bg-light my-4"><%= @camp_place_value.user.name %>さんの口コミ</h5>
+      <h5 class="d-inline-flex bg-light my-4"><%= @camp_item_value.user.name %>さんのレビュー</h5>
     </div>
     <div class="row offset-md-2">
       <div class="col-md-9 mt-4">
@@ -14,10 +13,10 @@
     </div>
     <div class="col-md-6 mt-3">
       <div class="col-9 mt-2">
-         <%= @camp_place_value.title %>
+         <%= @camp_item_value.title %>
       </div>
       <div class="col-9 mt-5">
-       <%= @camp_place_value.review %>
+       <%= @camp_item_value.review %>
       </div>
     </div>
   </div>
