@@ -18,9 +18,10 @@
 
         <% elsif admin_signed_in? %>
           <!--アドミンがログインしている時 -->
+          <li class="nav-item ml-1"><%= link_to "予約一覧", admins_reservations_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "ユーザー一覧", admins_users_path, class: 'nav-link' %></li>
-          <li class="nav-item ml-1"><%= link_to "キャンプ場履歴", admins_camp_places_path, class: 'nav-link' %></li>
-          <li class="nav-item ml-1"><%= link_to "キャンプ用品履歴", admins_camp_items_path, class: 'nav-link' %></li>
+          <li class="nav-item ml-1"><%= link_to "キャンプ場投稿履歴", admins_camp_places_path, class: 'nav-link' %></li>
+          <li class="nav-item ml-1"><%= link_to "キャンプ用品投稿履歴", admins_camp_items_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link' %></li>
 
         <% else %>

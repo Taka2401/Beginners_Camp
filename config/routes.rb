@@ -53,6 +53,7 @@ Rails.application.routes.draw do
 
    # ========= 管理者(admin)のルーティング ================
    namespace :admins do
+    resources :reservations, only: [:index, :show]
     resources :camp_places
     resources :camp_items
     resources :users, only: [:index, :show,]
