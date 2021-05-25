@@ -10,6 +10,9 @@ ja:
       payment_method:
         クレジットカード: "クレジットカード"
         銀行振込: "銀行振込"
+      day:
+        １泊２日: "１泊２日"
+        ２泊３日: "２泊３日"
   activerecord:
     models:
       user: ユーザー

@@ -14,8 +14,12 @@
           <td><%= f.select :guest, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], class: "col-lg-5" %></td>
         </tr>
         <tr>
+          <td class="col-xs-2 table-secondary">利用日数</td>
+          <td><%= f.select :day, Reservation.days_i18n.keys.map{|k| [I18n.t("enums.reservation.day.#{k}"), k]}, {} %></td>
+        </tr>
+        <tr>
           <td class="col-xs-2 table-secondary">料金</td>
-          <td>¥<%= @camp_place.fee %></td>
+          <td id="fee">¥<%= @camp_place.fee %></td>
         </tr>
         <tr>
           <td class="col-xs-2 table-secondary">支払い方法</td>
@@ -27,7 +31,7 @@
         </tr>
         <tr>
           <td class="col-xs-2 table-secondary">合計金額</td>
-          <td>¥<%= @reservation.total_fee =  @camp_place.fee %></td>
+          <td id="total_fee">¥<%= @reservation.total_fee =  @camp_place.fee %></td>
         </tr>
       </table>
     </div>

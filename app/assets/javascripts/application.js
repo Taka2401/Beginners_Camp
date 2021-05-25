@@ -41,15 +41,53 @@ $(document).ready(function () {
     // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
     hidePrevious : false
   });
+
   $('#post_image').on('change', function (e) {
-    console.log("aaaaaa")
     var reader = new FileReader();
     reader.onload = function (e) {
         $("#preview").attr('src', e.target.result);
     }
     reader.readAsDataURL(e.target.files[0]);
   });
+
+  $('select').change(function () {
+    var selectedValue = $(this).val() // 2泊3日
+    if (selectedValue === '１泊２日') {
+      const changedfee = Number($('#fee')[0].innerText.replace('¥', '')) / 2;
+      $('#fee')[0].innerText = `¥${changedfee}`;
+    } else if(selectedValue === '２泊３日') {
+      const changedfee = Number($('#fee')[0].innerText.replace('¥', '')) * 2;
+      $('#fee')[0].innerText = `¥${changedfee}`
+    }
+  })
+
+  $('select').change(function () {
+    var selectedValue = $(this).val() // 2泊3日
+    if (selectedValue === '１泊２日') {
+      const changedfee = Number($('#total_fee')[0].innerText.replace('¥', '')) / 2;
+      $('#total_fee')[0].innerText = `¥${changedfee}`;
+    } else if(selectedValue === '２泊３日') {
+      const changedfee = Number($('#total_fee')[0].innerText.replace('¥', '')) * 2;
+      $('#total_fee')[0].innerText = `¥${changedfee}`
+    }
+  })
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
