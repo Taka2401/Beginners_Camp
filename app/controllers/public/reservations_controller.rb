@@ -5,9 +5,15 @@ class Public::ReservationsController < ApplicationController
     @checkout = "11:00"
   end
 
+  def show
+    @user = User.find(params[:user_id])
+    @reservation = Reservation.find(params[:id])
+    @checkout = "11:00"
+  end
+
   def new
-    @camp_place = CampPlace.find(params[:camp_place_id])
     @reservation = Reservation.new
+    @camp_place = CampPlace.find(params[:camp_place_id])
     @checkout = "11:00"
   end
 
