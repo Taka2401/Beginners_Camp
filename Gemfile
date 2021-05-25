@@ -91,3 +91,5 @@ end
 gem 'momentjs-rails'
 gem "bootstrap4-datetime-picker-rails"
 gem "font-awesome-rails"
+gem 'enum_help'
+gem 'rails-i18n', '~> 5.1'

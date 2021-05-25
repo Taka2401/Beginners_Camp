@@ -14,11 +14,15 @@
         </div>
         <div class="form-group">
           <%= f.label :住所 %>
-          <%= f.text_field :address, class: "form-control name" %>
+          <%= f.text_field :address, class: "form-control address" %>
         </div>
         <div class="form-group">
           <%= f.label :キャンプ場紹介 %>
           <%= f.text_area :introduction, class: "form-control introduction", size: "80x6" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :料金 %>
+          <%= f.text_field :fee, class: "form-control fee" %>
         </div>
         <div class="form-group text-center mt-5">
           <%= f.submit "編集する", class: 'glyphicon glyphicon-home btn btn-success' %>
