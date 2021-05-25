@@ -26,6 +26,11 @@ class Public::ReservationsController < ApplicationController
 		@reservation.payment_method = params[:reservation][:payment_method]
 
 		@checkout = "11:00"
+
+		if @reservation.invalid?
+			render action: :new
+		end
+
   end
 
   def create
