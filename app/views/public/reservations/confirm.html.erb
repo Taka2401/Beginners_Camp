@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="col-md-7 mx-auto">
+      <table class="table table-bordered">
+        <tr>
+          <td class="col-xs-2 table-secondary">キャンプ場</td>
+          <td><%= @camp_place.name %></td>
+        </tr>
+        <tr>
+          <td class="col-xs-2 table-secondary">利用人数(5名様まで)</td>
+          <td><%= @reservation.guest %></td>
+        </tr>
+        <tr>
+          <td class="col-xs-2 table-secondary">料金</td>
+          <td>¥<%= @camp_place.fee %></td>
+        </tr>
+        <tr>
+          <td class="col-xs-2 table-secondary">支払い方法</td>
+          <td><%= @reservation.payment_method %></td>
+        </tr>
+        <tr>
+          <td class="col-xs-2 table-secondary">チェックアウト</td>
+          <td><%= @checkout %></td>
+        </tr>
+        <tr>
+          <td class="col-xs-2 table-secondary">合計金額</td>
+          <td>¥<%= @reservation.total_fee =  @camp_place.fee %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-7 mx-auto">
+      <div class="form-group">
+        <div class="input-group-append" data-target="#start_date" data-toggle="datetimepicker">
+          <%= @reservation.start_date.strftime('%Y/%m/%d %H:%M') %>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="mx-auto">
+        <%= form_with(model: @reservation, url: camp_place_reservations_path, local: true) do |f| %>
+          <%= f.hidden_field :guest, :value => @reservation.guest %>
+          <%= f.hidden_field :payment_method, :value => @reservation.payment_method %>
+          <%= f.hidden_field :total_fee, :value => @reservation.total_fee %>
+          <%= f.hidden_field :start_date, :value => @reservation.start_date %>
+        <%= f.submit '予約を確定する', class: "glyphicon glyphicon-home btn btn-danger" %>
+      </div>
+    </div>
+  <% end %>
+</div>
