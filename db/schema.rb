@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_085240) do
     t.integer "payment_method"
     t.integer "total_fee"
     t.integer "guest"
+    t.integer "day"
     t.index ["camp_place_id"], name: "index_reservations_on_camp_place_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end

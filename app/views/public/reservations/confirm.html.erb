@@ -10,6 +10,10 @@
           <td><%= @reservation.guest %></td>
         </tr>
         <tr>
+          <td class="col-xs-2 table-secondary">利用日数</td>
+          <td><%= @reservation.day %></td>
+        </tr>
+        <tr>
           <td class="col-xs-2 table-secondary">料金</td>
           <td>¥<%= @camp_place.fee %></td>
         </tr>
@@ -27,13 +31,14 @@
         </tr>
         <tr>
           <td class="col-xs-2 table-secondary">合計金額</td>
-          <td>¥<%= @reservation.total_fee =  @camp_place.fee %></td>
+          <td>¥<%= @reservation.total_fee %></td>
         </tr>
       </table>
     </div>
     <div class="row mt-4">
       <div class="mx-auto">
         <%= form_with(model: @reservation, url: camp_place_reservations_path, local: true) do |f| %>
+          <%= f.hidden_field :day, :value => @reservation.day %>
           <%= f.hidden_field :guest, :value => @reservation.guest %>
           <%= f.hidden_field :payment_method, :value => @reservation.payment_method %>
           <%= f.hidden_field :total_fee, :value => @reservation.total_fee %>
