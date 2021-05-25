@@ -15,12 +15,12 @@
         <tbody>
           <% @user.reservations.each do |reservation| %>
             <tr>
+              <td><%= reservation.camp_place.name %></td>
               <td>
-                <%= link_to camp_place_path(reservation.camp_place), style: "color: #494848;" do %>
-                  <%= reservation.camp_place.name %>
+                <%= link_to user_reservation_path(@user, reservation) do %>
+                  <%= reservation.start_date.strftime('%Y/%m/%d %H:%M:%S')%>
                 <% end %>
               </td>
-              <td><%= reservation.start_date.strftime('%Y/%m/%d %H:%M') %></td>
               <td><%= @checkout %></td>
             </tr>
           <% end %>

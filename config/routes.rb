@@ -47,7 +47,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update] do
-    resources :reservations, only: [:index]
+    resources :reservations, only: [:index, :show]
   end
   get 'user/:id/post' => 'users#post', as: 'user_post'
 
