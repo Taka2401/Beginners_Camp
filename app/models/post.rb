@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   has_many :post_comments, dependent: :destroy
 
   validates :title,  presence: true
-  validates :image,  presence: true
+  validates :image_id,  presence: true
 
   def save_tags(savepost_tags)
     current_tags = tags.pluck(:name) unless tags.nil?

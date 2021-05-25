@@ -19,6 +19,8 @@ ja:
       post:
         title: タイトル
         image_id: 画像
+      reservation:
+        start_date: チェックインの日付
     errors:
       models:
         user:
@@ -41,7 +43,24 @@ ja:
               blank: を入力してください。
             image_id:
               format: '%{message}'
+              blank: を選択してください
+        reservation:
+          attributes:
+            start_date:
+              format: '%{message}'
               blank: を入力してください。
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
