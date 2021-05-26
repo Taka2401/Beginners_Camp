@@ -21,7 +21,7 @@ ja:
         name: 名前
       post:
         title: タイトル
-        image_id: 画像
+        image: 画像
       reservation:
         start_date: チェックインの日付
     errors:
@@ -44,7 +44,7 @@ ja:
             title:
               format: '%{message}'
               blank: を入力してください。
-            image_id:
+            image:
               format: '%{message}'
               blank: を選択してください
         reservation:
