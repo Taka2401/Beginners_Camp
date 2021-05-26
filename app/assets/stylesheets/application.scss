@@ -106,6 +106,29 @@ footer{
   border-radius: 200px;
 }
 
+.search-box {
+  width: 200px;
+  position: relative;
+  border: 1px solid #aaa;
+  border-radius: 150px;
+  margin-right: 30px;
+}
 
+.search-left {
+  width: 70%;
+  height: 30px;
+  line-height: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 0 1000px white inset;
+}
+
+.search-right {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 30%;
+}
 
 
