@@ -27,7 +27,7 @@
         </tr>
         <tr>
           <td class="col-xs-2 table-secondary">チェックアウト</td>
-          <td><%= @checkout %></td>
+          <td><%= @reservation.end_date.strftime('%Y/%m/%d %H:%M') %></td>
         </tr>
         <tr>
           <td class="col-xs-2 table-secondary">合計金額</td>
@@ -43,6 +43,7 @@
           <%= f.hidden_field :payment_method, :value => @reservation.payment_method %>
           <%= f.hidden_field :total_fee, :value => @reservation.total_fee %>
           <%= f.hidden_field :start_date, :value => @reservation.start_date %>
+          <%= f.hidden_field :end_date, :value => @reservation.end_date %>
         <%= f.submit '予約を確定する', class: "glyphicon glyphicon-home btn btn-danger" %>
       </div>
     </div>
