@@ -5,8 +5,8 @@
       <div class="row offset-md-3">
         <%= render 'layouts/error_messages', object: f.object %>
       </div>
-       <div class="col-md-6 offset-md-3 mt-2">
-         <div class="row offset-md-4">
+       <div class="col-md-6 offset-md-3">
+         <div class="row col-md-8 offset-md-4">
            <strong><%= f.label :ユーザー名 %></strong>
          </div>
          <div class="row mt-2">
@@ -14,7 +14,7 @@
          </div>
        </div>
        <div class="col-md-6 offset-md-3 mt-3">
-         <div class="row offset-md-4">
+         <div class="row col-md-8 offset-md-4">
            <strong><%= f.label :メールアドレス %></strong>
          </div>
          <div class="row mt-2">
@@ -22,7 +22,7 @@
          </div>
        </div>
        <div class="col-md-6 offset-md-3 mt-3">
-         <div class="row col-md-8 offset-md-3">
+         <div class="row col-md-8 offset-md-4">
            <strong><%= f.label :パスワード %>
            <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %>文字以上)</em>
@@ -31,7 +31,7 @@
          <div class="row mt-1">
             <%= f.password_field :password, autocomplete: "current_password", class: "login-form" %>
           </div>
-        <div class="row col-md-8 offset-md-3 mt-3">
+        <div class="row col-md-8 offset-md-4 mt-3">
           <strong><%= f.label :パスワード（確認）%></strong>
         </div>
           <div class="row mt-2">
@@ -39,9 +39,9 @@
           </div>
         </div>
 
-        <div class="row mt-5">
-          <div class="col-12 text-center">
-            <%= f.submit "ログイン", class: "glyphicon glyphicon-home btn btn-primary col-lg-2" %>
+        <div class="row mt-4">
+          <div class="col-md-6 offset-md-3">
+            <%= f.submit "ログイン", class: "login-form glyphicon glyphicon-home btn btn-primary" %>
           <% end %>
         </div>
       </div>
