@@ -6,7 +6,16 @@
         <%= link_to "Beginner's Camp", root_path, class:"navbar-brand text-dark ml-lg-1" %>
       </h1>
       <ul class="navbar-nav">
-        <% if user_signed_in? %>
+        <% if admin_signed_in? %>
+          <!--アドミンがログインしている時 -->
+          <li class="nav-item ml-1"><%= link_to "予約一覧", admins_reservations_path, class: 'nav-link' %></li>
+          <li class="nav-item ml-1"><%= link_to "ユーザー一覧", admins_users_path, class: 'nav-link' %></li>
+          <li class="nav-item ml-1"><%= link_to "キャンプ場投稿履歴", admins_camp_places_path, class: 'nav-link' %></li>
+          <li class="nav-item ml-1"><%= link_to "キャンプ用品投稿履歴", admins_camp_items_path, class: 'nav-link' %></li>
+          <li class="nav-item ml-1"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link' %></li>
+
+        <% elsif user_signed_in? %>
+        <!--ユーザーがログインしている時 -->
           <li class="nav-item text-center mt-1">
           <%= render 'layouts/search' %>
           </li>
@@ -16,23 +25,13 @@
           <li class="nav-item ml-1"><%= link_to "みんなのキャンプ", posts_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
 
-        <% elsif admin_signed_in? %>
-          <!--アドミンがログインしている時 -->
-          <li class="nav-item ml-1"><%= link_to "予約一覧", admins_reservations_path, class: 'nav-link' %></li>
-          <li class="nav-item ml-1"><%= link_to "ユーザー一覧", admins_users_path, class: 'nav-link' %></li>
-          <li class="nav-item ml-1"><%= link_to "キャンプ場投稿履歴", admins_camp_places_path, class: 'nav-link' %></li>
-          <li class="nav-item ml-1"><%= link_to "キャンプ用品投稿履歴", admins_camp_items_path, class: 'nav-link' %></li>
-          <li class="nav-item ml-1"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link' %></li>
-
         <% else %>
           <!-- ログインしていない時 -->
-          <li class="nav-item ml-1"><%= link_to "みんなのキャンプ", posts_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to "Beginner'sCampとは", about_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "ログイン", new_user_session_path, class: 'nav-link' %></li>
 
         <% end %>
-
       </ul>
     </div>
   </nav>
