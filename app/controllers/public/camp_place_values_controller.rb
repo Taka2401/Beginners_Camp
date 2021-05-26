@@ -1,4 +1,5 @@
 class Public::CampPlaceValuesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @camp_place = CampPlace.find(params[:camp_place_id])
