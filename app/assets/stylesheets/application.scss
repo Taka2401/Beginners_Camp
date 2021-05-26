@@ -52,6 +52,7 @@ footer{
 
 #container{
   height: 300px;
+  width: 100%;
 }
 
 .input-group {
@@ -65,9 +66,9 @@ footer{
 }
 
 .slider {
-    width: 50%;
-    height: 50vw;
-    object-fit: cover;
+  width: 100%;
+  height: 50vw;
+  object-fit: cover;
 }
 
 .bg-slider {
@@ -84,7 +85,7 @@ footer{
     font-size: 48px;
     line-height: 1.5;
     font-weight: bold;
-    text-align:center;
+    text-align: center;
     text-shadow: 1px 1px 1px #000;
 }
 

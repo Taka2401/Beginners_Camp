@@ -1,4 +1,5 @@
 class Public::CampItemValuesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @camp_item = CampItem.find(params[:camp_item_id])

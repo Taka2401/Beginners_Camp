@@ -51,7 +51,7 @@ $(document).ready(function () {
   });
 
   $('select').change(function () {
-    var selectedValue = $(this).val() // 2泊3日
+    var selectedValue = $(this).val()
     if (selectedValue === '１泊２日') {
       const changedfee = Number($('#fee')[0].innerText.replace('¥', '')) / 2;
       $('#fee')[0].innerText = `¥${changedfee}`;
@@ -62,7 +62,7 @@ $(document).ready(function () {
   })
 
   $('select').change(function () {
-    var selectedValue = $(this).val() // 2泊3日
+    var selectedValue = $(this).val()
     if (selectedValue === '１泊２日') {
       const changedfee = Number($('#total_fee')[0].innerText.replace('¥', '')) / 2;
       $('#total_fee')[0].innerText = `¥${changedfee}`;

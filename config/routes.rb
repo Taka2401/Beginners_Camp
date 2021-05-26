@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   # ========= ユーザー(public)のルーティング ================
   scope module: :public do
-  root to: 'homes#top'
+  root to: 'camps#index'
   get '/about' => 'homes#about'
 
   resources :ranks, only: [:index]
