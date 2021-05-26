@@ -18,10 +18,10 @@
               <td><%= reservation.camp_place.name %></td>
               <td>
                 <%= link_to user_reservation_path(@user, reservation) do %>
-                  <%= reservation.start_date.strftime('%Y/%m/%d %H:%M:%S')%>
+                  <%= l reservation.start_date %>
                 <% end %>
               </td>
-              <td><%= @checkout %></td>
+              <td><%= l reservation.end_date %></td>
             </tr>
           <% end %>
         </tbody>

@@ -24,8 +24,8 @@
                 <% end %>
               </td>
               <td><%= reservation.user.name %></td>
-              <td><%= reservation.start_date.strftime('%Y/%m/%d %H:%M') %></td>
-              <td><%= @checkout %></td>
+              <td><%= l reservation.start_date %></td>
+              <td><%= l reservation.end_date %></td>
               </tr>
           </tbody>
         <% end %>
