@@ -22,11 +22,11 @@
       </tr>
       <tr>
         <td class="col-xs-2 table-secondary">チェックイン</td>
-        <td><%= @reservation.start_date.strftime('%Y/%m/%d %H:%M') %></td>
+        <td><%= l @reservation.start_date %></td>
       </tr>
       <tr>
         <td class="col-xs-2 table-secondary">チェックアウト</td>
-        <td><%= @checkout %></td>
+        <td><%= l @reservation.end_date %></td>
       </tr>
       <tr>
         <td class="col-xs-2 table-secondary">合計金額</td>
