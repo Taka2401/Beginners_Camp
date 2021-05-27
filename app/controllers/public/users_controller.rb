@@ -1,6 +1,7 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_current_user, {only: [:edit, :update, :show]}
+  # before_action :insert_current_user
+  before_action :ensure_current_user, only: [:edit, :update, :show]
 
   def show
     @user = User.find(params[:id])
@@ -33,5 +34,9 @@ class Public::UsersController < ApplicationController
       redirect_to camps_path
     end
   end
+
+  # def insert_current_user
+  #   @guest = current_user.id == 1 && current_user.name == 'ゲスト'
+  # end
 
 end
