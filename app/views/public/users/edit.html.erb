@@ -7,6 +7,17 @@
           <%= f.label :プロフィール画像 %>
           <%= f.attachment_field :profile_image, class: "form-control-file user_image" %>
         </div>
+        <% if @guest %>
+          <span class="required-form">※ゲストユーザーは情報を変更できません</span>
+          <div class="form-group">
+            <%= f.label :ユーザー名 %>
+            <%= f.text_field 'guest', placeholder: 'ゲスト', readonly: true, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :メールアドレス %>
+            <%= f.text_area 'guest', placeholder: 'guest@example.com', readonly: true , class: "form-control" %>
+          </div>
+        <% else %>
           <div class="form-group">
             <%= f.label :ユーザー名 %>
             <%= f.text_field :name, class: "form-control name" %>
@@ -15,6 +26,7 @@
             <%= f.label :メールアドレス %>
             <%= f.text_field :email, class: "form-control email" %>
           </div>
+        <% end %>
           <div class="form-group">
             <%= f.label :自己紹介 %>
             <%= f.text_area :introduction, class: "form-control introduction" %>
