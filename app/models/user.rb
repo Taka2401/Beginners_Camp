@@ -16,7 +16,7 @@ class User < ApplicationRecord
          has_many :camp_place_values, dependent: :destroy
 
          validates :name,  presence: true
-         validates :email, presence: true
+        # validates :email, presence: true
 
          def favorited_by?(post)
           favorites.where(post_id: post.id).exists?

@@ -1,6 +1,7 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_current_user, {only: [:edit, :update, :show]}
+  before_action :insert_current_user
+  before_action :ensure_current_user, only: [:edit, :update, :show]
 
   def show
     @user = User.find(params[:id])
@@ -24,7 +25,7 @@ class Public::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :introduction, :profile_image)
+    params.require(:user).permit(:name, :introduction, :profile_image, :email)
   end
 
   def ensure_current_user
@@ -32,6 +33,10 @@ class Public::UsersController < ApplicationController
       flash[:alert]="※権限がありません"
       redirect_to camps_path
     end
+  end
+
+  def insert_current_user
+    @guest = current_user.id == 1 && current_user.name == 'ゲスト'
   end
 
 end
