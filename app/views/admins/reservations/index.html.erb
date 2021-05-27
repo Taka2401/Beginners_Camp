@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-1">
+      <h5 class="d-inline-flex font-weight-bold mb-4">予約履歴一覧</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th>予約日時</th>
+            <th>ユーザー名</th>
+            <th>チェックイン</th>
+            <th>チェックアウト</th>
+          </tr>
+        </thead>
+        <% @reservations.each do |reservation| %>
+          <tbody>
+            <tr>
+              <td>
+                <%= link_to admins_reservation_path(reservation) do %>
+                  <%= reservation.created_at.strftime('%Y/%m/%d %H:%M') %>
+                <% end %>
+              </td>
+              <td><%= reservation.user.name %></td>
+              <td><%= l reservation.start_date %></td>
+              <td><%= l reservation.end_date %></td>
+              </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

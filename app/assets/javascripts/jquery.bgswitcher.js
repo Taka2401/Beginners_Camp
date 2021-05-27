@@ -6,6 +6,7 @@
  * @license  MIT License (https://github.com/rewish/jquery-bgswitcher/blob/master/LICENSE.md)
  * @link     https://github.com/rewish/jquery-bgswitcher
  */
+ 
 (function($) {
   'use strict';
 

@@ -1,6 +1,24 @@
-<div class="search-form">
+
+<div class="search-box">
   <%= form_tag(camp_places_path,:method => 'get') do %>
-    <%= text_field_tag :search %>
-    <%= submit_tag 'Search', :name => nil %>
+    <%= text_field_tag :search, '', placeholder:"検索ワード", class: 'search-left' %>
+    <span class="search-right">
+      <i class="fa fa-search search-btn", onclick="checkText()"></i>
+    </span>
   <% end %>
 </div>
+
+<!--<dl class="searchbox">-->
+<!--  <%#= search_form_for @search, url: articles_path do |f| %>-->
+<!--    <dt><%#= f.text_field :title_cont ,placeholder: '検索するテキストを入力...' %></dt>-->
+<!--    <dd><%#= f.submit ("検索") , class: 'search-btn'%></dd>-->
+<!--  <%# end %>-->
+<!--</dl>-->
+
+<script>
+function checkText() {
+  // document.search.submit();
+  $('form').submit();
+// trigger('submit');
+}
+</script>

@@ -15,8 +15,9 @@
  */
 
 @import "bootstrap";
+@import "font-awesome";
+@import "tempusdominus-bootstrap-4.css";
 @import 'font-awesome-sprockets';
-@import 'font-awesome';
 
 *{
   font-family: 'メイリオ', sans-serif;
@@ -39,7 +40,7 @@ header{
 }
 
 main {
-  margin-bottom: 200px;
+  margin-bottom: 150px;
 }
 
 footer{
@@ -51,12 +52,23 @@ footer{
 
 #container{
   height: 300px;
+  width: 100%;
+}
+
+.input-group {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .slider {
-    width: 50%;
-    height: 50vw;
-    object-fit: cover;
+  width: 100%;
+  height: 50vw;
+  object-fit: cover;
 }
 
 .bg-slider {
@@ -73,6 +85,51 @@ footer{
     font-size: 48px;
     line-height: 1.5;
     font-weight: bold;
-    text-align:center;
+    text-align: center;
     text-shadow: 1px 1px 1px #000;
 }
+
+.login-form {
+  height: 40px;
+  width: 100%;
+}
+
+#alert {
+  text-align: center;
+  color: red;
+}
+
+.required-form {
+  color: red;
+}
+
+.user-image {
+  border-radius: 200px;
+}
+
+.search-box {
+  width: 200px;
+  position: relative;
+  border: 1px solid #aaa;
+  border-radius: 150px;
+  margin-right: 30px;
+}
+
+.search-left {
+  width: 70%;
+  height: 30px;
+  line-height: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 0 1000px white inset;
+}
+
+.search-right {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 30%;
+}
+
+

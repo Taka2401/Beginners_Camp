@@ -1,36 +1,50 @@
 
 <div class="container">
-
   <div class="row">
-    <div class="col-md-6 offset-md-2">
-      <h5 class="font-weight-bold mt-5">新規投稿</h5>
+    <div class="col-md-6 offset-md-3">
+      <h5 class="font-weight-bold mt-2">新規投稿</h5>
     </div>
   </div>
-
  <%= form_with model:@post, local:true do |f| %>
-
- <div class="row">
-  <div class="col-md-8 offset-md-1 mt-4 pl-5">
-      <div class="form-group form-inline pl-3">
-        <p class="mr-2">キャンプ画像</p>
-        <div class="ml-5"><%= f.attachment_field :image %></div>
+   <div class="row offset-md-3">
+     <%= render 'layouts/error_messages', object: f.object %>
+   </div>
+  <div class="row mt-4">
+    <div class="row col-md-3 offset-md-1 mt-3">
+      <%= attachment_image_tag @post, :image, fallback: "image.jpeg", id: "preview", style: "height: 70%; width: 80%;" %>
+      <div class="row mt-3">
+        <%= f.attachment_field :image %>
+        <p class="required-form">※必須</p>
       </div>
+    </div>
+    <div class="col-md-7 offset-md-1">
       <div class="form-group form-inline">
-      　<p class="mr-2">タイトル</p>
+      　<p class="mr-2">タイトル<p class="required-form">※必須</p></p>
         <div class="ml-5"><%= f.text_field :title, size: "30", class: "form-control" %></div>
       </div>
       <div class="form-group form-inline">
       　<p class="mr-4">本文</p>
-        <div class="ml-5"><%= f.text_area :review, size: "50x5", class: "form-control" %></div>
+        <div class="ml-5"><%= f.text_area :review, size: "40x6", class: "form-control" %></div>
+      </div>
+      <div class="form-group form-inline">
+        <%= f.label :tag_ids, "タグ" %><span class="form-required form-auto">【 ,】で区切ると複数登録可能</span>
+        <%= f.text_field :tag_ids, value: @tag_list, class: "form-control offset-md-1"%>
       </div>
     </div>
-   </div>
-
+  </div>
   <div class="row">
-    <div class="col-md-3 offset-md-4 mt-3">
-      <%= f.submit '投稿する', class:"glyphicon glyphicon-home btn btn-success" %>
+    <div class="col-md-3 offset-md-6 mt-4">
+      <%= f.submit "投稿する", class:"glyphicon glyphicon-home btn btn-success" %>
     </div>
   </div>
-
   <% end %>
 </div>
+<script>
+  $('#post_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $("#preview").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
+</script>

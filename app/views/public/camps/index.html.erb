@@ -1,10 +1,8 @@
 
 <div class="container">
-
   <div class="bg-slider">
-   <h1 class="bg-slider__title">BGSWITCHER DEMO PAGE</h1>
-  </div>
-
+  <h1 class="bg-slider__title">Beginner’ｓ Camp</h1>
+</div>
   <script>
   jQuery(function($) {
       $('.bg-slider').bgSwitcher({
@@ -12,11 +10,16 @@
       });
   });
   </script>
-
-  <%= render 'camp_places', camp_places: @camp_places %>
-
-  <%= render 'recent_posts', posts: @posts %>
-
-  <%= render 'camp_items', camp_items: @camp_items %>
-
+  <div class="row mt-2">
+    <div class="row col-md-7 mt-5">
+      <%= render 'camp_places', camp_places: @camp_places %>
+      <%= render 'camp_items', camp_items: @camp_items %>
+    </div>
+    <div class="row col-md-3 offset-md-2 mt-5">
+      <%= render 'recent_posts', posts: @posts %>
+    </div>
+  </div>
+  <div class="row col-md-7">
+    <%= render 'tags', tags: @tags %>
+  </div>
 </div>

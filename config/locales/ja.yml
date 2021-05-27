@@ -1,0 +1,69 @@
+ja:
+  time:
+    formats:
+      default: '%Y/%m/%d %H:%M'
+      long: '%Y年%m月%d日(%a) %H時%M分%S秒 %z'
+      short: '%Y年%m月%d日 %H:%M'
+      slash: '%Y/%m/%d/'
+  enums:
+    reservation:
+      payment_method:
+        クレジットカード: "クレジットカード"
+        銀行振込: "銀行振込"
+      day:
+        １泊２日: "１泊２日"
+        ２泊３日: "２泊３日"
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: 名前
+      post:
+        title: タイトル
+        image: 画像
+      reservation:
+        start_date: チェックインの日付
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              format: '%{message}'
+              blank: を入力してください。
+            email:
+              format: '%{message}'
+              blank: を入力してください。
+            password:
+              format: '%{message}'
+              blank: を入力してください。
+            password_confirmation:
+              confirmation: とパスワードが一致しません
+        post:
+          attributes:
+            title:
+              format: '%{message}'
+              blank: を入力してください。
+            image:
+              format: '%{message}'
+              blank: を選択してください
+        reservation:
+          attributes:
+            start_date:
+              format: '%{message}'
+              blank: を入力してください。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

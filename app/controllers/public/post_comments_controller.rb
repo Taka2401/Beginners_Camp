@@ -1,4 +1,5 @@
 class Public::PostCommentsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     @post = Post.find(params[:post_id])
@@ -9,6 +10,10 @@ class Public::PostCommentsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:post_id])
+    @post_comment = PostComment.new
+    comment = @post.post_comments.find_by(id: params[:id])
+    comment.destroy
   end
 
   private

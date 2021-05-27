@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
 
-  devise_for :admin
+  devise_for :admin,
+    controllers: {
+      sessions:      'admins/sessions',
+      passwords:     'admins/passwords',
+      registrations: 'admins/registrations'
+    }
   devise_for :users,
-    path: '',
-    path_names: {
-      sign_up: '',
-      sign_in: 'login',
-      sign_out: 'logout',
-      registration: "signup",
+    controllers: {
+      sessions:      'users/sessions',
+      passwords:     'users/passwords',
+      registrations: 'users/registrations'
     }
 
   devise_scope :user do
@@ -16,41 +19,46 @@ Rails.application.routes.draw do
 
   # ========= ユーザー(public)のルーティング ================
   scope module: :public do
-  root to: 'homes#top'
+  root to: 'camps#index'
   get '/about' => 'homes#about'
 
   resources :ranks, only: [:index]
+  resources :tags, only: [:index, :show]
   resources :camps, only: [:index, :show]
   resources :camp_items, only: [:index, :show]
   resources :camp_places, only: [:index, :show]
   resources :camp_item_values, only: [:new, :create]
   resources :camp_place_values, only: [:new, :create]
-  resources :post_images, only: [:new, :create, :index, :show, :destroy]
 
   resources :camp_places, only: [:index, :show] do
-    resources :camp_place_values, only: [:new, :edit, :create, :update, :destroy]
+    resources :reservations, only: [:new, :create]
+    post 'reservations/confirm' => 'reservations#confirm'
+    resources :camp_place_values, only: [:index, :show, :new, :create, :destroy]
   end
 
+
   resources :camp_items, only: [:index, :show] do
-    resources :camp_item_values, only: [:new, :create]
+    resources :camp_item_values, only: [:index, :show, :new, :create]
   end
 
   resources :posts, only: [:index, :new, :create, :show, :destroy] do
-  resource :favorites, only: [:create, :destroy]
-  resources :post_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
+    resources :post_comments, only: [:create, :destroy]
   end
 
-  resources :users, only: [:show, :edit, :update]
-  get 'user/post/:id' => 'users#post', as: 'user_post'
+  resources :users, only: [:show, :edit, :update] do
+    resources :reservations, only: [:index, :show]
+  end
+  get 'user/:id/post' => 'users#post', as: 'user_post'
 
   end
 
    # ========= 管理者(admin)のルーティング ================
-   namespace :admin do
+   namespace :admins do
+    resources :reservations, only: [:index, :show]
     resources :camp_places
     resources :camp_items
-    resources :users, only: [:show, :edit, :update]
-    get 'user/post/:id' => 'users#post', as: 'user_post'
+    resources :users, only: [:index, :show,]
   end
 
 end

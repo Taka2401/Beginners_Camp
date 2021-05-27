@@ -1,6 +1,13 @@
 
 <% if post.favorites.present? %>
-  <%= link_to "♥#{post.favorites.count}いいね", post_favorites_path(post), method: :delete, remote: true %>
+  <% if current_user.favorited_by?(post) %>
+    <%= link_to "♥#{post.favorites.count}いいね", post_favorites_path(post), method: :delete, remote: true %>
+  <% else %>
+    <%= link_to "♥#{post.favorites.count}いいね", post_favorites_path(post), method: :post, remote: true %>
+  <% end %>
 <% else %>
   <%= link_to "♡#{post.favorites.count}いいね", post_favorites_path(post), method: :post, remote: true %>
 <% end %>
+
+
+

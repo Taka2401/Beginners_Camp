@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_16_025026) do
+ActiveRecord::Schema.define(version: 2021_05_24_085240) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2021_05_16_025026) do
     t.float "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "review"
   end
 
   create_table "camp_items", force: :cascade do |t|
@@ -48,6 +50,8 @@ ActiveRecord::Schema.define(version: 2021_05_16_025026) do
     t.float "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "review"
   end
 
   create_table "camp_places", force: :cascade do |t|
@@ -60,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_05_16_025026) do
     t.float "latitude"
     t.float "longitude"
     t.float "rate"
+    t.integer "fee"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -94,6 +99,34 @@ ActiveRecord::Schema.define(version: 2021_05_16_025026) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "camp_place_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "payment_method"
+    t.integer "total_fee"
+    t.integer "guest"
+    t.integer "day"
+    t.index ["camp_place_id"], name: "index_reservations_on_camp_place_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "tag_relationships", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

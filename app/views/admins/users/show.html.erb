@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+      <h5 class="d-inline-flex bg-light my-4"><%= @user.name %>さんの会員詳細</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-1">
+      <table class="table table-borderless">
+        <tr class="col-md-10">
+          <th>会員ID</th>
+          <td><%= @user.id %></td>
+        </tr>
+        <tr>
+          <th>ユーザー名</th>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td><%= @user.email %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

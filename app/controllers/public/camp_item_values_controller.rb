@@ -1,4 +1,13 @@
 class Public::CampItemValuesController < ApplicationController
+  before_action :authenticate_user!
+
+  def index
+    @camp_item = CampItem.find(params[:camp_item_id])
+  end
+
+  def show
+    @camp_item_value = CampItemValue.find(params[:id])
+  end
 
   def new
     @camp_item_value = CampItemValue.new
@@ -17,7 +26,7 @@ class Public::CampItemValuesController < ApplicationController
  private
 
   def camp_item_value_params
-    params.require(:camp_item_value).permit(:camp_item_id, :rate)
+    params.require(:camp_item_value).permit(:camp_item_id, :rate, :title, :review)
   end
 
 end

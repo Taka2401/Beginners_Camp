@@ -1,6 +1,8 @@
 class Public::PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
+
   def index
-    @posts = Post.all
+    @posts = Post.all.order(id: "DESC")
   end
 
   def show
@@ -15,8 +17,13 @@ class Public::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.save
-    redirect_to posts_path
+    tag_list = params[:post][:tag_ids].split(',')
+    if @post.save
+      @post.save_tags(tag_list)
+      redirect_to posts_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -28,7 +35,7 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:image, :title, :review)
+    params.require(:post).permit(:image, :post_image, :title, :review, :tag_list)
   end
 
 end

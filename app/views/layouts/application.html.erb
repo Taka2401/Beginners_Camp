@@ -12,16 +12,16 @@
       }
       </style>
 
-    <script src="https://kit.fontawesome.com/*******.js" crossorigin="anonymous"></script>
-
+    <script src="https://kit.fontawesome.com/ea883a78be.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
   </head>
 
   <body>
     <%= render 'layouts/header' %>
     <main>
+      <p id="alert"><%= flash[:alert] %></p>
       <%= yield %>
     </main>
     <%= render 'layouts/footer' %>

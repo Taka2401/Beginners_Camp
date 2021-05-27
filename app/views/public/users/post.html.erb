@@ -19,15 +19,11 @@
                 <td><p>タイトル</p></td>
                 <td><%= post.title %></td>
               </tr>
-              <tr>
-                <td><p>本文</p></td>
-                <td><%= post.review %></td>
-              </tr>
-              <div id="favorites_buttons_<%= post.id %>">
-                 <%= render partial: 'favorites/favorite', locals: {post: post} %>
-              </div>
             </tbody>
           </table>
+          <div id="favorites_buttons_<%= post.id %>">
+             <%= render partial: 'favorites/favorite', locals: {post: post} %>
+          </div>
         </div>
       </div>
      <% end %>

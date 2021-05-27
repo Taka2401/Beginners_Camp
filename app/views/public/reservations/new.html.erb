@@ -1,0 +1,52 @@
+<div class="container">
+  <%= form_with(model: @reservation, url: camp_place_reservations_confirm_path(@camp_place), local: true) do |f| %>
+    <div class="col-md-7 mx-auto">
+      <div class="row offset-md-3">
+        <%= render 'layouts/error_messages', object: f.object %>
+      </div>
+      <table class="table table-bordered">
+        <tr>
+          <td class="col-xs-2 table-secondary">キャンプ場</td>
+          <td><%= @camp_place.name %></td>
+        </tr>
+        <tr>
+          <td class="col-xs-2 table-secondary">利用人数(5名様まで)</td>
+          <td><%= f.select :guest, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], class: "col-lg-5" %></td>
+        </tr>
+        <tr>
+          <td class="col-xs-2 table-secondary">利用日数</td>
+          <td><%= f.select :day, Reservation.days_i18n.keys.map{|k| [I18n.t("enums.reservation.day.#{k}"), k]}, {} %></td>
+        </tr>
+        <tr>
+          <td class="col-xs-2 table-secondary">料金</td>
+          <td id="fee">¥<%= @camp_place.fee %></td>
+        </tr>
+        <tr>
+          <td class="col-xs-2 table-secondary">支払い方法</td>
+          <td><%= f.select :payment_method, Reservation.payment_methods_i18n.keys.map{|k| [I18n.t("enums.reservation.payment_method.#{k}"), k]}, {} %></td>
+        </tr>
+        <tr>
+          <td class="col-xs-2 table-secondary">チェックアウト</td>
+          <td><%= @checkout %></td>
+        </tr>
+        <tr>
+          <td class="col-xs-2 table-secondary">合計金額</td>
+          <td id="total_fee">¥<%= @reservation.total_fee =  @camp_place.fee %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-7 mx-auto">
+      <div class="form-group">
+        <div class="input-group-append" data-target="#start_date" data-toggle="datetimepicker">
+          <%= f.text_field :start_date, id: "start_date", class: "form-control datepicker", placeholder: "チェックイン日時", data: { target: '#start_date'} %>
+          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="mx-auto">
+        <%= f.submit '確認画面に進む', class: "glyphicon glyphicon-home btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
