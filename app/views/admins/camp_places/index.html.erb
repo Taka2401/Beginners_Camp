@@ -1,37 +1,38 @@
 
 <div class="container">
-
-   <div class="row">
-      <div class="col-md-6 offset-md-1">
-        <h5 class="font-weight-bold text-center">キャンプ場投稿履歴</h5>
-      </div>
-      <div class="col-md-2 offset-md-3">
-        <%= link_to "", new_admins_camp_place_path, class:"fas fa-plus-circle fa-3x new_btn_color" %>
+  <div class="row">
+    <div class="col-md-6 offset-md-1">
+      <h5 class="font-weight-bold text-center">キャンプ場投稿履歴</h5>
+    </div>
+    <div class="col-md-2 offset-md-3">
+      <%= link_to "", new_admins_camp_place_path, class:"fas fa-plus-circle fa-3x new_btn_color" %>
+    </div>
+  </div>
+    <% @camp_places.each do |camp_place| %>
+      <% camp_place.post_images.first(1).each  do |post_image| %>
+      <div class="row offset-md-1 mt-5">
+       <div class="col-md-3 text-center mt-3">
+        <%= link_to (attachment_image_tag post_image, :image, :fill, 200, 200, format: 'jpeg'), admins_camp_place_path(camp_place) %>
+       </div>
+      <% end %>
+      <div class="col-8 mt-5">
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+              <td></td>
+              <td><%= camp_place.name %></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><%= camp_place.address %></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-
-        <% @camp_places.each do |camp_place| %>
-          <% camp_place.post_images.first(1).each  do |post_image| %>
-          <div class="row offset-md-1 mt-5">
-           <div class="col-md-3 text-center mt-3">
-            <%= link_to (attachment_image_tag post_image, :image, :fill, 200, 200, format: 'jpeg'), admins_camp_place_path(camp_place) %>
-           </div>
-          <% end %>
-          <div class="col-8 mt-5">
-            <table class="table table-borderless">
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td><%= camp_place.name %></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><%= camp_place.address %></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-       <% end %>
+   <% end %>
+   <div class="col-12 mt-4 offset-md-5">
+    <%= paginate @camp_places, theme: 'twitter-bootstrap-4' %>
   </div>
+</div>
 

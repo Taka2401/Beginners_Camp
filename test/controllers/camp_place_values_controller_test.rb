@@ -25,5 +25,4 @@ class CampPlaceValuesControllerTest < ActionDispatch::IntegrationTest
     get camp_place_values_destroy_url
     assert_response :success
   end
-
 end

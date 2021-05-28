@@ -2,7 +2,7 @@ class Admins::CampItemsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @camp_items = CampItem.all
+    @camp_items = CampItem.all.page(params[:page]).per(10)
   end
 
   def show
@@ -39,7 +39,6 @@ class Admins::CampItemsController < ApplicationController
   private
 
   def camp_item_params
-     params.require(:camp_item).permit(:image, :name, :introduction)
+    params.require(:camp_item).permit(:image, :name, :introduction)
   end
-
 end

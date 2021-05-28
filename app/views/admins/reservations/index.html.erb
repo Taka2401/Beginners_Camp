@@ -20,7 +20,7 @@
             <tr>
               <td>
                 <%= link_to admins_reservation_path(reservation) do %>
-                  <%= reservation.created_at.strftime('%Y/%m/%d %H:%M') %>
+                  <%= l reservation.created_at %>
                 <% end %>
               </td>
               <td><%= reservation.user.name %></td>
@@ -31,5 +31,8 @@
         <% end %>
       </table>
     </div>
+  </div>
+  <div class="col-12 mt-4 offset-md-5">
+    <%= paginate @reservations, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>

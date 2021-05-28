@@ -2,7 +2,7 @@ class Public::PostsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @posts = Post.all.order(id: "DESC")
+    @posts = Post.page(params[:page]).per(10).order(id: "DESC")
   end
 
   def show
@@ -37,5 +37,4 @@ class Public::PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:image, :post_image, :title, :review, :tag_list)
   end
-
 end

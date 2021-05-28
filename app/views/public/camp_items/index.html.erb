@@ -4,28 +4,23 @@
     <div class="col-12 mt-2">
       <h3>キャンプ用品一覧</h3>
     </div>
-  </div>
-  <div class="row mt-3">
-    <% @camp_items.first(3).each do |camp_item| %>
-      <div class="d-flex flex-wrap mt-4">
-        <div class="col-12 camp__image">
-          <%= link_to camp_item_path(camp_item), style: "color: #494848;" do %>
-            <%= attachment_image_tag(camp_item, :image, :fill, 200, 200, format: 'jpeg', class: "rounded") %> <br />
-            <div class="col-12">
-              <%= camp_item.name %>
-            </div>
-          <% end %>
+    <div class="row mt-3">
+      <% @camp_items.first(3).each do |camp_item| %>
+        <div class="d-flex flex-wrap mt-4">
+          <div class="col-12 camp__image">
+            <%= link_to camp_item_path(camp_item), style: "color: #494848;" do %>
+              <%= attachment_image_tag(camp_item, :image, :fill, 200, 200, format: 'jpeg', class: "rounded") %> <br />
+              <div class="col-12">
+                <%= camp_item.name %>
+              </div>
+            <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-12 mt-4 offset-md-5">
+    <%= paginate @camp_items, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>
 
-
-<script>
-function checkText() {
-  // document.search.submit();
-  $('form').submit();
-// trigger('submit');
-}
-</script>

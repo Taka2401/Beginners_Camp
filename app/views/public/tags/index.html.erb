@@ -2,13 +2,16 @@
 <div class="container">
   <div class="row">
     <% @tags.each do |tag| %>
-      <div class="d-flex flex-wrap offset-md-1 mt-3">
-        <div class="col-12">
+      <div class="d-flex flex-wrap mt-3 ml-3">
+        <div class="col-12 tag-box">
           <%= link_to tag_path(tag.id), style: "color: #494848;" do %>
             <i class="fas fa-hashtag"></i> <%= tag.name %>
           <% end %>
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="col-12 mt-4 offset-md-5">
+    <%= paginate @tags, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>

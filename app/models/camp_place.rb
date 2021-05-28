@@ -1,5 +1,4 @@
 class CampPlace < ApplicationRecord
-
   belongs_to :admin
   has_many :reservations
   has_many :post_images, dependent: :destroy
@@ -14,5 +13,4 @@ class CampPlace < ApplicationRecord
     return CampPlace.all unless search
     CampPlace.where(['name LIKE ?', "%#{search}%"])
   end
-
 end

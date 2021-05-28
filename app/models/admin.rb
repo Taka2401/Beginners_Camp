@@ -4,8 +4,8 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         attachment :image
+  attachment :image
 
-         has_many :camp_places, dependent: :destroy
-         has_many :camp_items, dependent: :destroy
+  has_many :camp_places, dependent: :destroy
+  has_many :camp_items, dependent: :destroy
 end

@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 2021_05_24_085240) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-    t.integer "fee"
     t.float "rate"
+    t.integer "fee"
   end
 
   create_table "favorites", force: :cascade do |t|

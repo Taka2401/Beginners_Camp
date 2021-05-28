@@ -1,7 +1,11 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :insert_current_user
-  before_action :ensure_current_user, only: [:edit, :update, :show]
+  before_action :ensure_current_user, only: [:edit, :update]
+
+  def index
+    @users = User.page(params[:page]).per(10)
+  end
 
   def show
     @user = User.find(params[:id])
@@ -19,7 +23,7 @@ class Public::UsersController < ApplicationController
 
   def post
     @user = User.find(params[:id])
-    @post = @user.posts
+    @post = @user.posts.page(params[:page]).per(10)
   end
 
   private
@@ -30,7 +34,7 @@ class Public::UsersController < ApplicationController
 
   def ensure_current_user
     if current_user.id != params[:id].to_i
-      flash[:alert]="※権限がありません"
+      flash[:alert] = "※権限がありません"
       redirect_to camps_path
     end
   end
@@ -38,5 +42,4 @@ class Public::UsersController < ApplicationController
   def insert_current_user
     @guest = current_user.id == 1 && current_user.name == 'ゲスト'
   end
-
 end

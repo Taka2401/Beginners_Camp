@@ -10,5 +10,4 @@ class CampsInfoControllerTest < ActionDispatch::IntegrationTest
     get camps_info_show_url
     assert_response :success
   end
-
 end

@@ -54,6 +54,7 @@ group :development do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec'
+  gem 'rubocop-airbnb'
 end
 
 group :test do
@@ -68,28 +69,25 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
-
 gem "refile", github: 'refile/refile', require: "refile/rails"
 gem "refile-mini_magick", github: 'refile/refile-mini_magick'
 
 gem 'pry-byebug'
-
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 gem 'kaminari', '~> 0.17.0'
+gem 'bootstrap4-kaminari-views'
 gem "geocoder"
 gem 'jquery-bgswitcher-rails'
-
 gem 'devise-i18n'
-
-gem 'dotenv-rails'
-group :production do
-  gem 'mysql2'
-end
-
 gem 'momentjs-rails'
 gem "bootstrap4-datetime-picker-rails"
 gem "font-awesome-rails"
 gem 'enum_help'
 gem 'rails-i18n', '~> 5.1'
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end

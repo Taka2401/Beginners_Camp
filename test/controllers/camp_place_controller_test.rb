@@ -10,5 +10,4 @@ class CampPlaceControllerTest < ActionDispatch::IntegrationTest
     get camp_place_show_url
     assert_response :success
   end
-
 end

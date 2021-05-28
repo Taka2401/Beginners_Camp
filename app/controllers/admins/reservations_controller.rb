@@ -2,7 +2,7 @@ class Admins::ReservationsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @reservations = Reservation.all.order(id: "DESC")
+    @reservations = Reservation.all.page(params[:page]).per(10).order(id: "DESC")
     @checkout = "11:00"
   end
 
@@ -10,5 +10,4 @@ class Admins::ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     @checkout = "11:00"
   end
-
 end
