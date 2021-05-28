@@ -1,7 +1,7 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :insert_current_user
-  before_action :ensure_current_user, only: [:edit, :update, :show]
+  before_action :ensure_current_user, only: [:edit, :update]
 
   def show
     @user = User.find(params[:id])

@@ -2,11 +2,13 @@
 <div class="row mt-2 ml-1">
   <h3><i class="fas fa-tags"></i> タグから探す</h3>
 </div>
-<div class="row mt-5">
+<div class="row">
   <% tags.each do |tag| %>
-    <%= link_to tag_path(tag.id), class: "btn index-tags-btn" do %>
-      <i class="fas fa-hashtag"></i> <%= tag.name %>
-    <% end %>
+    <div class="row tag-box mt-2 ml-5">
+      <%= link_to tag_path(tag.id), style: "color: #494848;" do %>
+        <i class="fas fa-hashtag"></i> <%= tag.name %>
+      <% end %>
+    </div>
   <% end %>
 </div>
 <div class="row offset-md-8 mt-3">
