@@ -4,7 +4,7 @@ class Public::UsersController < ApplicationController
   before_action :ensure_current_user, only: [:edit, :update]
 
   def index
-    @users = User.all
+    @users = User.page(params[:page]).per(10)
   end
 
   def show
@@ -23,7 +23,7 @@ class Public::UsersController < ApplicationController
 
   def post
     @user = User.find(params[:id])
-    @post = @user.posts
+    @post = @user.posts.page(params[:page]).per(10)
   end
 
   private

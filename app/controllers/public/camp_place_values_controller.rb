@@ -3,6 +3,7 @@ class Public::CampPlaceValuesController < ApplicationController
 
   def index
     @camp_place = CampPlace.find(params[:camp_place_id])
+    @camp_places =@camp_place.camp_place_values.page(params[:page]).per(10)
   end
 
   def show

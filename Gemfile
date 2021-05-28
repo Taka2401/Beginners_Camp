@@ -78,6 +78,7 @@ gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 gem 'kaminari', '~> 0.17.0'
+gem 'bootstrap4-kaminari-views'
 gem "geocoder"
 gem 'jquery-bgswitcher-rails'
 
