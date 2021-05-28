@@ -5,13 +5,13 @@
       <%= link_to  user_path(@post.user) do %>
         <%= attachment_image_tag @post, :image,  :fill, 250, 250, format: 'jpeg' %>
       <% end %>
-      <div class="col-md-12">
-        <% @post.tags.each do |tag| %>
-          <%= link_to tag_path(tag.id), class: "btn index-tags-btn" do %>
+      <% @post.tags.each do |tag| %>
+        <div class="col-5 post-tag-box">
+          <%= link_to tag_path(tag.id) do %>
             <i class="fas fa-hashtag"></i><%= tag.name %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
       <div class="col-md-12 text-center mt-1">
         <% if user_signed_in? && current_user.id == @post.user_id %>
           <%= link_to '削除する', post_path(@post.id), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'btn btn-sm btn-danger' %>

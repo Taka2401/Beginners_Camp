@@ -3,6 +3,7 @@ class Public::ReservationsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
+    @reservations = @user.reservations.page(params[:page]).per(1)
     @checkout = "11:00"
   end
 
