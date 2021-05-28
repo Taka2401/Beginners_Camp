@@ -25,5 +25,4 @@ class ValuesControllerTest < ActionDispatch::IntegrationTest
     get values_destroy_url
     assert_response :success
   end
-
 end

@@ -39,7 +39,6 @@ class Admins::CampItemsController < ApplicationController
   private
 
   def camp_item_params
-     params.require(:camp_item).permit(:image, :name, :introduction)
+    params.require(:camp_item).permit(:image, :name, :introduction)
   end
-
 end

@@ -39,7 +39,6 @@ class Admins::CampPlacesController < ApplicationController
   private
 
   def camp_place_params
-     params.require(:camp_place).permit(:image, :name, :address, :introduction, :fee, post_images_images: [])
+    params.require(:camp_place).permit(:image, :name, :address, :introduction, :fee, post_images_images: [])
   end
-
 end

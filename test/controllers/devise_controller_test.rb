@@ -5,5 +5,4 @@ class DeviseControllerTest < ActionDispatch::IntegrationTest
     get devise_Admin_url
     assert_response :success
   end
-
 end

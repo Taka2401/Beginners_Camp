@@ -34,7 +34,7 @@ class Public::UsersController < ApplicationController
 
   def ensure_current_user
     if current_user.id != params[:id].to_i
-      flash[:alert]="※権限がありません"
+      flash[:alert] = "※権限がありません"
       redirect_to camps_path
     end
   end
@@ -42,5 +42,4 @@ class Public::UsersController < ApplicationController
   def insert_current_user
     @guest = current_user.id == 1 && current_user.name == 'ゲスト'
   end
-
 end

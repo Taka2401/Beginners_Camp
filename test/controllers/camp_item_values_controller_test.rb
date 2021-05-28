@@ -10,5 +10,4 @@ class CampItemValuesControllerTest < ActionDispatch::IntegrationTest
     get camp_item_values_create_url
     assert_response :success
   end
-
 end

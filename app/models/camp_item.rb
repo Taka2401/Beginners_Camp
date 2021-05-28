@@ -1,5 +1,4 @@
 class CampItem < ApplicationRecord
-
   attachment :image
 
   belongs_to :admin
@@ -10,5 +9,4 @@ class CampItem < ApplicationRecord
     return CampItem.all unless search
     CampItem.where(['name LIKE ?', "%#{search}%"])
   end
-
 end

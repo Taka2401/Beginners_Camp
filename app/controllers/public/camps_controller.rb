@@ -1,5 +1,4 @@
 class Public::CampsController < ApplicationController
-
   def index
     @tags = Tag.all
     @posts = Post.all
@@ -8,8 +7,6 @@ class Public::CampsController < ApplicationController
   end
 
   def show
-    @camp_place= CampPlace.find(params[:id])
+    @camp_place = CampPlace.find(params[:id])
   end
-
-
 end

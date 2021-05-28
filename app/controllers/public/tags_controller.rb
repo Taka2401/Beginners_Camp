@@ -1,5 +1,4 @@
 class Public::TagsController < ApplicationController
-
   def index
     @tags = Tag.page(params[:page]).per(20)
   end
@@ -8,5 +7,4 @@ class Public::TagsController < ApplicationController
     @tag = Tag.find(params[:id])
     @posts = @tag.posts.page(params[:page]).per(10)
   end
-
 end

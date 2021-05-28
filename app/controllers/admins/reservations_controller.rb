@@ -10,5 +10,4 @@ class Admins::ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     @checkout = "11:00"
   end
-
 end

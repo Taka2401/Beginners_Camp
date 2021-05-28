@@ -1,5 +1,4 @@
 class Post < ApplicationRecord
-
   attachment :image
 
   belongs_to :user
@@ -12,8 +11,6 @@ class Post < ApplicationRecord
 
   validates :title,  presence: true
   validates :image,  presence: true
-
-
 
   def save_tags(savepost_tags)
     current_tags = tags.pluck(:name) unless tags.nil?
@@ -29,6 +26,4 @@ class Post < ApplicationRecord
       tags << post_tag
     end
   end
-
-
 end

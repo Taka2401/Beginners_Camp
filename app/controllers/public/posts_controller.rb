@@ -37,5 +37,4 @@ class Public::PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:image, :post_image, :title, :review, :tag_list)
   end
-
 end
