@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-4">
+      <h5 class="d-inline-flex font-weight-bold mb-4">ユーザー一覧</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9 offset-md-1">
+      <table class="table table-hover border-bottom">
+        <% @users.each do |user| %>
+          <tbody>
+            <tr>
+              <td>
+                <%= link_to  user_path(user) do %>
+                  <%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "user_image.jpg", size:'50x50', class: "user-image") %>
+                <% end %>
+              </td>
+              <td><%= user.name %></td>
+              </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,10 @@ class Public::UsersController < ApplicationController
   before_action :insert_current_user
   before_action :ensure_current_user, only: [:edit, :update]
 
+  def index
+    @users = User.all
+  end
+
   def show
     @user = User.find(params[:id])
   end
