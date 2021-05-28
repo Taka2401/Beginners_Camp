@@ -46,7 +46,7 @@ Rails.application.routes.draw do
     resources :post_comments, only: [:create, :destroy]
   end
 
-  resources :users, only: [:show, :edit, :update] do
+  resources :users, only: [:index, :show, :edit, :update] do
     resources :reservations, only: [:index, :show]
   end
   get 'user/:id/post' => 'users#post', as: 'user_post'
