@@ -1,5 +1,5 @@
 <div class="search-box">
-  <%= form_tag(camp_places_path,:method => 'get') do %>
+  <%= form_tag(camp_places_path,:method => 'get', id: "search-form") do %>
     <%= text_field_tag :search, '', placeholder:"検索ワード", class: 'search-left' %>
     <span class="search-right">
       <i class="fa fa-search search-btn", onclick="checkText()"></i>
@@ -9,6 +9,6 @@
 
 <script>
 function checkText() {
-  $('form').submit();
+  $('#search-form').submit();
 }
 </script>
