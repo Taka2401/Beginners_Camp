@@ -29,8 +29,16 @@ ja:
       post:
         title: タイトル
         image: 画像
+      post_comment:
+        comment: コメント
       reservation:
         start_date: チェックインの日付
+      camp_item_value:
+        title: タイトル
+        rate: 評価
+      camp_place_value:
+        title: タイトル
+        rate: 評価
     errors:
       models:
         user:
@@ -54,11 +62,32 @@ ja:
             image:
               format: '%{message}'
               blank: を選択してください
+        post_comment:
+          attributes:
+            comment:
+              format: '%{message}'
+              blank: を入力してください。
         reservation:
           attributes:
             start_date:
               format: '%{message}'
               blank: を入力してください。
+        camp_item_value:
+          attributes:
+            title:
+              format: '%{message}'
+              blank: を入力してください。
+            rate:
+              format: '%{message}'
+              blank: してください。
+        camp_place_value:
+          attributes:
+            title:
+              format: '%{message}'
+              blank: を入力してください。
+            rate:
+              format: '%{message}'
+              blank: してください。
 
 
 
