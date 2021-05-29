@@ -20,6 +20,7 @@ class Public::CampItemValuesController < ApplicationController
     @camp_item_value = CampItemValue.new(camp_item_value_params)
     @camp_item_value.camp_item_id = @camp_item.id
     if @camp_item_value.save
+      flash[:notice] = "口コミを投稿しました！"
     redirect_to camp_item_path(@camp_item)
     else
       render :new

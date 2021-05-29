@@ -29,6 +29,7 @@ class Public::ReservationsController < ApplicationController
     @reservation.start_date = params[:reservation][:start_date]
     @reservation.payment_method = params[:reservation][:payment_method]
 
+    @checkout = "11:00"
     @reservation.total_fee = @camp_place.fee
 
     if @reservation.invalid?
@@ -54,8 +55,10 @@ class Public::ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation = current_user.reservations.new(reservation_params)
     @reservation.camp_place_id = @camp_place.id
-    @reservation.save
-    redirect_to camps_path
+    if @reservation.save
+      flash[:notice] = "予約が確定しました！"
+      redirect_to camps_path
+    end
   end
 
   private

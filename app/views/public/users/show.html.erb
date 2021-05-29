@@ -16,9 +16,9 @@
   </div>
   <div class="row mt-5">
     <div class="col-md-11 text-center mt-3">
+      <%= link_to '投稿履歴一覧', user_post_path(@user.id), class: 'glyphicon glyphicon-home btn btn-primary', method: :get %>
       <% if user_signed_in? && current_user.id == @user.id %>
         <%= link_to '編集する', edit_user_path(@user.id), class: 'glyphicon glyphicon-home btn btn-success' %>
-        <%= link_to '投稿履歴一覧', user_post_path(@user.id), class: 'glyphicon glyphicon-home btn btn-primary', method: :get %>
         <%= link_to '予約履歴一覧', user_reservations_path(@user.id), class: 'glyphicon glyphicon-home btn btn-danger' %>
       <% end %>
     </div>

@@ -60,6 +60,11 @@ window.onpageshow = function(event) {
       reader.readAsDataURL(e.target.files[0]);
     });
 
+     $('.datepicker').datetimepicker({
+      format: 'YYYY-MM-DD HH:mm',
+      minDate: moment()
+    });
+
     $('select').change(function () {
       var selectedValue = $(this).val()
       if (selectedValue === '１泊２日') {
