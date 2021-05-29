@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
     <%= form_with model: [@camp_place, @camp_place_value], local:true do |f| %>
+      <div class="row offset-md-3">
+       <%= render 'layouts/error_messages', object: f.object %>
+      </div>
       <div class="col-12 offset-md-1 mt-4">
         <div class="form-group form-inline">
         　<p>タイトル</p>

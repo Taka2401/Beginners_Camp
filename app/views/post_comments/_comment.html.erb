@@ -1,16 +1,13 @@
-
-  <%= form_with(model:[post, post_comment], remote: true) do |f| %>
-    <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに", :size =>'60x4' %>
-    <div class="float-right">
-        <%= f.submit "送信する" %>
-    </div>
-  <% end %>
-
-  <p>コメント件数：<%= post.post_comments.count %></p>
-  <div id="favorites_buttons_<%= post.id %>">
-    <%= render partial: 'favorites/favorite', locals: {post: post} %>
+<%= form_with(model:[post, post_comment], remote: true) do |f| %>
+  <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに", :size =>'60x4' %>
+  <div class="float-right">
+    <%= f.submit "送信する" %>
   </div>
-
+<% end %>
+<p>コメント件数：<%= post.post_comments.count %></p>
+<div id="favorites_buttons_<%= post.id %>">
+  <%= render partial: 'favorites/favorite', locals: {post: post} %>
+</div>
 <div class="row">
   <% post.post_comments.each do |post_comment| %>
     <div class="col-md-3 mt-3">

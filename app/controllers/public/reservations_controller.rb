@@ -3,7 +3,7 @@ class Public::ReservationsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @reservations = @user.reservations.page(params[:page]).per(1)
+    @reservations = @user.reservations.page(params[:page]).per(10)
     @checkout = "11:00"
   end
 
@@ -31,10 +31,14 @@ class Public::ReservationsController < ApplicationController
 
     @reservation.total_fee = @camp_place.fee
 
-    year = @reservation.start_date.year
-    month = @reservation.start_date.month
-    day = @reservation.start_date.day
+    if @reservation.invalid?
+      render action: :new
+    end
 
+    if @reservation.start_date.present?
+      year = @reservation.start_date.year
+      month = @reservation.start_date.month
+      day = @reservation.start_date.day
     if @reservation.day == "２泊３日"
       @camp_place.fee = @camp_place.fee * 2
       @reservation.total_fee = @reservation.total_fee * 2
@@ -42,18 +46,15 @@ class Public::ReservationsController < ApplicationController
     else
       @reservation.end_date = Time.zone.parse("#{year}-#{month}-#{day + 1} 11:00")
     end
-
-    if @reservation.invalid?
-      render action: :new
     end
   end
 
   def create
     @camp_place = CampPlace.find(params[:camp_place_id])
     @reservation = Reservation.new(reservation_params)
-    reservation = current_user.reservations.new(reservation_params)
-    reservation.camp_place_id = @camp_place.id
-    reservation.save
+    @reservation = current_user.reservations.new(reservation_params)
+    @reservation.camp_place_id = @camp_place.id
+    @reservation.save
     redirect_to camps_path
   end
 
