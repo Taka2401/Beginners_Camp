@@ -13,7 +13,6 @@
 //= require jquery
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require jquery.bgswitcher
 //= require jquery.raty.js
 //= require moment
@@ -21,7 +20,18 @@
 //= require tempusdominus-bootstrap-4.js
 //= require_tree .
 
-document.addEventListener("turbolinks:load", function() {
+window.onpageshow = function(event) {
+  if (
+         event.persisted
+      || window.performance && window.performance.navigation.type == 2
+  ) {
+      window.location.reload(true);
+  }
+
+  $('.bg-slider').bgSwitcher({
+    images: ['img/camp_image.10.jpg','img/camp_image.11.jpg','img/camp_image.12.jpg','img/camp_image.13.jpg'],
+　});
+
   $(document).ready(function () {
     $("#slider").skippr({
       // スライドショーの変化 ("fade" or "slide")
@@ -41,7 +51,7 @@ document.addEventListener("turbolinks:load", function() {
       // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
       hidePrevious : false
     });
-  
+
     $('#post_image').on('change', function (e) {
       var reader = new FileReader();
       reader.onload = function (e) {
@@ -49,7 +59,7 @@ document.addEventListener("turbolinks:load", function() {
       }
       reader.readAsDataURL(e.target.files[0]);
     });
-  
+
     $('select').change(function () {
       var selectedValue = $(this).val()
       if (selectedValue === '１泊２日') {
@@ -60,7 +70,7 @@ document.addEventListener("turbolinks:load", function() {
         $('#fee')[0].innerText = `¥${changedfee}`
       }
     })
-  
+
     $('select').change(function () {
       var selectedValue = $(this).val()
       if (selectedValue === '１泊２日') {
@@ -72,8 +82,7 @@ document.addEventListener("turbolinks:load", function() {
       }
     })
   });
-})
-
+};
 
 
 

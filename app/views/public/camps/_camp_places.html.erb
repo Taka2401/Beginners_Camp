@@ -12,6 +12,7 @@
             </div>
           <div class="row col-12 offset-md-1" id="star-rate1-<%= camp_place.id %>"></div>
           <script>
+          $('#star-rate1-<%= camp_place.id %>').empty();
           $('#star-rate1-<%= camp_place.id %>').raty({
             size: 30,
             starOn: "<%= asset_path('star-on.png') %>",
