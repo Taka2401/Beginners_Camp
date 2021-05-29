@@ -4,7 +4,7 @@
       <h1 class="navbar-brand font-weight-bold">
         <%= link_to "Beginner's Camp", root_path, class:"navbar-brand text-dark ml-lg-1" %>
       </h1>
-      <ul class="navbar-nav">
+      <ul class="navbar-nav font-weight-bold">
         <% if admin_signed_in? %>
           <!--アドミンがログインしている時 -->
           <li class="nav-item ml-1"><%= link_to "予約一覧", admins_reservations_path, class: 'nav-link' %></li>
