@@ -1,47 +1,45 @@
-
 <div class="container">
   <div class="col-12">
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|%>
-      <div class="row offset-md-3">
-        <%= render 'layouts/error_messages', object: f.object %>
-      </div>
-       <div class="col-md-6 offset-md-3">
-         <div class="row col-md-8 offset-md-4">
-           <strong><%= f.label :ユーザー名 %></strong>
-         </div>
-         <div class="row mt-2">
-           <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "login-form"  %>
-         </div>
+    <div class="row offset-md-3">
+      <%= render 'layouts/error_messages', object: f.object %>
+    </div>
+     <div class="col-md-6 offset-md-3">
+       <div class="row col-md-8 offset-md-4">
+         <strong><%= f.label :ユーザー名 %></strong>
        </div>
-       <div class="col-md-6 offset-md-3 mt-3">
-         <div class="row col-md-8 offset-md-4">
-           <strong><%= f.label :メールアドレス %></strong>
-         </div>
-         <div class="row mt-2">
-           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "login-form"  %>
-         </div>
+       <div class="row mt-2">
+         <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "login-form"  %>
        </div>
-       <div class="col-md-6 offset-md-3 mt-3">
-         <div class="row col-md-8 offset-md-4">
-           <strong><%= f.label :パスワード %>
-           <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %>文字以上)</em>
-           <% end %></strong>
-         </div>
-         <div class="row mt-1">
-            <%= f.password_field :password, autocomplete: "current_password", class: "login-form" %>
-          </div>
+     </div>
+     <div class="col-md-6 offset-md-3 mt-3">
+       <div class="row col-md-8 offset-md-4">
+         <strong><%= f.label :メールアドレス %></strong>
+       </div>
+       <div class="row mt-2">
+         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "login-form"  %>
+       </div>
+     </div>
+     <div class="col-md-6 offset-md-3 mt-3">
+       <div class="row col-md-8 offset-md-4">
+         <strong><%= f.label :パスワード %>
+         <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %>文字以上)</em>
+         <% end %></strong>
+       </div>
+       <div class="row mt-1">
+          <%= f.password_field :password, autocomplete: "current_password", class: "login-form" %>
+        </div>
         <div class="row col-md-8 offset-md-4 mt-3">
           <strong><%= f.label :パスワード（確認）%></strong>
         </div>
-          <div class="row mt-2">
-            <%= f.password_field :password_confirmation, autocomplete: "encrypted_password", class: "login-form" %>
-          </div>
+        <div class="row mt-2">
+          <%= f.password_field :password_confirmation, autocomplete: "encrypted_password", class: "login-form" %>
         </div>
-
-        <div class="row mt-4">
-          <div class="col-md-6 offset-md-3">
-            <%= f.submit "ログイン", class: "login-form glyphicon glyphicon-home btn btn-primary" %>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-6 offset-md-3">
+          <%= f.submit "ログイン", class: "login-form glyphicon glyphicon-home btn btn-primary" %>
           <% end %>
         </div>
       </div>
