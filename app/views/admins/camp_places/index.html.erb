@@ -11,7 +11,7 @@
       <% camp_place.post_images.first(1).each  do |post_image| %>
       <div class="row offset-md-1 mt-5">
        <div class="col-md-3 text-center mt-3">
-        <%= link_to (attachment_image_tag post_image, :image, :fill, 200, 200, format: 'jpeg'), admins_camp_place_path(camp_place) %>
+        <%= link_to (attachment_image_tag post_image, :image, format: 'jpeg', size: "200x200"), admins_camp_place_path(camp_place) %>
        </div>
       <% end %>
       <div class="col-8 mt-5">

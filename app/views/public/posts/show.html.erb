@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row mt-4">
-    <div class="col-md-3 offset-md-1">
+    <div class="col-md-3">
       <%= link_to  user_path(@post.user) do %>
-        <%= attachment_image_tag @post, :image,  :fill, 250, 250, format: 'jpeg' %>
+        <%= attachment_image_tag @post, :image, format: 'jpeg', size: "250x250" %>
       <% end %>
       <div class="row mt-2">
         <% @post.tags.each do |tag| %>
@@ -31,13 +31,13 @@
       </table>
     </div>
   </div>
-  <div class="col-md-6 offset-md-5">
+  <div class="col-md-6 offset-md-4">
     <div id="comments_error">
       <%= render 'layouts/error_messages', object: @post_comment %>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6 offset-md-5">
+    <div class="col-md-6 offset-md-4">
       <% if user_signed_in? %>
         <div class="new-comment">
           <div id="comment_buttons_<%= @post.id %>">
