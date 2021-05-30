@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row mt-5">
    <div class="col-md-3 offset-md-2">
-      <%= attachment_image_tag(@user, :profile_image, :fill, 200, 200, fallback: "user_image.jpg", size:'200x200', class: "user-image") %>
+      <%= attachment_image_tag(@user, :profile_image, format: 'jpeg', size: "50x50", fallback: "user_image.jpg", size:'200x200', class: "user-image") %>
     </div>
     <div class="col-md-6">
       <div class="col-12">
