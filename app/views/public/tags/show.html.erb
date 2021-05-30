@@ -7,7 +7,7 @@
       <div class="d-flex flex-wrap mt-4">
         <div class="col-12 mx-auto">
           <%= link_to post_path(post), style: "color: #494848;" do %>
-            <%= attachment_image_tag(post, :image, :fill, 150, 150, format: 'jpeg', class: "rounded") %> <br />
+            <%= attachment_image_tag(post, :image, format: 'jpeg', size: "150x150", class: "rounded") %> <br />
             <div class="col-12 mt-1">
               <%= post.title %>
             </div>
