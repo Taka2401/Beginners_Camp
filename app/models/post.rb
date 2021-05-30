@@ -3,11 +3,11 @@ class Post < ApplicationRecord
 
   belongs_to :user
 
-  has_many :tag_relationships, dependent: :destroy
-  has_many :tags, through: :tag_relationships
   has_many :favorites, dependent: :destroy
   has_many :post_images, dependent: :destroy
   has_many :post_comments, dependent: :destroy
+  has_many :tag_relationships, dependent: :destroy
+  has_many :tags, through: :tag_relationships
 
   validates :title,  presence: true
   validates :image,  presence: true

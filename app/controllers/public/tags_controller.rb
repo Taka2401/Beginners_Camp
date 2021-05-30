@@ -1,6 +1,6 @@
 class Public::TagsController < ApplicationController
   def index
-    @tags = Tag.page(params[:page]).per(20)
+    @tags = Tag.joins(:tag_relationships).group(:tag_id).order('count(post_id) desc').page(params[:page]).per(20)
   end
 
   def show

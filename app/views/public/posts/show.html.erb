@@ -4,14 +4,15 @@
       <%= link_to  user_path(@post.user) do %>
         <%= attachment_image_tag @post, :image,  :fill, 250, 250, format: 'jpeg' %>
       <% end %>
-      <% @post.tags.each do |tag| %>
-        <div class="col-6
-        mt-2 post-tag-box">
-          <%= link_to tag_path(tag.id), style: "color: #494848;" do %>
-            <i class="fas fa-hashtag"></i><%= tag.name %>
-          <% end %>
-        </div>
-      <% end %>
+      <div class="row mt-2">
+        <% @post.tags.each do |tag| %>
+          <div class="row post-tag-box mt-2 ml-4">
+            <%= link_to tag_path(tag.id), style: "color: #494848;" do %>
+              <i class="fas fa-hashtag"></i> <%= tag.name %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
       <div class="col-md-12 text-center mt-2">
         <% if user_signed_in? && current_user.id == @post.user_id %>
           <%= link_to '削除する', post_path(@post.id), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'btn btn-sm btn-danger' %>
