@@ -45,8 +45,13 @@
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
+-
 
-##【画像素材】　
-(https://o-dan.net/ja/)
-(https://www.pakutaso.com/)
-()
+## ER図
+
+
+##【画像素材】<br />
+https://o-dan.net/ja/<br />
+https://www.pakutaso.com/<br />
+https://morguefile.com/photos/morguefile/1/camp/pop
+

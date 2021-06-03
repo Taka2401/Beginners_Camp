@@ -36,6 +36,7 @@ class Public::ReservationsController < ApplicationController
       render action: :new
     end
 
+    # チェックインの月までを算出し、チェックアウトの日付を計算
     if @reservation.start_date.present?
       year = @reservation.start_date.year
       month = @reservation.start_date.month
@@ -48,6 +49,7 @@ class Public::ReservationsController < ApplicationController
       @reservation.end_date = Time.zone.parse("#{year}-#{month}-#{day + 1} 11:00")
     end
     end
+
   end
 
   def create
@@ -65,7 +67,13 @@ class Public::ReservationsController < ApplicationController
 
   def reservation_params
     params.require(:reservation).permit(
-      :camp_place_id, :start_date, :end_date, :total_fee, :guest, :day, :payment_method
+      :camp_place_id,
+      :start_date,
+      :end_date,
+      :total_fee,
+      :guest,
+      :day,
+      :payment_method
     )
   end
 end
