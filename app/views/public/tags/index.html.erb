@@ -3,7 +3,7 @@
     <% @tags.each do |tag| %>
       <div class="d-flex flex-wrap mt-3 ml-4">
         <div class="col-12 tag-box">
-          <%= link_to tag_path(tag.id), style: "color: #494848;" do %>
+          <%= link_to tag_path(tag.id), class: "link-color" do %>
             <i class="fas fa-hashtag"></i> <%= tag.name %>
           <% end %>
         </div>

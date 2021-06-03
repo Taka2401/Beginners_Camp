@@ -7,7 +7,7 @@
       <div class="row mt-2">
         <% @post.tags.each do |tag| %>
           <div class="row post-tag-box mt-2 ml-4">
-            <%= link_to tag_path(tag.id), style: "color: #494848;" do %>
+            <%= link_to tag_path(tag.id), class: "link-color" do %>
               <i class="fas fa-hashtag"></i> <%= tag.name %>
             <% end %>
           </div>

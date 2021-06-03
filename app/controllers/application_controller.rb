@@ -19,6 +19,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  @checkout = "11:00"
+
   protected
 
   def configure_permitted_parameters
