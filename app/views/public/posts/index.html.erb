@@ -16,24 +16,20 @@
            <%= attachment_image_tag post, :image, format: 'jpeg', size: "180x180"  %>
          <% end %>
         </div>
-      <div class="col-6">
+      <div class="col-6 offset-md-1">
         <table class="table table-borderless">
           <tbody>
             <tr>
-              <td></td>
               <td><p>タイトル</p><%= post.title %></td>
             </tr>
             <tr>
-              <td></td>
-                <td id="favorites_buttons_<%= post.id %>">
-                 <%= render partial: 'favorites/favorite', locals: {post: post} %>
-                </td>
+              <td id="favorites_buttons_<%= post.id %>">
+               <%= render partial: 'favorites/favorite', locals: {post: post} %>
+              </td>
             </tr>
             <tr>
-              <td></td>
-                <td id="comment_buttons_<%= post.id %>">
-                 コメント件数：<%= post.post_comments.count %>
-                </td>
+              <td id="comment_buttons_<%= post.id %>">
+               コメント件数：<%= post.post_comments.count %>
               </td>
             </tr>
           </tbody>
