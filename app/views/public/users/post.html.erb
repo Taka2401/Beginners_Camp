@@ -4,30 +4,30 @@
       <h5 class="font-weight-bold text-center">投稿履歴一覧</h5>
     </div>
   </div>
-    <% @post.each do |post| %>
-        <div class="row mt-5">
-            <div class="col-md-5 text-center">
-              <%= link_to (attachment_image_tag post, :image, :fill, 200, 200, format: 'jpeg'), post_path(post.id) %>
-            </div>
-        <div class="col-md-6 ml-5">
-          <table class="table table-borderless">
-            <tbody>
-              <tr>
-                <td></td>
-                <td><p>タイトル</p><%= post.title %></td>
-              </tr>
-              <tr>
-                <td></td>
-                  <td id="favorites_buttons_<%= post.id %>">
-                   <%= render partial: 'favorites/favorite', locals: {post: post} %>
-                  </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+  <% @post.each do |post| %>
+    <div class="row mt-5">
+      <div class="col-md-5 text-center">
+        <%= link_to (attachment_image_tag post, :image, :fill, 200, 200, format: 'jpeg'), post_path(post.id) %>
       </div>
-     <% end %>
-    <div class="col-12 mt-5 offset-md-4">
-      <%= paginate @post, theme: 'twitter-bootstrap-4' %>
+      <div class="col-md-6 ml-5">
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+              <td></td>
+              <td><p>タイトル</p><%= post.title %></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td id="favorites_buttons_<%= post.id %>">
+               <%= render partial: 'favorites/favorite', locals: {post: post} %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  <% end %>
+  <div class="col-12 mt-5 offset-md-4">
+    <%= paginate @post, theme: 'twitter-bootstrap-4' %>
   </div>
+</div>
