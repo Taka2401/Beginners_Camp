@@ -22,7 +22,7 @@ class Public::CampItemValuesController < ApplicationController
     @camp_item_value.user_id = current_user.id
     if @camp_item_value.save
       flash[:notice] = "口コミを投稿しました！"
-    redirect_to camp_item_path(@camp_item)
+      redirect_to camp_item_path(@camp_item)
     else
       render :new
     end

@@ -4,13 +4,11 @@ class Public::ReservationsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @reservations = @user.reservations.page(params[:page]).per(10)
-    @checkout = "11:00"
   end
 
   def show
     @user = User.find(params[:user_id])
     @reservation = Reservation.find(params[:id])
-    @checkout = "11:00"
   end
 
   def new
@@ -29,7 +27,6 @@ class Public::ReservationsController < ApplicationController
     @reservation.start_date = params[:reservation][:start_date]
     @reservation.payment_method = params[:reservation][:payment_method]
 
-    @checkout = "11:00"
     @reservation.total_fee = @camp_place.fee
 
     if @reservation.invalid?
@@ -41,15 +38,14 @@ class Public::ReservationsController < ApplicationController
       year = @reservation.start_date.year
       month = @reservation.start_date.month
       day = @reservation.start_date.day
-    if @reservation.day == "２泊３日"
-      @camp_place.fee = @camp_place.fee * 2
-      @reservation.total_fee = @reservation.total_fee * 2
-      @reservation.end_date = Time.zone.parse("#{year}-#{month}-#{day + 2} 11:00")
-    else
-      @reservation.end_date = Time.zone.parse("#{year}-#{month}-#{day + 1} 11:00")
+      if @reservation.day == "２泊３日"
+        @camp_place.fee = @camp_place.fee * 2
+        @reservation.total_fee = @reservation.total_fee * 2
+        @reservation.end_date = Time.zone.parse("#{year}-#{month}-#{day + 2} 11:00")
+      else
+        @reservation.end_date = Time.zone.parse("#{year}-#{month}-#{day + 1} 11:00")
+      end
     end
-    end
-
   end
 
   def create
