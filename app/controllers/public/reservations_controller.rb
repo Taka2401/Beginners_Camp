@@ -3,7 +3,7 @@ class Public::ReservationsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @reservations = @user.reservations.page(params[:page]).per(10)
+    @reservations = @user.reservations.page(params[:page]).per(10).order(id: "DESC")
   end
 
   def show
