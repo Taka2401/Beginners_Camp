@@ -24,11 +24,18 @@
   color : #494848;
 }
 
+/* ヘッダー */
+
+header{
+  width: 100%;
+  height: 80px;
+  background-color: #FFFFFF;
+  opacity: 0.9;
+}
+
 .navbar-brand  {
   font-size: 25px;
 }
-
-
 
 .navbar-dark .navbar-nav .nav-link{
   color: rgba(73, 72, 72, 1.0);
@@ -38,15 +45,14 @@
   color: rgba(73, 72, 72, 1.0);
 }
 
-header{
-  width: 100%;
-  height: 80px;
-  background-color: #FFFFFF;
-  opacity: 0.9;
-}
-
 main {
   margin-bottom: 150px;
+}
+
+#container{
+  height: 300px;
+  width: 100%;
+  max-width: 1140px;
 }
 
 footer{
@@ -56,11 +62,28 @@ footer{
   line-height: 40px;
 }
 
-#container{
-  height: 300px;
+/* TOP画面 */
+
+.bg-slider {
   width: 100%;
-  max-width: 1140px;
+  height: 100vh;
+  background-position:center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.bg-slider__title{
+  color: #fff;
+  font-size: 48px;
+  line-height: 1.5;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000;
+}
+
+/* about画面 */
 
 .slider {
   width: 100%;
@@ -68,29 +91,12 @@ footer{
   object-fit: cover;
 }
 
-.bg-slider {
-    width: 100%;
-    height: 100vh;
-    background-position:center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.bg-slider__title{
-    color: #fff;
-    font-size: 48px;
-    line-height: 1.5;
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 1px 1px 1px #000;
-}
-
 .login-form {
   height: 40px;
   width: 100%;
 }
+
+/* フラッシュメッセージ */
 
 #notice {
   width: 100%;
@@ -100,18 +106,20 @@ footer{
   font-size: 20px;
 }
 
+/* エラーメッセージ */
+
 #alert {
   text-align: center;
   color: red;
 }
 
+/* 必須項目 */
+
 .required-form {
   color: red;
 }
 
-.user-image {
-  border-radius: 200px;
-}
+/* 検索フォーム */
 
 .search-box {
   width: 200px;
@@ -138,6 +146,8 @@ footer{
   width: 30%;
 }
 
+/* タグ関連 */
+
 .tag-box {
   border: 3px solid #000000;
   border-radius: 5px;
@@ -151,6 +161,8 @@ footer{
   font-size: 12px;
   color: black;
 }
+
+/* 投稿関連 */
 
 .post_btn {
   color: black;
@@ -167,9 +179,18 @@ footer{
   padding-top: 190px;
 }
 
+.user-image {
+  border-radius: 200px;
+}
+
+/* リンク関連 */
+
 .link-color {
   color: black;
   text-decoration: none !important;
 }
+
+
+
 
 
