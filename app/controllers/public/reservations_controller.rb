@@ -28,6 +28,7 @@ class Public::ReservationsController < ApplicationController
     @reservation.payment_method = params[:reservation][:payment_method]
 
     @reservation.total_fee = @camp_place.fee
+    @checkout = "11:00"
 
     if @reservation.invalid?
       render action: :new
