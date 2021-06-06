@@ -13,4 +13,9 @@ class CampPlace < ApplicationRecord
     return CampPlace.all unless search
     CampPlace.where(['name LIKE ?', "%#{search}%"])
   end
+  
+  def self.rank
+    CampPlace.find(CampPlaceValue.group(:camp_place_id).order('avg(rate) desc').limit(3).pluck(:camp_place_id))
+  end
+  
 end

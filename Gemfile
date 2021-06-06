@@ -42,6 +42,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'bullet'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'spring-commands-rspec'
 end
 
 group :development do
