@@ -16,10 +16,14 @@ class User < ApplicationRecord
   has_many :camp_place_values, dependent: :destroy
 
   validates :name,  presence: true
-  # validates :email, presence: true
+  validates :email, presence: true
+  
+  def current_user?(current_user)
+     current_user.id == id
+  end
 
   def favorited_by?(post)
-    favorites.where(post_id: post.id).exists?
+    self.favorites.where(post_id: post.id).exists?
   end
 
   def self.guest
@@ -27,4 +31,7 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
     end
   end
+  
+  
+
 end

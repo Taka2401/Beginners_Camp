@@ -12,6 +12,14 @@ class Post < ApplicationRecord
   validates :title,  presence: true
   validates :image,  presence: true
 
+  def self.rank
+    Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+  end
+  
+  def written_by?(current_user)
+    current_user.id == user_id 
+  end
+
   def save_tags(savepost_tags)
     current_tags = tags.pluck(:name) unless tags.nil?
     old_tags = current_tags - savepost_tags
@@ -26,4 +34,5 @@ class Post < ApplicationRecord
       tags << post_tag
     end
   end
+  
 end
