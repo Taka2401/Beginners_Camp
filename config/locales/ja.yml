@@ -45,20 +45,20 @@ ja:
           attributes:
             name:
               format: '%{message}'
-              blank: を入力してください。
+              blank: を入力してください
             email:
               format: '%{message}'
-              blank: を入力してください。
+              blank: を入力してください
             password:
               format: '%{message}'
-              blank: を入力してください。
+              blank: を入力してください
             password_confirmation:
               confirmation: とパスワードが一致しません
         post:
           attributes:
             title:
               format: '%{message}'
-              blank: を入力してください。
+              blank: を入力してください
             image:
               format: '%{message}'
               blank: を選択してください
@@ -66,28 +66,28 @@ ja:
           attributes:
             comment:
               format: '%{message}'
-              blank: を入力してください。
+              blank: を入力してください
         reservation:
           attributes:
             start_date:
               format: '%{message}'
-              blank: を入力してください。
+              blank: を入力してください
         camp_item_value:
           attributes:
             title:
               format: '%{message}'
-              blank: を入力してください。
+              blank: を入力してください
             rate:
               format: '%{message}'
-              blank: してください。
+              blank: してください
         camp_place_value:
           attributes:
             title:
               format: '%{message}'
-              blank: を入力してください。
+              blank: を入力してください
             rate:
               format: '%{message}'
-              blank: してください。
+              blank: してください
 
 
 
