@@ -20,10 +20,8 @@
   </div>
   <div class="row mt-5">
     <div class="col-md-12 text-center">
-      <% if admin_signed_in? && current_admin.id == @camp_item.admin_id %>
-        <%= link_to '編集する', edit_admins_camp_item_path(@camp_item), class: 'glyphicon glyphicon-home btn btn-success' %>
-        <%= link_to '削除する', admins_camp_item_path(@camp_item), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'glyphicon glyphicon-home btn btn-danger' %>
-      <% end %>
+      <%= link_to '編集する', edit_admins_camp_item_path(@camp_item), class: 'glyphicon glyphicon-home btn btn-success' %>
+      <%= link_to '削除する', admins_camp_item_path(@camp_item), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'glyphicon glyphicon-home btn btn-danger' %>
     </div>
   </div>
 </div>

@@ -23,7 +23,7 @@ class User < ApplicationRecord
   end
 
   def favorited_by?(post)
-    self.favorites.where(post_id: post.id).exists?
+    favorites.where(post_id: post.id).exists?
   end
 
   def self.guest
