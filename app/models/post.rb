@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   attachment :image
 
-  belongs_to :user
+  belongs_to :user, optional: true
 
   has_many :favorites, dependent: :destroy
   has_many :post_images, dependent: :destroy
@@ -15,9 +15,9 @@ class Post < ApplicationRecord
   def self.rank
     Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
   end
-  
+
   def written_by?(current_user)
-    current_user.id == user_id 
+    current_user.id == user_id
   end
 
   def save_tags(savepost_tags)
@@ -34,5 +34,5 @@ class Post < ApplicationRecord
       tags << post_tag
     end
   end
-  
+
 end
