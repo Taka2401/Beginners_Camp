@@ -4,7 +4,9 @@
       <h5 class="font-weight-bold text-center">キャンプ場投稿履歴</h5>
     </div>
     <div class="col-md-2 offset-md-3">
-      <%= link_to "", new_admins_camp_place_path, class:"far fa-edit fa-3x post_btn" %>
+      <%= link_to new_admins_camp_place_path do %>
+        <i class="far fa-edit fa-3x post_btn"></i>
+      <% end %>
     </div>
   </div>
     <% @camp_places.each do |camp_place| %>
@@ -14,7 +16,7 @@
         <%= link_to (attachment_image_tag post_image, :image, format: 'jpeg', size: "200x200"), admins_camp_place_path(camp_place) %>
        </div>
       <% end %>
-      <div class="col-8 mt-5">
+      <div class="col-8 mt-5 font-weight-bold">
         <table class="table table-borderless">
           <tbody>
             <tr>
