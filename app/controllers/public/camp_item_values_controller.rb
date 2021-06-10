@@ -3,7 +3,7 @@ class Public::CampItemValuesController < ApplicationController
 
   def index
     @camp_item = CampItem.find(params[:camp_item_id])
-    @camp_items = @camp_item.camp_item_values.page(params[:page]).per(10)
+    @camp_items = @camp_item.camp_item_values.page(params[:page]).per(10).order(id: "DESC")
   end
 
   def show
