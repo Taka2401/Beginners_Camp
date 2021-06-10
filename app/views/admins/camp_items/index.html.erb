@@ -4,7 +4,9 @@
       <h5 class="font-weight-bold text-center">キャンプ用品投稿履歴</h5>
     </div>
     <div class="col-md-2 offset-md-3">
-      <%= link_to "", new_admins_camp_item_path, class:"far fa-edit fa-3x post_btn" %>
+      <%= link_to new_admins_camp_item_path do %>
+        <i class="far fa-edit fa-3x post_btn"></i>
+      <% end %>
     </div>
  </div>
   <% @camp_items.each do |camp_item| %>
