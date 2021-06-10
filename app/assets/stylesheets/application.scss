@@ -109,8 +109,26 @@ footer{
 /* エラーメッセージ */
 
 #alert {
+  width: 100%;
   text-align: center;
-  color: red;
+  color: white;
+  background-color: #33CC00;
+  font-size: 20px;
+}
+
+#error_explanation {
+  width: 65%;
+  background-color: #fcf8e3;
+  border: 2px solid #faebcc;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom:20px;
+
+  ul {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 /* 必須項目 */
@@ -171,12 +189,6 @@ footer{
 .preview-form {
   height: 190px;
   width: 200px;
-  position: fixed;
-  z-index: 100px;
-}
-
-.image-form {
-  padding-top: 190px;
 }
 
 .user-image {

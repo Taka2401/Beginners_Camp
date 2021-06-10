@@ -1,32 +1,35 @@
 require 'rails_helper'
 
 RSpec.describe Reservation, type: :model do
-  it "is valid with a id, user_id, camp_place_id, start_date, end_date, payment_method, guest, day, total_fee" do
-    reservation = Reservation.new(
-      id: "1",
-      user_id: "1",
-      camp_place_id: "1",
-      start_date: "2021/12/01",
-      end_date: "2021/12/03",
-      payment_method: "クレジットカード",
-      guest: "3",
-      day: "２泊３日",
-      total_fee: "19600"
-    )
-    expect(reservation).to be_valid
+  describe 'バリデーション' do
+    subject(:user) { FactoryBot.create(:user) }
+    subject(:camp_place) { FactoryBot.create(:camp_place) }
+    subject(:reservation) { FactoryBot.build(:reservation, user_id: user.id, camp_place_id: camp_place.id) }
+
+    it '正常に予約できること' do
+      expect(reservation).to be_valid
+      reservation.save
+    end
+    context 'user_id' do
+      it 'user_idがなければ予約できないこと'do
+        reservation.user_id = nil
+        expect(reservation).to be_invalid
+        expect(reservation.save).to be_falsey
+      end
+    end
+    context 'camp_place_id' do
+      it 'camp_place_idがなければ予約できないこと'do
+        reservation.camp_place_id = nil
+        expect(reservation).to be_invalid
+        expect(reservation.save).to be_falsey
+      end
+    end
+    context 'start_date' do
+      it 'start_dateがなければ予約できないこと'do
+        reservation.start_date = nil
+        expect(reservation).to be_invalid
+        expect(reservation.save).to be_falsey
+      end
+    end
   end
-
-  it "is valid with a id, user_id, camp_place_id, start_date, end_date, payment_method, guest, day, total_fee"
-  it "is invalid without a id"
-  it "is invalid without a user_id"
-  it "is invalid without a camp_place_id"
-  it "is invalid without an start_date"
-
-  it "is invalid without a " do
-    reservation = Reservation.new(start_date: nil)
-    reservation.valid?
-    expect(reservation.errors[:start_date]).to include("を入力してください")
-  end
-
-
 end
