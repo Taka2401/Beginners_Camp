@@ -7,6 +7,7 @@ class Public::CampPlaceValuesController < ApplicationController
   end
 
   def show
+    @camp_place = CampPlace.find(params[:camp_place_id])
     @camp_place_value = CampPlaceValue.find(params[:id])
   end
 
@@ -26,6 +27,13 @@ class Public::CampPlaceValuesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @camp_place = CampPlace.find(params[:camp_place_id])
+    @camp_place_value = CampPlaceValue.find(params[:id])
+    @camp_place_value.destroy
+    redirect_to camp_place_path(@camp_place)
   end
 
   private

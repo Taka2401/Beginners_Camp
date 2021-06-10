@@ -47,9 +47,11 @@ ja:
       camp_item_value:
         title: タイトル
         rate: 評価
+        review: 本文
       camp_place_value:
         title: タイトル
         rate: 評価
+        review: 本文
 
 
 
