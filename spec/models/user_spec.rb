@@ -63,14 +63,14 @@ RSpec.describe User, type: :model do
       it 'passwordが存在しても、password_confirmationが空白だと登録できないこと' do
         user.password_confirmation = ''
         expect(user).to be_invalid
-        expect(user.errors[:password_confirmation]).to include("とパスワードが一致しません")
+        expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
         expect(user.save).to be_falsey
       end
       it 'passwordとpassword_confirmationが一致していないと登録できないこと' do
         user.password = 'password_A'
         user.password_confirmation = 'password_B'
         expect(user).to be_invalid
-        expect(user.errors[:password_confirmation]).to include("とパスワードが一致しません")
+        expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
         expect(user.save).to be_falsey
       end
       it '5文字以下だと登録できないこと' do
@@ -97,7 +97,6 @@ RSpec.describe User, type: :model do
         user.save
       end
     end
-
     context 'introduction' do
       subject(:user) {FactoryBot.build(:user)}
       it 'nilでも登録できること' do
@@ -105,7 +104,17 @@ RSpec.describe User, type: :model do
         expect(user).to be_valid
         user.save
       end
+      it '自己紹介が300文字以内なら登録できること' do
+        user.introduction = 'a' * 150
+        expect(user).to be_valid
+        user.save
+      end
+      it '自己紹介が301文字以上だと登録できないこと' do
+        user.introduction = 'a' * 151
+        expect(user).to be_invalid
+        expect(user.save).to be_falsey
+      end
     end
-    
+
   end
 end

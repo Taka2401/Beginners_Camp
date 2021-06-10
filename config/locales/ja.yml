@@ -26,6 +26,7 @@ ja:
     attributes:
       user:
         name: 名前
+        introduction: 自己紹介
       post:
         title: タイトル
         image: 画像

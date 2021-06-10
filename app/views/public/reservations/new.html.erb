@@ -1,6 +1,6 @@
 <div class="container">
   <%= form_with(model: @reservation, url: camp_place_reservations_confirm_path(@camp_place), local: true) do |f| %>
-    <div class="col-md-7 mx-auto">
+    <div class="col-md-7 mx-auto mt-2">
       <div class="row offset-md-1">
         <%= render 'layouts/error_messages', object: f.object %>
       </div>
@@ -41,9 +41,10 @@
           <%= f.text_field :start_date, id: "start_date", class: "form-control datepicker", placeholder: "チェックイン日時", data: { target: '#start_date'} %>
           <div class="input-group-text"><i class="fa fa-calendar"></i></div>
         </div>
+        <p class="required-form">※必須</p>
       </div>
     </div>
-    <div class="row mt-4">
+    <div class="row">
       <div class="mx-auto">
         <%= f.submit '確認画面に進む', class: "glyphicon glyphicon-home btn btn-primary" %>
       </div>

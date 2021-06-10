@@ -56,7 +56,7 @@ RSpec.describe CampPlace, type: :model do
     end
     context 'post_images_images' do
       it '画像がなければ登録できないこと' do
-        camp_place.post_images_images = nil
+        camp_place.post_images = []
         expect(camp_place).to be_invalid
         expect(camp_place.save).to be_falsey
       end

@@ -41,6 +41,18 @@ RSpec.describe CampItemValue, type: :model do
         expect(camp_item_value.save).to be_falsey
       end
     end
+    context 'review' do
+      it '内容が300文字以内なら登録できること' do
+        camp_item_value.review = 'a' * 300
+        expect(camp_item_value).to be_valid
+        camp_item_value.save
+      end
+      it '内容が301文字以上だと登録できないこと' do
+        camp_item_value.review = 'a' * 301
+        expect(camp_item_value).to be_invalid
+        expect(camp_item_value.save).to be_falsey
+      end
+    end
     context 'rate' do
       it '評価がなければ登録できないこと' do
         camp_item_value.rate = nil
