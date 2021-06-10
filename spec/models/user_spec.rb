@@ -86,9 +86,7 @@ RSpec.describe User, type: :model do
         user.save
       end
     end
-  end
-
-  describe 'プロフィール' do
+    
     context 'profile_image_id' do
       subject(:user) {FactoryBot.build(:user)}
       it 'nilでも登録できること' do
@@ -97,6 +95,7 @@ RSpec.describe User, type: :model do
         user.save
       end
     end
+    
     context 'introduction' do
       subject(:user) {FactoryBot.build(:user)}
       it 'nilでも登録できること' do
@@ -115,6 +114,5 @@ RSpec.describe User, type: :model do
         expect(user.save).to be_falsey
       end
     end
-
   end
 end
