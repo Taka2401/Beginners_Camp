@@ -1,23 +1,19 @@
 class Post < ApplicationRecord
   attachment :image
 
-  belongs_to :user, optional: true
+  belongs_to :user
 
   has_many :favorites, dependent: :destroy
-  has_many :post_images, dependent: :destroy
   has_many :post_comments, dependent: :destroy
   has_many :tag_relationships, dependent: :destroy
   has_many :tags, through: :tag_relationships
 
-  validates :title,  presence: true
+  validates :title,  presence: true, length: { maximum: 30 }
+  validates :review, length: { maximum: 140 }
   validates :image,  presence: true
 
   def self.rank
     Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
-  end
-
-  def written_by?(current_user)
-    current_user.id == user_id
   end
 
   def save_tags(savepost_tags)

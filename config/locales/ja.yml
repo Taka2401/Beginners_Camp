@@ -29,10 +29,21 @@ ja:
       post:
         title: タイトル
         image: 画像
+        review: 本文
       post_comment:
         comment: コメント
       reservation:
         start_date: チェックインの日付
+      camp_place:
+        post_images_images: 画像
+        name: キャンプ場
+        introduction: 紹介文
+        address: 住所
+        fee: 料金
+      camp_item:
+        image: 画像
+        name: キャンプ用品
+        introduction: 紹介文
       camp_item_value:
         title: タイトル
         rate: 評価

@@ -9,19 +9,14 @@
  </div>
   <% @camp_items.each do |camp_item| %>
     <div class="row offset-md-1 mt-5">
-         <div class="col-md-3 text-center mt-3">
-          <%= link_to (attachment_image_tag camp_item, :image, format: 'jpeg', size: "200x200"), admins_camp_item_path(camp_item) %>
-        </div>
-      <div class="col-8 mt-3">
-        <table class="table table-borderless">
+      <div class="col-md-3 text-center mt-3">
+        <%= link_to (attachment_image_tag camp_item, :image, format: 'jpeg', size: "200x200"), admins_camp_item_path(camp_item) %>
+      </div>
+      <div class="col-8 mt-3 font-weight-bold">
+        <table class="table table-borderless offset-md-3">
           <tbody>
             <tr>
-              <td></td>
               <td><%= camp_item.name %></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><%= camp_item.introduction %></td>
             </tr>
           </tbody>
         </table>

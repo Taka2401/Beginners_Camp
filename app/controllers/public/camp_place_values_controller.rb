@@ -31,6 +31,6 @@ class Public::CampPlaceValuesController < ApplicationController
   private
 
   def camp_place_value_params
-    params.require(:camp_place_value).permit(:camp_place_id, :title, :review, :rate)
+    params.require(:camp_place_value).permit(:title, :rate, :review)
   end
 end
