@@ -28,29 +28,23 @@ window.onpageshow = function(event) {
       window.location.reload(true);
   }
 
-  $('.bg-slider').bgSwitcher({
-    images: ['img/camp_image.10.jpg','img/camp_image.11.jpg','img/camp_image.12.jpg','img/camp_image.13.jpg'],
-　});
+    $('.bg-slider').bgSwitcher({
+      images: ['img/camp_image.10.jpg','img/camp_image.11.jpg','img/camp_image.12.jpg','img/camp_image.13.jpg'],
+  　});
 
-  $(document).ready(function () {
-    $("#slider").skippr({
-      // スライドショーの変化 ("fade" or "slide")
-      transition : 'slide',
-      // 変化に係る時間(ミリ秒)
-      speed : 1000,
-      // easingの種類
-      easing : 'easeOutQuart',
-      // ナビゲーションの形("block" or "bubble")
-      navType : 'block',
-      // 子要素の種類('div' or 'img')
-      childrenElementType : 'div',
-      // スライドショーの自動再生(falseで自動再生なし)
-      autoPlay : true,
-      // 自動再生時のスライド切替間隔(ミリ秒)
-      autoPlayDuration : 3000,
-      // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
-      hidePrevious : false
-    });
+  　$(document).ready(function () {
+      $("#slider").skippr({
+        transition : 'slide',
+        speed : 1000,
+        easing : 'easeOutQuart',
+        navType : 'block',
+        childrenElementType : 'div',
+        arrows : true,
+        autoPlay : true,
+        autoPlayDuration : 3000,
+        keyboardOnAlways : true,
+        hidePrevious : false
+      });
 
     $('#post_image').on('change', function (e) {
       var reader = new FileReader();

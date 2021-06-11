@@ -3,11 +3,12 @@ class Public::CampItemValuesController < ApplicationController
 
   def index
     @camp_item = CampItem.find(params[:camp_item_id])
-    @camp_items = @camp_item.camp_item_values.page(params[:page]).per(10)
+    @camp_items = @camp_item.camp_item_values.page(params[:page]).per(10).order(id: "DESC")
   end
 
   def show
     @camp_item_value = CampItemValue.find(params[:id])
+    @camp_item = CampItem.find(params[:camp_item_id])
   end
 
   def new
@@ -28,9 +29,16 @@ class Public::CampItemValuesController < ApplicationController
     end
   end
 
+  def destroy
+    @camp_item = CampItem.find(params[:camp_item_id])
+    @camp_item_value = CampItemValue.find(params[:id])
+    @camp_item_value.destroy
+    redirect_to camp_item_path(@camp_item)
+  end
+
   private
 
   def camp_item_value_params
-    params.require(:camp_item_value).permit(:camp_item_id, :rate, :title, :review)
+    params.require(:camp_item_value).permit(:title, :rate, :review)
   end
 end

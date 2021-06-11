@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row mx-auto mt-5">
     <div class="col-md-5 text-center">
-      <%= attachment_image_tag @camp_item, :image, format: 'jpeg', size: "250x250" %>
+      <%= attachment_image_tag @camp_item, :image, format: 'jpeg', size: "250x250", class: "rounded" %>
     </div>
     <div class="col-md-6">
       <table class="table">
@@ -20,8 +20,8 @@
   </div>
   <div class="row mt-5">
     <div class="col-md-6 offset-md-6">
-      <%= link_to "レビューを見る", camp_item_camp_item_values_path(@camp_item), class: 'glyphicon glyphicon-home btn btn-primary' %>
       <%= link_to "レビューを投稿する", new_camp_item_camp_item_value_path(@camp_item), class: 'glyphicon glyphicon-home btn btn-success' %>
+      <%= link_to "レビューを見る", camp_item_camp_item_values_path(@camp_item), class: 'glyphicon glyphicon-home btn btn-primary' %>
     </div>
   </div>
 </div>

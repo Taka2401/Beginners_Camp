@@ -32,11 +32,11 @@ Rails.application.routes.draw do
     resources :camp_places, only: [:index, :show] do
       resources :reservations, only: [:new, :create]
       post 'reservations/confirm' => 'reservations#confirm'
-      resources :camp_place_values, only: [:index, :show, :new, :create, :destroy]
+      resources :camp_place_values, only: [:index, :new, :create, :show, :destroy]
     end
 
     resources :camp_items, only: [:index, :show] do
-      resources :camp_item_values, only: [:index, :show, :new, :create]
+      resources :camp_item_values, only: [:index, :new, :create, :show, :destroy]
     end
 
     resources :posts, only: [:index, :new, :create, :show, :destroy] do

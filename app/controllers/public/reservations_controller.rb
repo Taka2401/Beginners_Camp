@@ -19,14 +19,9 @@ class Public::ReservationsController < ApplicationController
 
   def confirm
     @camp_place = CampPlace.find(params[:camp_place_id])
-    @reservation = Reservation.new
+    @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id
-    @reservation.day = params[:reservation][:day]
-    @reservation.guest = params[:reservation][:guest]
-    @reservation.total_fee = params[:reservation][:total_fee]
-    @reservation.start_date = params[:reservation][:start_date]
-    @reservation.payment_method = params[:reservation][:payment_method]
-
+    @reservation.camp_place_id = @camp_place.id
     @reservation.total_fee = @camp_place.fee
     @checkout = "11:00"
 
@@ -63,14 +58,6 @@ class Public::ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(
-      :camp_place_id,
-      :start_date,
-      :end_date,
-      :total_fee,
-      :guest,
-      :day,
-      :payment_method
-    )
+    params.require(:reservation).permit(:start_date, :total_fee, :guest, :day, :payment_method)
   end
 end

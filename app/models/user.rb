@@ -9,21 +9,17 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_many :post_images, dependent: :destroy
   has_many :reservations, dependent: :destroy
   has_many :post_comments, dependent: :destroy
   has_many :camp_item_values, dependent: :destroy
   has_many :camp_place_values, dependent: :destroy
 
-  validates :name,  presence: true
+  validates :name,  presence: true, length: { maximum: 10 }
   validates :email, presence: true
-  
-  def current_user?(current_user)
-     current_user.id == id
-  end
+  validates :introduction, length: { maximum: 150 }
 
   def favorited_by?(post)
-    self.favorites.where(post_id: post.id).exists?
+    favorites.where(post_id: post.id).exists?
   end
 
   def self.guest
@@ -31,7 +27,7 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
     end
   end
-  
-  
+
+
 
 end
