@@ -5,7 +5,7 @@ FactoryBot.define do
     address { 'address' }
     fee { '9800' }
     after(:build) do |camp_place|
-      camp_place.post_images << build(:post_image, camp_place: camp_place, image: File.open('spec/fixtures/preview_image.jpg'))
+      camp_place.post_images << build(:post_image, camp_place: camp_place, image: File.open('spec/fixtures/no_image.jpg'))
     end
     association :admin
   end
