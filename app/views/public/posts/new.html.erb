@@ -10,7 +10,7 @@
    </div>
   <div class="row mt-4">
     <div class="row col-md-3 offset-md-1 mt-3">
-      <%= attachment_image_tag @post, :image, fallback: "preview_image.jpeg", id: "preview", class: "preview-form rounded" %>
+      <%= attachment_image_tag @post, :image, fallback: "no_image.jpeg", id: "preview", class: "preview-form rounded" %>
       <div class="row image-form mt-4">
         <%= f.attachment_field :image %>
         <p class="required-form">※必須</p>
