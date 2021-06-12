@@ -49,6 +49,6 @@
 ## 使用素材
 【画像素材】<br />
 https://o-dan.net/ja/<br />
-https://www.pakutaso.com/<br />
+https://www.pakutaso.com/
 https://morguefile.com/photos/morguefile/1/camp/pop
 
