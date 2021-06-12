@@ -3,6 +3,5 @@ class RemoveUserIdAndPostIdAndCampItemIdFromPostImages < ActiveRecord::Migration
     remove_column :post_images, :user_id, :inteder
     remove_column :post_images, :post_id, :integer
     remove_column :post_images, :camp_item_id, :integer
-    remove_column :post_images, :camp_iitem_id, :integer
   end
 end
