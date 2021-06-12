@@ -75,7 +75,7 @@ footer{
   justify-content: center;
 }
 .bg-slider__title{
-  color: #fff;
+  color: #FFFFFF;
   font-size: 48px;
   line-height: 1.5;
   font-weight: bold;
@@ -101,7 +101,7 @@ footer{
 #notice {
   width: 100%;
   text-align: center;
-  color: white;
+  color: #FFFFFF;
   background-color: #33CC00;
   font-size: 20px;
 }
@@ -111,7 +111,7 @@ footer{
 #alert {
   width: 100%;
   text-align: center;
-  color: white;
+  color: #FFFFFF;
   background-color: #33CC00;
   font-size: 20px;
 }
@@ -122,7 +122,7 @@ footer{
   border: 2px solid #faebcc;
   border-radius: 4px;
   padding: 12px;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 
   ul {
     display: inline-block;
@@ -134,7 +134,7 @@ footer{
 /* 必須項目 */
 
 .required-form {
-  color: red;
+  color: #FF0000;
 }
 
 /* 検索フォーム */
@@ -177,13 +177,13 @@ footer{
   border-radius: 5px;
   padding: 5px;
   font-size: 12px;
-  color: black;
+  color: #000000;
 }
 
 /* 投稿関連 */
 
 .post_btn {
-  color: black;
+  color: #000000;
 }
 
 .preview-form {
@@ -198,7 +198,7 @@ footer{
 /* リンク関連 */
 
 .link-color {
-  color: black;
+  color: #000000;
   text-decoration: none !important;
 }
 
