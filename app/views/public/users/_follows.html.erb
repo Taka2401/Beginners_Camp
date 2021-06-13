@@ -1,0 +1,9 @@
+  <%= link_to "#{user.followings.count} フォロー", user_following_path(user), class: "link-color" %><span>　|　</span>
+  <%= link_to "#{user.followers.count} フォロワー ", user_followers_path(user), class: "link-color" %>
+  <% if current_user.id != user.id %>
+    <% if current_user.following?(user) %>
+      <%= link_to "フォロー解除", user_relationships_path(user.id), method: :delete, class: "my_page_btn btn btn-primary" %>
+    <% else %>
+      <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class: "my_page_btn btn btn-success" %>
+    <% end %>
+  <% end %>

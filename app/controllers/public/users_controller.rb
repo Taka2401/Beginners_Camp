@@ -9,6 +9,9 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @post = @user.posts.page(params[:page]).per(10).order(id: "DESC")
+    @reservations = @user.reservations.page(params[:page]).per(10).order(id: "DESC")
+    @like_posts = Post.where(id: @user.favorites.pluck(:post_id)).page(params[:page]).per(10).order(id: "DESC")
   end
 
   def edit
@@ -27,6 +30,9 @@ class Public::UsersController < ApplicationController
   def post
     @user = User.find(params[:id])
     @post = @user.posts.page(params[:page]).per(10)
+  end
+
+  def favorites
   end
 
   def following

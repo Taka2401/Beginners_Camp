@@ -1,14 +1,9 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 offset-md-1">
-      <h5 class="font-weight-bold text-center">投稿履歴一覧</h5>
-    </div>
-  </div>
-  <% @post.each do |post| %>
+<div class="user_post">
+  <% like_posts.each do |post| %>
     <div class="row mt-5">
       <div class="col-md-5 text-center">
         <%= link_to  post_path(post.id) do %>
-          <%= attachment_image_tag post, :image, format: 'jpeg', size: "200x200" %>
+          <%= attachment_image_tag post, :image, format: 'jpeg', size: "100x100", class: "rounded" %>
         <% end %>
       </div>
       <div class="col-md-6 ml-5">
@@ -28,6 +23,6 @@
     </div>
   <% end %>
   <div class="col-12 mt-5 offset-md-4">
-    <%= paginate @post, theme: 'twitter-bootstrap-4' %>
+    <%= paginate like_posts, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>

@@ -13,6 +13,10 @@
         <td><%= @reservation.guest %>名</td>
       </tr>
       <tr>
+        <td class="col-xs-2 table-secondary">利用日数</td>
+        <td><%= @reservation.day %></td>
+      </tr>
+      <tr>
         <td class="col-xs-2 table-secondary">料金</td>
         <td>¥<%= @reservation.camp_place.fee %></td>
       </tr>
