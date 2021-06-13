@@ -1,13 +1,12 @@
-
-  <% if current_user == nil %>
-      ♥<%= post.favorites.count %>いいね
+<% if current_user == nil %>
+  ♥<%= post.favorites.count %>いいね
+<% else %>
+  <% if current_user.favorited_by?(post) %>
+    <%= link_to "♥#{post.favorites.count}いいね", post_favorites_path(post), method: :delete, remote: true %>
   <% else %>
-    <% if current_user.favorited_by?(post) %>
-      <%= link_to "♥#{post.favorites.count}いいね", post_favorites_path(post), method: :delete, remote: true %>
-    <% else %>
-      <%= link_to "♥#{post.favorites.count}いいね", post_favorites_path(post), method: :post, remote: true %>
-    <% end %>
+    <%= link_to "♥#{post.favorites.count}いいね", post_favorites_path(post), method: :post, remote: true %>
   <% end %>
+<% end %>
 
 
 
