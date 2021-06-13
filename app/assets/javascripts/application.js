@@ -30,13 +30,12 @@ window.onpageshow = function(event) {
   }
     /*global $*/
     $('#tab-target-1').tab('show');
-
-
+    
     $('.bg-slider').bgSwitcher({
       images: ['img/camp_image.10.jpg','img/camp_image.11.jpg','img/camp_image.12.jpg','img/camp_image.13.jpg'],
-  　});
-
-  　$(document).ready(function () {
+    });
+    
+    $(document).ready(function () {
       $("#slider").skippr({
         transition : 'slide',
         speed : 1000,
@@ -54,37 +53,37 @@ window.onpageshow = function(event) {
       var reader = new FileReader();
       reader.onload = function (e) {
           $("#preview").attr('src', e.target.result);
-      }
+      };
       reader.readAsDataURL(e.target.files[0]);
     });
 
-     /*global moment $*/
+     /*global moment*/
      $('.datepicker').datetimepicker({
       format: 'YYYY-MM-DD HH:mm',
       minDate: moment()
     });
 
     $('select').change(function () {
-      var selectedValue = $(this).val()
+      var selectedValue = $(this).val();
       if (selectedValue === '１泊２日') {
         const changedfee = Number($('#fee')[0].innerText.replace('¥', '')) / 2;
         $('#fee')[0].innerText = `¥${changedfee}`;
       } else if(selectedValue === '２泊３日') {
         const changedfee = Number($('#fee')[0].innerText.replace('¥', '')) * 2;
-        $('#fee')[0].innerText = `¥${changedfee}`
+        $('#fee')[0].innerText = `¥${changedfee}`;
       }
-    })
+    });
 
     $('select').change(function () {
-      var selectedValue = $(this).val()
+      var selectedValue = $(this).val();
       if (selectedValue === '１泊２日') {
         const changedfee = Number($('#total_fee')[0].innerText.replace('¥', '')) / 2;
         $('#total_fee')[0].innerText = `¥${changedfee}`;
       } else if(selectedValue === '２泊３日') {
         const changedfee = Number($('#total_fee')[0].innerText.replace('¥', '')) * 2;
-        $('#total_fee')[0].innerText = `¥${changedfee}`
+        $('#total_fee')[0].innerText = `¥${changedfee}`;
       }
-    })
+    });
   });
 };
 
