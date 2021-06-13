@@ -29,6 +29,17 @@ class Public::UsersController < ApplicationController
     @post = @user.posts.page(params[:page]).per(10)
   end
 
+  def following
+    @user = User.find(params[:id])
+    @users = @user.followings.page(params[:page]).per(10)
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followers.page(params[:page]).per(10)
+  end
+
+
   private
 
   def user_params
