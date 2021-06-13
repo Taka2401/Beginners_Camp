@@ -18,7 +18,8 @@
 //= require moment
 //= require moment/ja.js
 //= require tempusdominus-bootstrap-4.js
-//= require_tree .
+//= require bootstrap
+//= require_tree
 
 window.onpageshow = function(event) {
   if (
@@ -27,6 +28,9 @@ window.onpageshow = function(event) {
   ) {
       window.location.reload(true);
   }
+    /*global $*/
+    $('#tab-target-1').tab('show');
+
 
     $('.bg-slider').bgSwitcher({
       images: ['img/camp_image.10.jpg','img/camp_image.11.jpg','img/camp_image.12.jpg','img/camp_image.13.jpg'],
@@ -54,6 +58,7 @@ window.onpageshow = function(event) {
       reader.readAsDataURL(e.target.files[0]);
     });
 
+     /*global moment $*/
      $('.datepicker').datetimepicker({
       format: 'YYYY-MM-DD HH:mm',
       minDate: moment()
@@ -82,20 +87,5 @@ window.onpageshow = function(event) {
     })
   });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
