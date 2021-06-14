@@ -1,10 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-6 offset-md-3">
-      <h5><%= @user.name %>さんの予約履歴一覧</h5>
-    </div>
-    <div class="col-10 offset-md-1">
-      <table class="table table-hover mt-5">
+    <div class="col-11 text-center">
+      <table class="table table-hover mt-3">
         <thead>
           <tr>
             <th>キャンプ場</th>
@@ -14,11 +11,11 @@
           </tr>
         </thead>
         <tbody>
-          <% @reservations.each do |reservation| %>
+          <% reservations.each do |reservation| %>
             <tr>
               <td><%= reservation.camp_place.name %></td>
               <td>
-                <%= link_to user_reservation_path(@user, reservation) do %>
+                <%= link_to user_reservation_path(user, reservation) do %>
                   <%= l reservation.created_at %>
                  <% end %>
               </td>
@@ -30,7 +27,7 @@
       </table>
     </div>
     <div class="col-12 mt-5 offset-md-3">
-      <%= paginate @reservations, theme: 'twitter-bootstrap-4' %>
+      <%= paginate reservations, theme: 'twitter-bootstrap-4' %>
     </div>
   </div>
 </div>

@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 offset-md-4">
-      <h5 class="d-inline-flex font-weight-bold mb-4">ユーザー一覧</h5>
+    <div class="col-md-6 offset-md-3 mt-3">
+      <h5><%= @user.name %>さんをフォローしているユーザー</h5>
     </div>
   </div>
   <div class="row">
     <div class="col-md-9 offset-md-1">
-      <table class="table table-hover border-bottom">
+      <table class="table table-hover border-bottom mt-5">
         <% @users.each do |user| %>
           <tbody>
             <tr>

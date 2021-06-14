@@ -86,7 +86,7 @@ RSpec.describe User, type: :model do
         user.save
       end
     end
-    
+
     context 'profile_image_id' do
       subject(:user) {FactoryBot.build(:user)}
       it 'nilでも登録できること' do
@@ -95,7 +95,7 @@ RSpec.describe User, type: :model do
         user.save
       end
     end
-    
+
     context 'introduction' do
       subject(:user) {FactoryBot.build(:user)}
       it 'nilでも登録できること' do
@@ -103,13 +103,13 @@ RSpec.describe User, type: :model do
         expect(user).to be_valid
         user.save
       end
-      it '自己紹介が300文字以内なら登録できること' do
-        user.introduction = 'a' * 150
+      it '自己紹介が100文字以内なら登録できること' do
+        user.introduction = 'a' * 100
         expect(user).to be_valid
         user.save
       end
-      it '自己紹介が301文字以上だと登録できないこと' do
-        user.introduction = 'a' * 151
+      it '自己紹介が101文字以上だと登録できないこと' do
+        user.introduction = 'a' * 101
         expect(user).to be_invalid
         expect(user.save).to be_falsey
       end
