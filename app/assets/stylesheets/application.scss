@@ -74,7 +74,7 @@ footer{
   align-items: center;
   justify-content: center;
 }
-.bg-slider__title{
+.bg-slider-title{
   color: #FFFFFF;
   font-size: 48px;
   line-height: 1.5;
@@ -182,8 +182,28 @@ footer{
 
 /* 投稿関連 */
 
-.post_btn {
+.post-inner {
+  width: 190px;
+  border: 1px solid #C0C0C0;
+  border-radius: 5px;
+  padding: 8px 5px 10px 8px;
+  margin: 0 0 70px 100px;
+  font-size: 13px;
+  box-shadow: 10px 10px 10px -10px;
+}
+
+.post-btn {
   color: #000000;
+}
+
+.post-active {
+  padding-top: 30px;
+  margin: 3px 0 0 120px;
+}
+
+.comment-active {
+  padding-top: 2px;
+  margin-right: 3px;
 }
 
 .preview-form {
@@ -202,12 +222,12 @@ footer{
 
 /* マイページ関連 */
 
-.my_page_btn {
+.mypage-btn {
   font-size: 6px;
   margin-left: 30px;
 }
 
-.user_post {
+.user-post {
   font-size: 12px;
 }
 
