@@ -34,9 +34,9 @@
         <% end %>
       </ul>
     </div>
-    <div class="col-10 offset-md-1 tab-content">
+    <div class="col-10  tab-content">
       <div id="tab1" class="tab-pane fade in active">
-        <%= render 'posts', post: @post %>
+        <%= render 'posts', posts: @posts %>
       </div>
       <div id="tab2" class="tab-pane fade">
         <%= render 'favorites', like_posts: @like_posts %>
