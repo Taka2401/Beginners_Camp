@@ -19,7 +19,7 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
 
   validates :name,  presence: true, length: { maximum: 10 }
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true
   validates :introduction, length: { maximum: 100 }
 
   def follow(user_id)

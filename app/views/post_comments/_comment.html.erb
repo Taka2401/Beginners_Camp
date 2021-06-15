@@ -1,21 +1,21 @@
 <%= form_with(model:[post, post_comment], remote: true) do |f| %>
-  <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに", :size =>'60x4' %>
-  <div class="float-right">
+  <%= f.text_area :comment, rows:'5', placeholder: "コメントをここに", :size =>'60x4' %>
+  <div class="new-comment float-right">
     <%= f.submit "送信する" %>
   </div>
 <% end %>
 <div id="favorites_buttons_<%= post.id %>">
   <%= render partial: 'favorites/favorite', locals: {post: post} %>
 </div>
-<div class="row">
-  <% post.post_comments.each do |post_comment| %>
-    <div class="col-md-3 mt-3">
-      <%= link_to  user_path(post.user) do %>
+<% post.post_comments.each do |post_comment| %>
+  <div class="row post-comment mt-4">
+    <div class="col-md-2">
+      <%= link_to  user_path(post.user), class: "link-color" do %>
         <%= attachment_image_tag(post_comment.user, :profile_image, :fill, 50, 50, fallback: "user_image.jpg", size:'50x50', class: "user-image") %><br />
         <%= post_comment.user.name %>
       <% end %>
     </div>
-    <div class="col-md-9 mt-3">
+    <div class="col-md-9">
       <%= post_comment.comment %>
       <div class="float-right">
         <% if post_comment.user == current_user %>
@@ -23,5 +23,5 @@
         <% end %>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>

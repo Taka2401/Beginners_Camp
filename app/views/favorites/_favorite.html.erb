@@ -2,9 +2,9 @@
   ♥<%= post.favorites.count %>いいね
 <% else %>
   <% if current_user.favorited_by?(post) %>
-    <%= link_to "♥#{post.favorites.count}", post_favorites_path(post), method: :delete, remote: true %>
+    <%= link_to "♥#{post.favorites.count}", post_favorites_path(post), method: :delete, remote: true, class: "favorite-btn" %>
   <% else %>
-    <%= link_to "♥#{post.favorites.count}", post_favorites_path(post), method: :post, remote: true %>
+    <%= link_to "♥#{post.favorites.count}", post_favorites_path(post), method: :post, remote: true, class: "favorite-btn" %>
   <% end %>
 <% end %>
 
