@@ -10,7 +10,7 @@
       <div class="col-12 mt-3">
         <%= render 'follows', user: @user %>
         <% if current_user.id == @user.id %>
-          <%= link_to '編集する', edit_user_path(@user.id), class: 'my_page_btn btn btn-success' %>
+          <%= link_to '編集する', edit_user_path(@user.id), class: 'mypage-btn btn btn-success' %>
         <% end %>
       </div>
       <div class="col-12 mt-3">
