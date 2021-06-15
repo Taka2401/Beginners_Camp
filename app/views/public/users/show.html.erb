@@ -10,7 +10,7 @@
       <div class="col-12 mt-3">
         <%= render 'follows', user: @user %>
         <% if current_user.id == @user.id %>
-          <%= link_to '編集する', edit_user_path(@user.id), class: 'my_page_btn btn btn-success' %>
+          <%= link_to '編集する', edit_user_path(@user.id), class: 'mypage-btn btn btn-success' %>
         <% end %>
       </div>
       <div class="col-12 mt-3">
@@ -34,9 +34,9 @@
         <% end %>
       </ul>
     </div>
-    <div class="col-10 offset-md-1 tab-content">
+    <div class="col-10  tab-content">
       <div id="tab1" class="tab-pane fade in active">
-        <%= render 'posts', post: @post %>
+        <%= render 'posts', posts: @posts %>
       </div>
       <div id="tab2" class="tab-pane fade">
         <%= render 'favorites', like_posts: @like_posts %>

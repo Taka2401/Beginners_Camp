@@ -1,33 +1,29 @@
-<div class="container">
-  <div class="row">
-    <div class="col-11 text-center">
-      <table class="table table-hover mt-3">
-        <thead>
+  <div class="col-12 text-center mt-5">
+    <table class="table table-hover mt-3">
+      <thead>
+        <tr>
+          <th>キャンプ場</th>
+          <th>予約日時</th>
+          <th>チェックイン</th>
+          <th>チェックアウト</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% reservations.each do |reservation| %>
           <tr>
-            <th>キャンプ場</th>
-            <th>予約日時</th>
-            <th>チェックイン</th>
-            <th>チェックアウト</th>
+            <td><%= reservation.camp_place.name %></td>
+            <td>
+              <%= link_to user_reservation_path(user, reservation) do %>
+                <%= l reservation.created_at %>
+               <% end %>
+            </td>
+            <td><%= l reservation.start_date %></td>
+            <td><%= l reservation.end_date %></td>
           </tr>
-        </thead>
-        <tbody>
-          <% reservations.each do |reservation| %>
-            <tr>
-              <td><%= reservation.camp_place.name %></td>
-              <td>
-                <%= link_to user_reservation_path(user, reservation) do %>
-                  <%= l reservation.created_at %>
-                 <% end %>
-              </td>
-              <td><%= l reservation.start_date %></td>
-              <td><%= l reservation.end_date %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-12 mt-5 offset-md-3">
-      <%= paginate reservations, theme: 'twitter-bootstrap-4' %>
-    </div>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-</div>
+  <div class="col-12 mt-5 offset-md-3">
+    <%= paginate reservations, theme: 'twitter-bootstrap-4' %>
+  </div>

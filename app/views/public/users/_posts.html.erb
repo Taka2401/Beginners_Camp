@@ -1,28 +1,23 @@
-<div class="user_post">
-  <% post.each do |post| %>
-    <div class="row mt-5">
-      <div class="col-md-5 text-center">
+<div class="user-post">
+  <div class="d-flex flex-wrap mt-5">
+    <% posts.each do |post| %>
+      <div class="mypage-post-inner">
         <%= link_to  post_path(post.id) do %>
-          <%= attachment_image_tag post, :image, format: 'jpeg', size: "100x100", class: "rounded" %>
-        <% end %>
+          <%= attachment_image_tag post, :image, format: 'jpeg', size: "130x130", class: "rounded" %>
+        <% end %><br />
+        <div class="mt-2">
+          <%= post.title %>
+        </div>
+        <div class="row mypage-post-active">
+          <i class="far fa-comment-dots mypage-comment-active"><%= post.post_comments.count %></i>
+          <div id="favorites_buttons_<%= post.id %>">
+            <%= render partial: 'favorites/favorite', locals: {post: post} %>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6 ml-5">
-        <table class="table table-borderless">
-          <tbody>
-            <tr>
-              <td><p>タイトル</p><%= post.title %></td>
-            </tr>
-            <tr>
-              <td id="favorites_buttons_<%= post.id %>">
-                <%= render partial: 'favorites/favorite', locals: {post: post} %>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
   <div class="col-12 mt-5 offset-md-4">
-    <%= paginate post, theme: 'twitter-bootstrap-4' %>
+    <%= paginate posts, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>
