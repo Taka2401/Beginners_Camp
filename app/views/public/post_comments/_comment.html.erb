@@ -5,7 +5,7 @@
   </div>
 <% end %>
 <div id="favorites_buttons_<%= post.id %>">
-  <%= render partial: 'favorites/favorite', locals: {post: post} %>
+  <%= render partial: 'public/favorites/favorite', locals: {post: post} %>
 </div>
 <% post.post_comments.each do |post_comment| %>
   <div class="row post-comment mt-4">
