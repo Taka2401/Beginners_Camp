@@ -11,7 +11,7 @@
         <div class="row mypage-post-active">
           <i class="far fa-comment-dots mypage-comment-active"><%= post.post_comments.count %></i>
           <div id="favorites_buttons_<%= post.id %>">
-            <%= render partial: 'favorites/favorite', locals: {post: post} %>
+            <%= render partial: 'public/favorites/favorite', locals: {post: post} %>
           </div>
         </div>
       </div>
