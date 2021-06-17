@@ -43,7 +43,7 @@
 ![PF＿ER図](https://user-images.githubusercontent.com/79072615/122395611-1fd34580-cfb2-11eb-9452-e508cf068dea.png)
 
 # インフラ構成図
-![PF_インフラ構成図](https://user-images.githubusercontent.com/79072615/122412080-3ed8d400-cfc0-11eb-92e5-e89ca070736e.png)
+![PF＿インフラ構成図](https://user-images.githubusercontent.com/79072615/122415052-8b251380-cfc2-11eb-91dc-c14bde9c099e.png)
 
 ## 開発環境
 - OS：Linux(CentOS)
