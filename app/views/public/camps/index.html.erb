@@ -1,16 +1,17 @@
-<div class="container">
-  <div class="bg-slider">
-  <h1 class="bg-slider-title">Beginner’ｓ Camp</h1>
-</div>
-<div class="row mt-2">
-  <div class="row col-md-7 mt-5">
-    <%= render 'camp_places', camp_places: @camp_places %>
-    <%= render 'camp_items', camp_items: @camp_items %>
+  <div class="bg-slider-inner">
+    <div class="bg-slider"></div>
   </div>
-  <div class="row col-md-4 offset-md-1 mt-5">
-    <%= render 'recent_posts', posts: @posts %>
+  <div class="container">
+    <div class="row mt-2 ml-2">
+      <div class="row col-md-7 mt-5">
+        <%= render 'camp_places', camp_places: @camp_places %>
+        <%= render 'camp_items', camp_items: @camp_items %>
+      </div>
+      <div class="row col-md-4 offset-md-1 mt-5">
+        <%= render 'recent_posts', posts: @posts %>
+      </div>
+    </div>
+    <div class="row col-md-7">
+      <%= render 'tags', tags: @tags %>
+    </div>
   </div>
-</div>
-<div class="row col-md-7">
-  <%= render 'tags', tags: @tags %>
-</div>
