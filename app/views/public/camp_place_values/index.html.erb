@@ -1,45 +1,47 @@
 <div class="container">
   <div class="row">
-    <div class="col-6 offset-md-3">
-      <h3>口コミ一覧</h3>
-    </div>
-    <div class="col-8 offset-md-1">
-      <table class="table table-hover mt-5">
-        <thead>
-          <tr>
-            <th>ユーザー名</th>
-            <th>タイトル</th>
-            <th>評価</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @camp_places.each do |camp_place_value| %>
+    <div class="all-value-inner mt-5">
+      <div class="col-12 offset-md-3">
+        <h3>口コミ一覧</h3>
+      </div>
+      <div class="col-12">
+        <table class="table table-hover mt-5">
+          <thead>
             <tr>
-              <td><%= camp_place_value.user.name %>さん</td>
-              <td>
-                <%= link_to camp_place_camp_place_value_path(@camp_place, camp_place_value), class: "link-color" do %>
-                  <%= camp_place_value.title %>
-                <% end %>
-             </td>
-              <td id="star-rate1-<%= camp_place_value.id %>"></td>
-              <script>
-              $('#star-rate1-<%= camp_place_value.id %>').raty({
-                size: 30,
-                starOn: "<%= asset_path('star-on.png') %>",
-                starOff: "<%= asset_path('star-off.png') %>",
-                starHalf: "<%= asset_path('star-half.png') %>",
-                half: true,
-                readOnly: true,
-                score: "<%= camp_place_value.rate %>",
-              });
-              </script>
+              <th>ユーザー名</th>
+              <th>タイトル</th>
+              <th>評価</th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-12 mt-4 offset-md-3">
-      <%= paginate @camp_places, theme: 'twitter-bootstrap-4' %>
+          </thead>
+          <tbody>
+            <% @camp_places.each do |camp_place_value| %>
+              <tr>
+                <td><%= camp_place_value.user.name %>さん</td>
+                <td>
+                  <%= link_to camp_place_camp_place_value_path(@camp_place, camp_place_value), class: "link-color" do %>
+                    <%= camp_place_value.title %>
+                  <% end %>
+               </td>
+                <td id="star-rate1-<%= camp_place_value.id %>"></td>
+                <script>
+                $('#star-rate1-<%= camp_place_value.id %>').raty({
+                  size: 30,
+                  starOn: "<%= asset_path('star-on.png') %>",
+                  starOff: "<%= asset_path('star-off.png') %>",
+                  starHalf: "<%= asset_path('star-half.png') %>",
+                  half: true,
+                  readOnly: true,
+                  score: "<%= camp_place_value.rate %>",
+                });
+                </script>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 mt-4 offset-md-3">
+        <%= paginate @camp_places, theme: 'twitter-bootstrap-4' %>
+      </div>
     </div>
   </div>
 </div>

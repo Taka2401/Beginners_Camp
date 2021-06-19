@@ -1,26 +1,26 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8 offset-md-3">
-      <h5 class="d-inline-flex bg-light my-4"><%= @camp_item_value.user.name %>さんのレビュー</h5>
-    </div>
-    <div class="row offset-md-2">
-      <table class="table table-borderless">
-        <tbody>
-          <tr>
-            <td><p>タイトル</p><%= @camp_item_value.title %></td>
-          </tr>
-          <tr>
-            <td><p>内容</p><%= @camp_item_value.review %></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-md-12 offset-md-4">
-      <% if current_user.id == @camp_item_value.user_id %>
-        <%= link_to '削除する', camp_item_camp_item_value_path(@camp_item), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'glyphicon glyphicon-home btn btn-danger' %>
-      <% end %>
+    <div class="all-value-inner mt-5">
+      <div class="col-md-8 offset-md-3">
+        <h5 class="d-inline-flex bg-light"><%= @camp_item_value.user.name %>さんのレビュー</h5>
+      </div>
+      <div class="row offset-md-2">
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+              <td><p>タイトル</p><%= @camp_item_value.title %></td>
+            </tr>
+            <tr>
+              <td><p>内容</p><%= @camp_item_value.review %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-8 offset-md-4 mt-4">
+        <% if current_user.id == @camp_item_value.user_id %>
+          <%= link_to '削除する', camp_item_camp_item_value_path(@camp_item), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'btn btn-sm btn-danger' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

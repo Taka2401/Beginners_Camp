@@ -2,19 +2,21 @@
   <div class="col-12 offset-md-1 mt-2">
     <h3><i class="fas fa-edit"></i> 最近の投稿</h3>
   </div>
-    <% @posts.first(3).each do |post| %>
-        <div class="col-12 offset-md-1 mt-4">
-          <%= link_to post_path(post), class: "link-color" do %>
-            <%= attachment_image_tag(post, :image, format: 'jpeg', size: "180x180", class: "rounded") %> <br />
-            <div class="post-title mt-1">
-              <%= post.title %>
-            </div>
-          <% end %>
+  <% @posts.first(3).each do |post| %>
+    <div class="col-12 offset-md-1 mt-4">
+      <%= link_to post_path(post), class: "link-color" do %>
+        <%= attachment_image_tag(post, :image, format: 'jpeg', size: "180x180", class: "rounded") %> <br />
+        <div class="row">
+          <div class="post-title mt-1 ml-3">
+            <%= post.title %>
+          </div>
           <div id="favorites_buttons_<%= post.id %>">
             <%= render partial: 'public/favorites/favorite', locals: {post: post} %>
           </div>
+        <% end %>
         </div>
-    <% end %>
+    </div>
+  <% end %>
   <div class="row offset-md-4 mt-4">
     <div class="col-md-12">
      <%= link_to "もっと見る>>", posts_path, class: "float-right link-color" %>
