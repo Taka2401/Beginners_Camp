@@ -7,6 +7,7 @@ FactoryBot.define do
     after(:build) do |camp_place|
       camp_place.post_images << build(:post_image, camp_place: camp_place, image: File.open('spec/fixtures/no_image.jpg'))
     end
+
     association :admin
   end
 end
