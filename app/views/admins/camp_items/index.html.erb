@@ -8,25 +8,19 @@
         <i class="far fa-edit fa-3x post-btn"></i>
       <% end %>
     </div>
- </div>
-  <% @camp_items.each do |camp_item| %>
-    <div class="row offset-md-1 mt-5">
-      <div class="col-md-3 text-center mt-3">
-        <%= link_to (attachment_image_tag camp_item, :image, format: 'jpeg', size: "200x200", class: "rounded"), admins_camp_item_path(camp_item) %>
+    <% @camp_items.each do |camp_item| %>
+      <div class="d-flex flex-wrap mt-5 ml-2">
+        <div class="col-md-12 mt-3">
+          <%= link_to (attachment_image_tag camp_item, :image, format: 'jpeg', size: "200x200", class: "rounded"), admins_camp_item_path(camp_item) %>
+          <div class="col-12 mt-1">
+            <%= camp_item.name %>
+          </div>
+        </div>
       </div>
-      <div class="col-8 mt-3 font-weight-bold">
-        <table class="table table-borderless offset-md-3">
-          <tbody>
-            <tr>
-              <td><%= camp_item.name %></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+     <% end %>
+    <div class="col-12 mt-4 offset-md-5">
+      <%= paginate @camp_items, theme: 'twitter-bootstrap-4' %>
     </div>
-   <% end %>
-  <div class="col-12 mt-4 offset-md-5">
-    <%= paginate @camp_items, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>
 
