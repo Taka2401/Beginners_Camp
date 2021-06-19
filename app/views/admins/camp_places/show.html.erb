@@ -1,39 +1,39 @@
 <div class="container">
   <div class="row">
-    <% @camp_place.post_images.each  do |post_image| %>
-     <div class="d-flex flex-wrap mt-4 mt-5">
-       <div class="col-md-6 offset-md-11">
-         <%= attachment_image_tag post_image, :image, format: 'jpeg', size: "200x200", class: "rounded" %>
+    <div class="camp-place-inner">
+      <% @camp_place.post_images.each  do |post_image| %>
+       <div class="d-flex flex-wrap mt-4 ml-2">
+         <div class="col-md-12 offset-md-9">
+           <%= attachment_image_tag post_image, :image, format: 'jpeg', size: "200x200", class: "rounded" %>
+          </div>
         </div>
+      <% end %>
+      <div class="col-md-8 offset-md-2 mt-4">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td></td>
+              <td><%= @camp_place.name %></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><%= @camp_place.address %></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><%= @camp_place.introduction %></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>¥<%= @camp_place.fee %></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    <% end %>
-    <div class="col-md-8 offset-md-2 mt-4">
-      <table class="table">
-        <tbody>
-          <tr>
-            <td></td>
-            <td><%= @camp_place.name %></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><%= @camp_place.address %></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><%= @camp_place.introduction %></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>¥<%= @camp_place.fee %></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <%= link_to '編集する', edit_admins_camp_place_path(@camp_place), class: 'glyphicon glyphicon-home btn btn-success' %>
-      <%= link_to '削除する', admins_camp_place_path(@camp_place), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'glyphicon glyphicon-home btn btn-danger' %>
+      <div class="col-md-12 text-center">
+        <%= link_to '編集する', edit_admins_camp_place_path(@camp_place), class: 'glyphicon glyphicon-home btn btn-success' %>
+        <%= link_to '削除する', admins_camp_place_path(@camp_place), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'glyphicon glyphicon-home btn btn-danger' %>
+      </div>
     </div>
   </div>
 </div>
