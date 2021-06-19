@@ -1,40 +1,44 @@
 <div class="container">
-  <div class="row mt-5">
-    <div class="col-md-2 offset-md-2 text-center">
-      <%= attachment_image_tag(@user, :profile_image, format: 'jpeg', fallback: "user_image.jpg", size:'100x100', class: "user-image") %>
-      <div class="col-md-12 mt-2">
-        <%= @user.name %>
+  <div class="row">
+    <div class="user-inner text-center">
+      <div class="col-md-3">
+        <%= attachment_image_tag(@user, :profile_image, format: 'jpeg', fallback: "user_image.jpg", size:'100x100', class: "user-image") %>
+        <div class="col-md-12 mt-2">
+          <%= @user.name %>
+        </div>
       </div>
-    </div>
-    <div class="col-md-6">
-      <div class="col-12 mt-3">
-        <%= render 'follows', user: @user %>
-        <% if current_user.id == @user.id %>
-          <%= link_to '編集する', edit_user_path(@user.id), class: 'mypage-btn btn btn-success' %>
-        <% end %>
-      </div>
-      <div class="col-12 mt-3">
-        <%= @user.introduction %>
+      <div class="col-md-9 mt-3">
+        <div>
+          <%= render 'follows', user: @user %>
+          <% if current_user.id == @user.id %>
+            <%= link_to '編集する', edit_user_path(@user.id), class: 'follow-btn btn btn-success' %>
+          <% end %>
+        </div>
+        <div class="col-12 mt-3">
+          <%= @user.introduction %>
+        </div>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-10 offset-md-2 mt-5">
-      <ul class="nav">
+    <div class="col-7 offset-md-2 mt-4">
+      <ul class="nav tab-inner">
         <li class="tab-item">
-          <a id="tab-target-1" href="#tab1" class="tab-link link-color" data-toggle="tab">投稿一覧</a>
+          <a id="tab-target-1" href="#tab1" class="tab link-color" data-toggle="tab">投稿一覧</a>
         </li>
         <li class="tab-item">
-          <a href="#tab2" class="tab-link link-color" data-toggle="tab">いいねした投稿</a>
+          <a href="#tab2" class="tab link-color" data-toggle="tab">いいねした投稿</a>
         </li>
         <% if current_user.id == @user.id %>
           <li class="tab-item">
-            <a href="#tab3" class="tab-link link-color" data-toggle="tab">予約一覧</a>
+            <a href="#tab3" class="tab link-color" data-toggle="tab">予約一覧</a>
           </li>
         <% end %>
       </ul>
     </div>
-    <div class="col-10  tab-content">
+  </div>
+  <div class="tab-content-inner">
+    <div class="col-12  tab-content">
       <div id="tab1" class="tab-pane fade in active">
         <%= render 'posts', posts: @posts %>
       </div>
@@ -42,12 +46,11 @@
         <%= render 'favorites', like_posts: @like_posts %>
       </div>
       <% if current_user.id == @user.id %>
-        <div id="tab3" class="tab-pane fade">
+        <div id="tab3" class="tab-pane fade text-center">
           <%= render 'public/reservations/index', user: @user, reservations: @reservations %>
         </div>
       <% end %>
     </div>
-   </div>
   </div>
 </div>
 

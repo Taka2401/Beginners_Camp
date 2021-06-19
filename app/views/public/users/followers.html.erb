@@ -1,28 +1,30 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 offset-md-3 mt-3">
-      <h5><%= @user.name %>さんをフォローしているユーザー</h5>
+    <div class="follow-inner">
+      <div class="col-md-12 text-center mt-3">
+        <h5><%= @user.name %>さんをフォローしているユーザー</h5>
+      </div>
+      <div class="row">
+        <div class="col-md-9 offset-md-1">
+          <table class="table table-hover border-bottom mt-5">
+            <% @users.each do |user| %>
+              <tbody>
+                <tr>
+                  <td>
+                    <%= link_to  user_path(user) do %>
+                      <%= attachment_image_tag(user, :profile_image, format: 'jpeg', fallback: "user_image.jpg", size:'50x50', class: "user-image") %>
+                    <% end %>
+                  </td>
+                  <td><%= user.name %></td>
+                  </tr>
+              </tbody>
+            <% end %>
+          </table>
+        </div>
+      </div>
+      <div class="col-12 mt-4 offset-md-5">
+        <%= paginate @users, theme: 'twitter-bootstrap-4' %>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-9 offset-md-1">
-      <table class="table table-hover border-bottom mt-5">
-        <% @users.each do |user| %>
-          <tbody>
-            <tr>
-              <td>
-                <%= link_to  user_path(user) do %>
-                  <%= attachment_image_tag(user, :profile_image, format: 'jpeg', fallback: "user_image.jpg", size:'50x50', class: "user-image") %>
-                <% end %>
-              </td>
-              <td><%= user.name %></td>
-              </tr>
-          </tbody>
-        <% end %>
-      </table>
-    </div>
-  </div>
-  <div class="col-12 mt-4 offset-md-5">
-    <%= paginate @users, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>

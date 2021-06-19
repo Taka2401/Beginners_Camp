@@ -29,6 +29,7 @@
 header{
   width: 100%;
   height: 60px;
+  padding-bottom: 80px;
   background-color: #FFFFFF;
   opacity: 0.9;
 }
@@ -67,6 +68,23 @@ footer{
   line-height: 40px;
 }
 
+/* 登録画面 */
+
+.login-inner {
+  width: 100%;
+  padding: 50px 0;
+  margin: 50px 150px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
+}
+
+.login-form {
+  height: 40px;
+  width: 100%;
+}
+
 /* TOP画面 */
 
 .bg-slider {
@@ -82,6 +100,8 @@ footer{
 }
 
 .camp-place-inner {
+  padding: 35px;
+  margin: 20px auto;
   flex-wrap: wrap;
   display: flex;
   border: 1px solid #000000;
@@ -91,6 +111,7 @@ footer{
 }
 
 .camp-item-inner {
+  padding: 30px;
   flex-wrap: wrap;
   display: flex;
   border: 1px solid #000000;
@@ -109,13 +130,13 @@ footer{
 }
 
 .recent-post-inner {
-  padding: 12px 40px 40px 0;
+  padding: 30px 40px 40px 0;
+  margin: 20px 0 0 70px;
   border: 1px solid #000000;
   border-radius: 5px;
   background-color: #FFFFFF;
   box-shadow: 10px 10px 10px -10px;
 }
-
 
 /* about画面 */
 
@@ -123,11 +144,6 @@ footer{
   width: 100%;
   height: 50vw;
   object-fit: cover;
-}
-
-.login-form {
-  height: 40px;
-  width: 100%;
 }
 
 /* フラッシュメッセージ */
@@ -151,7 +167,7 @@ footer{
 }
 
 #error_explanation {
-  width: 530px;
+  width: 500px;
   background-color: #fcf8e3;
   border: 2px solid #faebcc;
   border-radius: 4px;
@@ -224,6 +240,17 @@ footer{
   color: #33CC00;
 }
 
+.all-post-inner {
+  margin: 50px auto;
+  flex-wrap: wrap;
+  display: flex;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px -10px;
+  background-color: #FFFFFF;
+}
+
+
 .post-inner {
   width: 220px;
   border: 1px solid #33CC00;
@@ -240,14 +267,26 @@ footer{
   border: 1px solid #33CC00;
   border-radius: 5px;
   padding: 10px 1px 10px 15px;
-  margin: 0 0 70px 120px;
+  margin: 80px;
   font-size: 13px;
   font-weight: 1000;
   box-shadow: 10px 10px 10px -10px;
 }
 
+.post-content-inner {
+  width: 100%;
+  padding: 50px;
+  margin: 50px auto;
+  flex-wrap: wrap;
+  display: flex;
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px -10px;
+}
+
 .post-title {
-  width: 200px;
+  width: 150px;
   font-size: 13px;
   white-space: nowrap;
   overflow: hidden;
@@ -276,6 +315,11 @@ footer{
   margin-right: 3px;
 }
 
+.comment-form {
+  padding-left: 35px;
+
+}
+
 .mypage-comment-active {
   padding-top: 2px;
   margin-right: 3px;
@@ -296,29 +340,104 @@ footer{
 }
 
 .new-comment  {
+  padding-left: 25px;
   width: 70px;
 }
 
 .post-comment {
   width: 630px;
   word-wrap: break-word;
+  font-size: 13px;
 }
 
+.btn-sm {
+  font-size: 8px;
+}
 
 /* マイページ関連 */
 
-.mypage-btn {
+.follow-btn {
   font-size: 6px;
   margin-left: 30px;
+}
+
+.user-inner {
+  flex-wrap: wrap;
+  display: flex;
+  padding: 20px 0 20px 20px;
+  margin: 50px 280px 0 280px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
+}
+
+.all-user-inner {
+  width: 80%;
+  padding: 20px;
+  margin: 50px auto;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
 }
 
 .user-post {
   font-size: 12px;
 }
 
-.tab-link {
+.tab {
   border: none;
-  margin-right: 150px;
+  margin-left: 40px;
+}
+
+.tab-inner {
+  padding: 20px 0;
+  margin: 0 50px 0 160px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
+}
+
+.tab-content-inner {
+  margin: 50px auto;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
+}
+
+.follow-inner {
+  width: 100%;
+  margin: 30px auto;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
+}
+
+/* ランキング関連 */
+
+.rank-title-inner {
+  width: 500px;
+  padding: 30px;
+  margin: 50px auto;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
+}
+
+.rank-inner {
+  padding: 20px 20px 20px 50px;
+  margin: 10px;
+  flex-wrap: wrap;
+  display: flex;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
 }
 
 /* リンク関連 */
@@ -333,6 +452,52 @@ footer{
  #map {
   height: 300px;
   width: 80%;
+  z-index: 3;
 }
+
+/* 一覧ページ */
+
+.all-content-inner {
+  padding: 35px;
+  margin: 50px auto;
+  flex-wrap: wrap;
+  display: flex;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
+}
+
+.all-value-inner {
+  width: 80%;
+  padding: 50px;
+  margin: 50px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
+}
+
+/* 予約ページ */
+
+.reservation-inner {
+  width: 100%;
+  padding: 20px;
+  margin: 30px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
