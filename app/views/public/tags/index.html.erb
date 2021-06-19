@@ -1,16 +1,18 @@
 <div class="container">
   <div class="row">
-    <% @tags.each do |tag| %>
-      <div class="d-flex flex-wrap mt-3 ml-4">
-        <div class="col-12 tag-box">
-          <%= link_to tag_path(tag.id), class: "link-color" do %>
-            <i class="fas fa-hashtag"></i> <%= tag.name %>
-          <% end %>
+    <div class="all-content-inner mt-5">
+      <% @tags.each do |tag| %>
+        <div class="d-flex flex-wrap mt-3 ml-4">
+          <div class="col-12 tag-box">
+            <%= link_to tag_path(tag.id), class: "link-color" do %>
+              <i class="fas fa-hashtag"></i> <%= tag.name %>
+            <% end %>
+          </div>
         </div>
+      <% end %>
+      <div class="col-12 mt-4 offset-md-5">
+        <%= paginate @tags, theme: 'twitter-bootstrap-4' %>
       </div>
-    <% end %>
-  </div>
-  <div class="col-12 mt-4 offset-md-5">
-    <%= paginate @tags, theme: 'twitter-bootstrap-4' %>
+    </div>
   </div>
 </div>
