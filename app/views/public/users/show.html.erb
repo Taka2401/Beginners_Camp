@@ -40,10 +40,18 @@
   <div class="tab-content-inner">
     <div class="col-12  tab-content">
       <div id="tab1" class="tab-pane fade in active">
-        <%= render 'posts', posts: @posts %>
+        <% if @user.posts.any? %>
+          <%= render 'posts', posts: @posts %>
+        <% else %>
+          <p class="text-center mt-3">投稿はありません</p>
+        <% end %>
       </div>
       <div id="tab2" class="tab-pane fade">
-        <%= render 'favorites', like_posts: @like_posts %>
+        <% if @like_posts.any? %>
+          <%= render 'favorites', like_posts: @like_posts %>
+        <% else %>
+          <p class="text-center mt-3">いいねした投稿はありません</p>
+        <% end %>
       </div>
       <% if current_user.id == @user.id %>
         <div id="tab3" class="tab-pane fade text-center">
