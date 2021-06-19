@@ -13,7 +13,7 @@
                 <div class="post-title col-12 mt-1">
                   <%= post.title %>
                 </div>
-                <div id="favorites_buttons_<%= post.id %>">
+                <div id="favorites_buttons_<%= post.id %>", class="mt-1">
                  <%= render partial: 'public/favorites/favorite', locals: {post: post} %>
                 </div>
               </div>
