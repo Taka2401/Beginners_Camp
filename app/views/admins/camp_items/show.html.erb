@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row mt-5">
+  <div class="row">
     <div class="col-md-3 offset-md-1 mt-5">
       <%= attachment_image_tag @camp_item, :image, format: 'jpeg', size: "200x200", class: "rounded" %>
     </div>
@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="row mt-5">
-    <div class="col-md-12 text-center">
+    <div class="col-md-7 offset-md-6 mt-5">
       <%= link_to '編集する', edit_admins_camp_item_path(@camp_item), class: 'glyphicon glyphicon-home btn btn-success' %>
       <%= link_to '削除する', admins_camp_item_path(@camp_item), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'glyphicon glyphicon-home btn btn-danger' %>
     </div>

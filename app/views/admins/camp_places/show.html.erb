@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row mt-5">
+  <div class="row">
     <% @camp_place.post_images.each  do |post_image| %>
-     <div class="d-flex flex-wrap mt-4">
+     <div class="d-flex flex-wrap mt-4 mt-5">
        <div class="col-md-6 offset-md-11">
          <%= attachment_image_tag post_image, :image, format: 'jpeg', size: "200x200", class: "rounded" %>
         </div>
@@ -30,7 +30,7 @@
       </table>
     </div>
   </div>
-  <div class="row mt-5">
+  <div class="row">
     <div class="col-md-12 text-center">
       <%= link_to '編集する', edit_admins_camp_place_path(@camp_place), class: 'glyphicon glyphicon-home btn btn-success' %>
       <%= link_to '削除する', admins_camp_place_path(@camp_place), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'glyphicon glyphicon-home btn btn-danger' %>
