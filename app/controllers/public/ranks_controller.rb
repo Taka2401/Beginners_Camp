@@ -6,5 +6,4 @@ class Public::RanksController < ApplicationController
     @camp_place_ranks = CampPlace.rank
     @camp_item_ranks = CampItem.rank
   end
-
 end

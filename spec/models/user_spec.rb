@@ -10,6 +10,7 @@ RSpec.describe User, type: :model do
 
     context 'name' do
       subject(:user) { FactoryBot.build(:user) }
+
       it '空白でないこと' do
         user.name = ''
         expect(user).to be_invalid
@@ -37,6 +38,7 @@ RSpec.describe User, type: :model do
 
     context 'email' do
       subject(:user) { FactoryBot.build(:user) }
+
       it '空白でないこと' do
         user.email = ''
         expect(user).to be_invalid
@@ -54,6 +56,7 @@ RSpec.describe User, type: :model do
 
     context 'password' do
       subject(:user) { FactoryBot.build(:user) }
+
       it '空白だと登録できないこと' do
         user.password = ''
         expect(user).to be_invalid
@@ -88,7 +91,8 @@ RSpec.describe User, type: :model do
     end
 
     context 'profile_image_id' do
-      subject(:user) {FactoryBot.build(:user)}
+      subject(:user) { FactoryBot.build(:user) }
+
       it 'nilでも登録できること' do
         user.profile_image_id = nil
         expect(user).to be_valid
@@ -97,7 +101,8 @@ RSpec.describe User, type: :model do
     end
 
     context 'introduction' do
-      subject(:user) {FactoryBot.build(:user)}
+      subject(:user) { FactoryBot.build(:user) }
+
       it 'nilでも登録できること' do
         user.introduction = nil
         expect(user).to be_valid
