@@ -387,7 +387,8 @@ footer{
   border-radius: 150px;
 }
 
-.table {
+.table td{
+  max-width: 200px;
   border-top-style: none;
 }
 
@@ -523,13 +524,19 @@ footer{
 }
 
 .all-value-inner {
-  width: 80%;
-  padding: 50px;
-  margin: 50px;
+  width: 800px;
+  padding: 20px 50px;
+  margin: 50px auto;
+  word-wrap: break-word;
   border: 1px solid #000000;
   border-radius: 5px;
   background-color: #FFFFFF;
   box-shadow: 10px 10px 10px -10px;
+}
+
+.value-detail {
+  width: 250px;
+  word-wrap: break-word;
 }
 
 /* 予約ページ */
@@ -702,7 +709,7 @@ footer{
   .camp-place-inner {
     width: 100%;
     display: block;
-    margin: 0 auto;
+    margin: 20px;
     text-align: center;
   }
 
@@ -738,16 +745,12 @@ footer{
     margin: 20px;
   }
 
-  .table td {
-    padding-left: 5px;
-  }
-
   /* 口コミ関連 */
 
   .all-value-inner {
     width: 100%;
     padding: 10px;
-    margin: 0 auto;
+    margin: 15px;
     font-size: 12px;
     font-weight: 1000;
     text-align: center;
