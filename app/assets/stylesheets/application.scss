@@ -414,10 +414,12 @@ footer{
 }
 
 .user-inner {
+  width: 550px;
   flex-wrap: wrap;
   display: flex;
-  padding: 10px;
+  padding: 20px;
   margin: 30px auto;
+  word-wrap: break-word;
   border: 1px solid #000000;
   border-radius: 5px;
   background-color: #FFFFFF;
@@ -482,7 +484,7 @@ footer{
 }
 
 .rank-inner {
-  padding: 20px 20px 20px 50px;
+  padding: 50px 20px 20px 50px;
   margin: 10px;
   flex-wrap: wrap;
   display: flex;
@@ -640,8 +642,8 @@ footer{
   }
 
   .post-title {
-    width: 100px;
-    padding-left: 20px;
+    width: 200px;
+    padding-left: 50px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -900,13 +902,7 @@ footer{
     font-weight: 1000;
   }
 
-  .follw-user {
-
-  }
-
 }
-
-
 
 
 
