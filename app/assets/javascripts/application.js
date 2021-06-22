@@ -30,11 +30,11 @@ window.onpageshow = function(event) {
   }
     /*global $*/
     $('#tab-target-1').tab('show');
-    
+
     $('.bg-slider').bgSwitcher({
       images: ['img/camp_image.10.jpg','img/camp_image.11.jpg','img/camp_image.12.jpg','img/camp_image.13.jpg'],
     });
-    
+
     $(document).ready(function () {
       $("#slider").skippr({
         transition : 'slide',
