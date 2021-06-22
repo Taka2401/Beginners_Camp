@@ -3,7 +3,7 @@
     <div class="reservation-inner">
       <%= form_with(model: @reservation, url: camp_place_reservations_confirm_path(@camp_place), local: true) do |f| %>
         <div class="col-md-7 mx-auto mt-2">
-          <div class="row offset-md-1">
+          <div class="row col-12 offset-md-1">
             <%= render 'layouts/error_messages', object: f.object %>
           </div>
           <table class="table table-bordered">

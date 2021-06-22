@@ -1,8 +1,8 @@
   <div class="row mt-5">
     <div class="rank-inner">
       <div class="row">
-        <div class="col-12 mt-2 ml-3">
-          <h3 strong><i class="fas fa-campground"></i> 人気のキャンプ用品TOP3</strong></h3>
+        <div class="col-12">
+          <h3 class="rank-title"><strong><i class="fas fa-campground"></i> 人気のキャンプ用品TOP3</strong></h3>
         </div>
         <% camp_item_ranks.first(3).each.with_index(1) do |camp_item, i| %>
           <div class="d-flex flex-wrap mt-4 ml-4">
@@ -15,7 +15,7 @@
                 <div class="col-12">
                   <%= camp_item.name %>
                 </div>
-            <div class="row col-12 offset-md-1" id="star-rate2-<%= camp_item.id %>"></div>
+            <div class="row col-12 offset-md-1 rank-value" id="star-rate2-<%= camp_item.id %>"></div>
               <script>
               $('#star-rate2-<%= camp_item.id %>').raty({
                 size: 30,

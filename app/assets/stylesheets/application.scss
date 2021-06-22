@@ -53,10 +53,10 @@ header{
   padding-right: 10px;
 }
 
-.humberger {
+.fa-bars {
   position: fixed;
-  right: 30px;
-  top: 42px;
+  top: 35px;
+  right: 20px;
 }
 
 main {
@@ -94,6 +94,10 @@ footer{
   width: 100%;
 }
 
+.password {
+  padding-left: 20px;
+}
+
 /* TOP画面 */
 
 .bg-slider {
@@ -121,6 +125,7 @@ footer{
 
 .camp-item-inner {
   padding: 30px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
   display: flex;
   border: 1px solid #000000;
@@ -130,7 +135,8 @@ footer{
 }
 
 .tag-inner {
-  padding: 12px 40px 40px 20px;
+  width: 715px;
+  padding: 20px;
   margin-left: 10px;
   border: 1px solid #000000;
   border-radius: 5px;
@@ -153,6 +159,33 @@ footer{
   width: 100%;
   height: 50vw;
   object-fit: cover;
+}
+
+.slide-inner {
+  padding: 15px;
+  margin: 10px auto;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
+}
+
+.about-title {
+  padding: 20px 0;
+  margin: 40px 200px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
+}
+
+.about-content {
+  padding: 50px 20px;
+  margin: 30px auto;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
 }
 
 /* フラッシュメッセージ */
@@ -238,6 +271,17 @@ footer{
   font-size: 12px;
   color: #000000;
 }
+
+.tag-content-inner {
+  padding: 35px;
+  margin: 50px auto;
+  flex-wrap: wrap;
+  display: flex;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
+  }
 
 /* 投稿関連 */
 
@@ -500,6 +544,367 @@ footer{
 
 
 
+/* レスポンシブ */
+@media screen and (max-width:425px) {
+
+  /* ヘッダー */
+
+  .humberger {
+    position: fixed;
+    right: 10px;
+    top: 42px;
+    padding-top: 10px;
+  }
+
+  .navbar-brand {
+    width: 120px;
+  }
+
+  .navbar-collapse {
+    height: 270px;
+    margin: 10px 0 0 220px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 10px 10px 10px -10px;
+    opacity: 0.9;
+  }
+
+  .guest-nav {
+    height: 150px;
+    padding: 5px 5px 0 12px;
+    margin: 10px 0 0 182px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 10px 10px 10px -10px;
+    opacity: 0.9;
+  }
+
+  img.header-logo {
+    width: 120px;
+    padding-top: 20px;
+  }
+
+  .search-item {
+    padding-top: 10px;
+  }
+
+  .search-box {
+    width: 150px;
+    position: relative;
+    border: 1px solid #aaa;
+    border-radius: 150px;
+    margin-right: 50px;
+  }
+
+   .btn {
+    margin: 5px 20px;
+  }
+
+  /* エラーメッセージ */
+
+  #error_explanation {
+    width: 100%;
+    margin: 10px 20px;
+    font-size: 11px;
+    font-weight: 1000;
+  }
+
+  /* ログインページ */
+
+  .login-inner {
+    padding: 20px 30px;
+    margin: 30px;
+  }
+
+  .login {
+    width: 300px;
+    padding-left: 0;
+    margin-right: 20px;
+  }
+
+  /* TOPページ */
+
+  .camp-content {
+    max-width: 260px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .recent-post-inner {
+    width: 100%;
+    padding: 30px 30px 30px 50px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .post-title {
+    width: 100px;
+    padding-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .tag-inner {
+    width: 360px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .tag-all {
+    margin-left: 200px;
+  }
+
+  .camp-value {
+    padding-left: 60px;
+  }
+
+   /* about画面 */
+
+  #box {
+    width: 100%;
+    margin: 40px auto;
+  }
+
+  .about-title {
+    padding: 20px 0;
+    margin: 0 auto;
+  }
+
+  .about-text {
+    word-wrap: break-word;
+    font-size: 12px;
+    font-weight: 650;
+  }
+
+  .about-detail {
+    margin: 10px auto;
+    font-size: 20px;
+    font-weight: 1000;
+  }
+
+  .about-image {
+    margin: 30px 0;
+  }
+
+  .about-content {
+    padding: 30px 0;
+    margin: 30px auto;
+    text-align: center;
+  }
+
+  /* キャンプコンテンツ関連 */
+
+  .camp-place-inner {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .camp-item-inner {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #map {
+    width: 100%;
+  }
+
+  .all-content-inner {
+    width: 100%;
+    padding: 30px 30px 20px 10px;
+    margin: 20px;
+    display: block;
+    text-align: center;
+  }
+
+  .tag-content-inner {
+    width: 100%;
+    padding: 20px 20px 20px 50px;
+    margin: 20px;
+    display: block;
+  }
+
+  /* 予約関連 */
+
+  .reservation-inner {
+    padding: 10px 0;
+    margin: 20px;
+  }
+
+  .table td {
+    padding-left: 5px;
+  }
+
+  /* 口コミ関連 */
+
+  .all-value-inner {
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 12px;
+    font-weight: 1000;
+    text-align: center;
+  }
+
+  .form-label {
+    padding: 9px 0 0 50px;
+  }
+
+  .form-control {
+    width: 280px;
+  }
+
+  .value-content {
+    padding-left: 110px;
+  }
+
+  .required-form {
+    margin-right: 50px;
+  }
+
+  /* 投稿関連 */
+
+  .all-post-inner {
+    margin: 20px;
+    padding: 0 20px;
+  }
+
+  .post-inner {
+    width: 100%;
+    margin: 15px 50px;
+  }
+
+  .post-btn {
+    margin: 0 120px;
+  }
+
+  .post-content-inner {
+    width: 100%;
+    padding: 30px 10px;
+    margin: 20px;
+    text-align: center;
+  }
+
+  .comment-form {
+    width: 100%;
+  }
+
+  .new-comment {
+    margin: 0 35px 0 150px;
+  }
+
+  .post-comment {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  .comment-user {
+    width: 70px;
+    padding-top: 15px;
+  }
+
+  .comment {
+    width: 200px;
+  }
+
+  .preview-form {
+    width: 260px;
+    margin: 0 40px 0 70px;
+  }
+
+  .image-form {
+    width: 100%;
+  }
+
+  .image-select {
+    margin-left: 50px;
+  }
+
+  .tag {
+    padding-top: 8px;
+  }
+
+  .tag-form {
+    margin: 8px 0 20px 20px;
+  }
+
+  /* ランキング関連 */
+
+  .rank-title-inner {
+    padding: 20px 10px;
+    margin: 30px 20px;
+    font-size: 20px;
+  }
+
+  .rank-inner {
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+  }
+
+  .rank-title {
+    font-size: 20px;
+  }
+
+  .rank-value {
+    padding-left: 120px;
+  }
+
+   /* マイページ */
+
+  .user-inner {
+    width: 90%;
+    margin: 20px 0 0 20px ;
+    word-wrap: break-word;
+  }
+
+  .tab-inner {
+    width: 380px;
+    margin: 20px 0 0 0;
+  }
+
+  .tab {
+    padding: 0;
+  }
+
+  .mypage-post-inner {
+    padding: 10px;
+    margin: 30px auto;
+  }
+
+  .tab-content-inner {
+    width: 100%;
+    font-size: 10px;
+    font-weight: 1000;
+
+    .table th, .table td {
+      max-width: 10px;
+      padding: 10px 0;
+    }
+  }
+
+  .follow-inner {
+    margin: 20px;
+    padding: 10px;
+  }
+
+  .follw-title {
+    font-size: 17px;
+    font-weight: 1000;
+  }
+
+  .follw-user {
+
+  }
+
+}
 
 
 

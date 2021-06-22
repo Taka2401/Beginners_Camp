@@ -1,7 +1,9 @@
 <header class="sticky-top">
   <nav class="navbar navbar-expand-lg navbar-dark">
       <h1 class="navbar-brand font-weight-bold">
-        <%= link_to image_tag("Beginner's Camp.logo.png"), root_path, class: "header-logo" %>
+        <%= link_to root_path do %>
+          <%= image_tag asset_path("Beginner's Camp.logo.png"), class: "header-logo" %>
+        <% end %>
       </h1>
 
       <button class="navbar-toggler toggler-example humberger" type="button" data-toggle="collapse" data-target="#navbarTabContent" aria-controls="navbarTabContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +40,7 @@
         </div>
       <% else %>
       <!-- ログインしていない時 -->
-        <div class="collapse navbar-collapse" id="navbarTabContent">
+        <div class="collapse navbar-collapse guest-nav" id="navbarTabContent">
           <ul class="navbar-nav font-weight-bold">
             <li class="nav-item"><%= link_to "Beginner'sCampとは", about_path, class: 'nav-link' %></li>
             <li class="nav-item ml-1"><%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %></li>
