@@ -29,7 +29,7 @@ class Public::ReservationsController < ApplicationController
       render action: :new
     end
 
-    # チェックインの月までを算出し、チェックアウトの日付を計算
+    # チェックインを算出し、チェックアウトの日付を計算
     if @reservation.start_date.present?
       year = @reservation.start_date.year
       month = @reservation.start_date.month
