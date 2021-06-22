@@ -571,7 +571,7 @@ footer{
 
   .navbar-collapse {
     height: 270px;
-    margin: 10px 0 0 220px;
+    margin: 10px 0 0 180px;
     border: 1px solid #000000;
     border-radius: 5px;
     background-color: #FFFFFF;
@@ -707,15 +707,10 @@ footer{
   /* キャンプコンテンツ関連 */
 
   .camp-place-inner {
-    width: 100%;
-    display: block;
-    margin: 20px;
     text-align: center;
   }
 
   .camp-item-inner {
-    width: 100%;
-    margin: 0 auto;
     text-align: center;
   }
 
@@ -725,7 +720,7 @@ footer{
 
   .all-content-inner {
     width: 100%;
-    padding: 30px 30px 20px 10px;
+    padding: 20px;
     margin: 20px;
     display: block;
     text-align: center;
@@ -741,8 +736,14 @@ footer{
   /* 予約関連 */
 
   .reservation-inner {
-    padding: 10px 0;
+    padding: 10px;
     margin: 20px;
+    font-size: 8px;
+
+     .table th, .table td {
+      max-width: 10px;
+      padding: 10px 5px;
+    }
   }
 
   /* 口コミ関連 */
@@ -903,6 +904,14 @@ footer{
   .follw-title {
     font-size: 17px;
     font-weight: 1000;
+  }
+
+   /* admin関連 */
+
+  .all-user-inner {
+    padding: 15px;
+    margin: 20px auto;
+    font-size: 10px;
   }
 
 }
