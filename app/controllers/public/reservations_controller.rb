@@ -38,12 +38,11 @@ class Public::ReservationsController < ApplicationController
       if @reservation.day == "２泊３日"
         @camp_place.fee = @camp_place.fee * 2
         @reservation.total_fee = @reservation.total_fee * 2
-        @reservation.end_date =Time.zone.parse("#{year}-#{month}-#{day} 11:00") + 2.days
+        @reservation.end_date = Time.zone.parse("#{year}-#{month}-#{day} 11:00") + 2.days
       else
         @reservation.end_date = Time.zone.parse("#{year}-#{month}-#{day} 11:00") + 1.days
       end
     end
-
   end
 
   def create
