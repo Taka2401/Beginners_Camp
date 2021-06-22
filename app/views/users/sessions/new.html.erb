@@ -3,7 +3,7 @@
     <div class="login-inner">
       <%= form_with model: @user, url: user_session_path, id: 'new_user', local: true do |f|%>
       <div class="col-md-8 offset-md-2">
-        <div class="row offset-md-5">
+        <div class="row col-12 offset-md-4">
           <strong><%= f.label :メールアドレス %></strong>
         </div>
         <div class="row mt-3">
@@ -11,21 +11,21 @@
         </div>
       </div>
       <div class="col-md-8 offset-md-2 mt-4">
-        <div class="row offset-md-5">
-          <strong><%= f.label :パスワード %></strong>
+        <div class="row col-12 offset-md-4">
+          <strong><%= f.label :パスワード, {class: 'password'}  %></strong>
         </div>
         <div class="row mt-3">
           <%= f.password_field :password, autocomplete: "current_password", class: "login-form" %>
         </div>
       </div>
       <div class="row mt-5">
-        <div class="col-md-8 offset-md-2">
+        <div class="col-md-8 offset-md-2 login">
           <%= f.submit "ログイン", class: "login-form glyphicon glyphicon-home btn btn-primary" %>
           <% end %>
         </div>
       </div>
       <div class="row mt-5">
-        <div class="col-md-8 offset-md-2">
+        <div class="col-md-8 offset-md-2 login">
           <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post,  class: "login-form glyphicon glyphicon-home btn btn-success" %>
         </div>
       </div>

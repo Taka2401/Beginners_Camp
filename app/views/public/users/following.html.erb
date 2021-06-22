@@ -2,11 +2,11 @@
   <div class="row">
     <div class="follow-inner">
       <div class="col-md-6 offset-md-3 mt-3">
-        <h5><%= @user.name %>さんがフォローしているユーザー</h5>
+        <h5 class="follw-title"><%= @user.name %>さんがフォローしているユーザー</h5>
       </div>
       <div class="row">
         <div class="col-md-9 offset-md-1">
-          <table class="table table-hover border-bottom mt-5">
+          <table class="table table-hover border-bottom mt-5 follw-user">
             <% @users.each do |user| %>
               <tbody>
                 <tr>
