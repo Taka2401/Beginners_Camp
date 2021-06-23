@@ -13,10 +13,10 @@ https://beginners-camp.net/
   - Javascript
   - Bootstrap
  ## バックエンド
-　- Ruby 2.6.3
-　- Ruby on Rails 5.2.6
-　- Rubocop（コード解析ツール)
-　- Rspec（テスト)
+  - Ruby 2.6.3
+  - Ruby on Rails 5.2.6
+  - Rubocop（コード解析ツール)
+  - Rspec（テスト)
  ## インフラ
   - MySQL 5.7.22 / Puma / Nginx
   - GitHub Actions(CI/CD)
