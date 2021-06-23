@@ -7,6 +7,21 @@
 ## URL
 https://beginners-camp.net/
 
+## 使用技術
+ ## フロントエンド
+  - HTML/CSS
+  - Javascript
+  - Bootstrap
+ ## バックエンド
+　- Ruby 2.6.3
+　- Ruby on Rails 5.2.6
+　- Rubocop（コード解析ツール)
+　- Rspec（テスト)
+ ## インフラ
+  - MySQL 5.7.22 / Puma / Nginx
+  - GitHub Actions(CI/CD)
+  - AWS(Cloud9、VPC、ACM、Route53、IAM、ALB、EC2、RDS、S3、CloudFront)
+
 ## サイト概要
 キャンプをしてみたい！でも、キャンプ場の予約や用品を準備するのに時間が掛かりませんか？<br />
 
@@ -49,13 +64,6 @@ https://beginners-camp.net/
 
 # インフラ構成図
 ![PF_インフラ構成図](https://user-images.githubusercontent.com/79072615/122544018-55863600-d067-11eb-813e-96ea1b9d35f9.png)
-
-## 開発環境
-- OS：Linux(CentOS)
-- 言語：HTML,CSS,JavaScript,Ruby,SQL
-- フレームワーク：Ruby on Rails
-- JSライブラリ：jQuery
-- IDE：Cloud9
 
 ## 使用素材
 【画像素材】<br />
