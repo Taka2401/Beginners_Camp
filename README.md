@@ -2,6 +2,8 @@
 # Beginner's Camp
 **キャンプを始めたい、初心者向けに特化した情報を提供するWebアプリです！**
 
+![Beginner's Camp top](https://user-images.githubusercontent.com/79072615/123040710-24bf4b80-d42f-11eb-9719-e5d74f7a1b10.png)
+
 ## サイト概要
 キャンプをしてみたい！でも、キャンプ場の予約や用品を準備するのに時間が掛かりませんか？<br />
 
