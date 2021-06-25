@@ -16,10 +16,6 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
-  resources :camp_items, only: [:index, :show] do
-    resources :camp_item_values, only: [:index, :new, :create, :show, :destroy]
-  end
-
   # ========= ユーザー(public)のルーティング ================
   scope module: :public do
     root to: 'camps#index'
@@ -37,6 +33,10 @@ Rails.application.routes.draw do
       resources :reservations, only: [:new, :create]
       post 'reservations/confirm' => 'reservations#confirm'
       resources :camp_place_values, only: [:index, :new, :create, :show, :destroy]
+    end
+
+    resources :camp_items, only: [:index, :show] do
+      resources :camp_item_values, only: [:index, :new, :create, :show, :destroy]
     end
 
     resources :posts, only: [:index, :new, :create, :show, :destroy] do

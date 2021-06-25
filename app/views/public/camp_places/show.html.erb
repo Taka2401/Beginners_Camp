@@ -1,40 +1,42 @@
 <div class="container">
   <div class="row">
-    <div class="camp-place-inner">
-      <% @camp_place.post_images.each  do |post_image| %>
-       <div class="d-flex flex-wrap mt-4">
-         <div class="col-md-10 offset-md-6">
-           <%= attachment_image_tag post_image, :image, format: 'jpeg', size: "250x250", class: "rounded" %>
+    <div class="col-md-12 mt-4">
+      <div class="camp-place-inner">
+        <% @camp_place.post_images.each  do |post_image| %>
+         <div class="d-flex flex-wrap mt-4">
+           <div class="col-md-4 offset-md-4">
+             <%= attachment_image_tag post_image, :image, format: 'jpeg', size: "250x250", class: "rounded camp-image" %>
+            </div>
           </div>
+        <% end %>
+        <div class="col-md-8 offset-md-2 mt-4">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td></td>
+                <td><%= @camp_place.name %></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><%= @camp_place.address %></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><%= @camp_place.introduction %></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><strong>利用料金　￥<%= @camp_place.fee %></strong></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      <% end %>
-      <div class="col-md-8 offset-md-2 mt-4">
-        <table class="table">
-          <tbody>
-            <tr>
-              <td></td>
-              <td><%= @camp_place.name %></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><%= @camp_place.address %></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><%= @camp_place.introduction %></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><strong>利用料金　￥<%= @camp_place.fee %></strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-12 text-center">
-        <%= link_to "予約する", new_camp_place_reservation_path(@camp_place), class: 'glyphicon glyphicon-home btn btn-danger' %>
-        <%= link_to "口コミを投稿する", new_camp_place_camp_place_value_path(@camp_place), class: 'glyphicon glyphicon-home btn btn-success' %>
-        <%= link_to "口コミを見る", camp_place_camp_place_values_path(@camp_place), class: 'glyphicon glyphicon-home btn btn-primary' %>
-        <%= render 'maps', camp_place: @camp_place %>
+        <div class="col-12 text-center">
+          <%= link_to "予約する", new_camp_place_reservation_path(@camp_place), class: 'glyphicon glyphicon-home btn btn-danger' %>
+          <%= link_to "口コミを投稿する", new_camp_place_camp_place_value_path(@camp_place), class: 'glyphicon glyphicon-home btn btn-success' %>
+          <%= link_to "口コミを見る", camp_place_camp_place_values_path(@camp_place), class: 'glyphicon glyphicon-home btn btn-primary' %>
+          <%= render 'maps', camp_place: @camp_place %>
+        </div>
       </div>
     </div>
   </div>
