@@ -5,14 +5,12 @@
         <%= attachment_image_tag @camp_item, :image, format: 'jpeg', size: "250x250", class: "rounded" %>
       </div>
       <div class="col-md-6 mt-3">
-        <table class="table">
+        <table class="table offset-md-1">
           <tbody>
             <tr>
-              <td></td>
               <td><%= @camp_item.name %></td>
             </tr>
             <tr>
-              <td></td>
               <td><%= @camp_item.introduction %></td>
             </tr>
           </tbody>
