@@ -9,7 +9,7 @@
           <%= render 'layouts/error_messages', object: f.object %>
         </div>
        <div class="row offset-md-1">
-        <div class="row col-md-3 mt-3 image-form">
+        <div class="row col-md-4 mt-3 image-form">
           <%= attachment_image_tag @post, :image, fallback: "no_image.jpeg", id: "preview", class: "preview-form rounded" %>
           <div class="row mt-4 image-select">
             <%= f.attachment_field :image %>
