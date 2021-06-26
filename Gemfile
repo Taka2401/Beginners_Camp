@@ -40,6 +40,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'bullet'
   gem 'spring-commands-rspec'
@@ -78,7 +79,6 @@ gem 'refile-mini_magick'
 gem 'refile-s3', github: 'refile/refile-s3', ref: '768d60d4e5e5e6a00a874767018ff8e31b1da3cd'
 gem 'webdrivers', '~> 4.0', require: false
 
-gem 'pry-byebug'
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
