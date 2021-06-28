@@ -16,7 +16,7 @@ https://beginners-camp.net/
  ## フロントエンド
   - HTML/CSS
   - Javascript
-  - Bootstrap
+  - Bootstrap 4.5
  ## バックエンド
   - Ruby 2.6.3
   - Ruby on Rails 5.2.6
