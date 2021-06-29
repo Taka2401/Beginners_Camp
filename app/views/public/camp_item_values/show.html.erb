@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="all-value-inner mt-5">
-      <div class="col-md-8 offset-md-3">
+      <div class="col-md-12 offset-md-3">
         <h5 class="d-inline-flex bg-light"><%= @camp_item_value.user.name %>さんのレビュー</h5>
       </div>
       <div class="col-12">
@@ -16,7 +16,7 @@
           </tbody>
         </table>
       </div>
-      <div class="col-md-8 offset-md-4 mt-4">
+      <div class="col-md-12 text-center mt-4">
         <% if current_user.id == @camp_item_value.user_id %>
           <%= link_to '削除する', camp_item_camp_item_value_path(@camp_item), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'btn btn-sm btn-danger' %>
         <% end %>

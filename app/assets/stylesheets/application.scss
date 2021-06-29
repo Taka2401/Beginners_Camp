@@ -125,7 +125,7 @@ footer{
 
 .camp-item-inner {
   padding: 30px;
-  margin-bottom: 20px;
+  margin: 20px auto;
   flex-wrap: wrap;
   display: flex;
   border: 1px solid #000000;
@@ -525,6 +525,7 @@ footer{
 }
 
 .all-value-inner {
+  width: 600px;
   padding: 20px;
   margin: 50px auto;
   word-wrap: break-word;
@@ -757,8 +758,9 @@ footer{
   /* 口コミ関連 */
 
   .all-value-inner {
+    width: 350px;
     padding: 10px;
-    margin: 15px;
+    margin: 15px auto;
     font-size: 12px;
     font-weight: 1000;
     text-align: center;
