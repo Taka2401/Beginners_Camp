@@ -16,7 +16,7 @@
           </tbody>
         </table>
       </div>
-      <div class="col-md-12 offset-md-4 mt-4">
+      <div class="col-md-12 text-center mt-4">
         <% if current_user.id == @camp_place_value.user_id %>
           <%= link_to '削除する', camp_place_camp_place_value_path(@camp_place), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'btn btn-sm  btn-danger' %>
         <% end %>
