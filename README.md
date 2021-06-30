@@ -61,7 +61,7 @@ N＋１問題では、開発当初ページ遷移時の時間が若干遅く、�
 
 ## 設計書
 
-## 機能一覧
+# 機能一覧
 [機能一覧](https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HWk_Q/edit#gid=0)
 
 # ER図
