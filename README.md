@@ -61,13 +61,13 @@ N＋１問題では、開発当初ページ遷移時の時間が若干遅く、�
 
 ## 設計書
 
-# 機能一覧
+## 機能一覧
 [機能一覧](https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HWk_Q/edit#gid=0)
 
-# ER図
+## ER図
 ![PF＿ER図](https://user-images.githubusercontent.com/79072615/122395611-1fd34580-cfb2-11eb-9452-e508cf068dea.png)
 
-# インフラ構成図
+## インフラ構成図
 ![PF_インフラ構成図](https://user-images.githubusercontent.com/79072615/122544018-55863600-d067-11eb-813e-96ea1b9d35f9.png)
 
 ## 使用素材
