@@ -32,7 +32,7 @@ window.onpageshow = function(event) {
     $('#tab-target-1').tab('show');
 
     $('.bg-slider').bgSwitcher({
-      images: ['img/camp_image.10.jpg','img/camp_image.11.jpg','img/camp_image.12.jpg','img/camp_image.13.jpg'],
+      images: ['img/camp_image.10.jpg','img/camp_image.11.jpg','img/camp_image.12.jpg'],
     });
 
     $(document).ready(function () {
