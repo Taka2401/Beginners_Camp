@@ -10,19 +10,7 @@
           <div class="col-12 text-center mt-1">
             <%= camp_place.name %>
           </div>
-        <div class="row col-12 offset-md-1 camp-value" id="star-rate1-<%= camp_place.id %>"></div>
-        <script>
-        $('#star-rate1-<%= camp_place.id %>').empty();
-        $('#star-rate1-<%= camp_place.id %>').raty({
-          size: 30,
-          starOn: "<%= asset_path('star-on.png') %>",
-          starOff: "<%= asset_path('star-off.png') %>",
-          starHalf: "<%= asset_path('star-half.png') %>",
-          half: true,
-          readOnly: true,
-          score: "<%= camp_place.camp_place_values.average(:rate).to_f.round(1) %>",
-        });
-        </script>
+        <%= render 'shared/camp_place_values', camp_place: camp_place %>
       </div>
     <% end %>
    <% end %>
