@@ -12,6 +12,11 @@
 ## URL
 https://beginners-camp.net/
 
+###管理者ログインページ
+https://beginners-camp.net/admin/sign_in
+メールアドレス: test@gamil.com
+パスワード: 121212
+
 ## 使用技術
  ## フロントエンド
   - HTML/CSS
