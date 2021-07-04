@@ -14,8 +14,8 @@ https://beginners-camp.net/
 
 ### 管理者ログインページ
 https://beginners-camp.net/admin/sign_in<br />
-メールアドレス: test@gmail.com<br />
-パスワード: 121212
+メールアドレス:   test@gmail.com<br />
+パスワード:   121212
 
 ## 使用技術
  ## フロントエンド
