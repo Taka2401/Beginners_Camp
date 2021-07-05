@@ -5,26 +5,16 @@
           <h3 class="rank-title"><strong><i class="fab fa-firefox"></i> 人気のキャンプ場TOP3</strong></h3>
         </div>
         <% camp_place_ranks.first(3).each.with_index(1) do |camp_place, i| %>
-          <div class="d-flex flex-wrap mt-4 ml-4">
-            <div class="col-12">
+          <div class="d-flex flex-wrap ml-4">
+            <div class="col-10 mt-4 ml-2">
               <H3>第<%= i %>位</H3>
             </div>
-            <% camp_place.post_images.first(1).each  do |post_image| %>
-              <div class="col-12">
-                <%= link_to camp_place_path(camp_place), class: "link-color" do %>
-                  <%= attachment_image_tag(post_image, :image, format: 'jpeg', size: "200x200", class: "rounded") %> <br />
-                <div class="col-12">
-                  <%= camp_place.name %>
-                </div>
-                <%= render 'shared/camp_place_values', camp_place: camp_place %>
-              </div>
-            </div>
-            <% end %>
-          <% end %>
+            <%= render 'shared/camp_places', camp_place: camp_place %>
+          </div>
         <% end %>
-      </div>
-      <div class="col-md-11 mt-3 ml-5">
-       <%= link_to "キャンプ場一覧を見る>>", camp_places_path, class: "float-right link-color" %>
+        <div class="col-md-11 mt-4 ml-5">
+         <%= link_to "キャンプ場一覧を見る>>", camp_places_path, class: "float-right link-color" %>
+        </div>
       </div>
     </div>
   </div>

@@ -113,7 +113,7 @@ footer{
 }
 
 .camp-place-inner {
-  padding: 35px;
+  padding: 35px 20px;
   margin: 20px auto;
   flex-wrap: wrap;
   display: flex;
@@ -124,7 +124,7 @@ footer{
 }
 
 .camp-item-inner {
-  padding: 30px;
+  padding: 35px 20px;
   margin: 20px auto;
   flex-wrap: wrap;
   display: flex;
@@ -151,6 +151,12 @@ footer{
   border-radius: 5px;
   background-color: #FFFFFF;
   box-shadow: 10px 10px 10px -10px;
+}
+
+.camp-content {
+  flex-wrap: wrap;
+  display: flex;
+  max-width: 210px;
 }
 
 /* about画面 */
@@ -305,21 +311,10 @@ footer{
 
 .post-inner {
   width: 220px;
-  margin: 30px 70px;
+  margin: 30px 50px 30px 80px;
   border: 1px solid #33CC00;
   border-radius: 5px;
   padding: 12px 5px 10px 20px;
-  font-size: 13px;
-  font-weight: 1000;
-  box-shadow: 10px 10px 10px -10px;
-}
-
-.mypage-post-inner {
-  width: 180px;
-  border: 1px solid #33CC00;
-  border-radius: 5px;
-  padding: 10px 1px 10px 15px;
-  margin: 80px;
   font-size: 13px;
   font-weight: 1000;
   box-shadow: 10px 10px 10px -10px;
@@ -345,21 +340,9 @@ footer{
   text-overflow: ellipsis;
 }
 
-.mypage-post-title {
-  width: 130px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .post-active {
   padding-top: 50px;
   margin: 3px 0 0 120px;
-}
-
-.mypage-post-active {
-  padding-top: 40px;
-  margin: 3px 0 0 100px;
 }
 
 .comment-active {
@@ -370,11 +353,6 @@ footer{
 .comment-form {
   padding-left: 35px;
 
-}
-
-.mypage-comment-active {
-  padding-top: 2px;
-  margin-right: 3px;
 }
 
 .preview-form {
@@ -653,8 +631,10 @@ footer{
   /* TOPページ */
 
   .camp-content {
-    max-width: 260px;
-    padding: 20px;
+    flex-wrap: wrap;
+    display: flex;
+    width: 240px;
+    padding-left: 25px;
     margin: 0 auto;
   }
 
@@ -667,7 +647,6 @@ footer{
 
   .post-title {
     width: 150px;
-    // padding-left: 50px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -723,7 +702,7 @@ footer{
   /* キャンプコンテンツ関連 */
 
   .camp-place-inner {
-    padding: 30px 30px 30px 15px;
+    padding: 30px 20px 30px 35px;
     margin: 20px auto;
     text-align: center;
   }
@@ -733,7 +712,8 @@ footer{
   }
 
   .camp-item-inner {
-    padding: 30px 10px;
+    padding: 30px 30px 30px 35px;
+    margin: 20px auto;
     text-align: center;
   }
 
@@ -750,7 +730,8 @@ footer{
   }
 
   .all-content-inner {
-    padding: 30px 5px;
+    width: 330px;
+    padding: 30px;
     margin: 15px auto;
     display: block;
     text-align: center;
@@ -882,18 +863,14 @@ footer{
   }
 
   .rank-inner {
-    width: 100%;
-    padding: 20px;
+    width: 330px;
+    padding: 20px 30px;
     margin: 20px;
     text-align: center;
   }
 
   .rank-title {
     font-size: 20px;
-  }
-
-  .rank-value {
-    padding-left: 100px;
   }
 
    /* マイページ */
@@ -911,11 +888,6 @@ footer{
 
   .tab {
     padding: 0;
-  }
-
-  .mypage-post-inner {
-    padding: 10px;
-    margin: 30px auto;
   }
 
   .tab-content-inner {
