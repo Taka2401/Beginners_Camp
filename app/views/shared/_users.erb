@@ -1,0 +1,18 @@
+  <div class="row mt-5">
+    <div class="col-md-10">
+      <table class="table table-hover offset-md-1">
+        <% users.each do |user| %>
+          <tbody>
+            <tr>
+              <td>
+                <%= link_to  user_path(user) do %>
+                  <%= attachment_image_tag(user, :profile_image, format: 'jpeg', fallback: "user_image.jpg", size:'50x50', class: "user-image") %>
+                <% end %>
+              </td>
+              <td><%= user.name %></td>
+              </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
