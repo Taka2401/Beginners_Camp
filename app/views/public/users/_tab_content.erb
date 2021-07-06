@@ -1,0 +1,38 @@
+  <div class="row">
+    <ul class="nav tab-inner">
+      <li class="tab-item">
+        <a id="tab-target-1" href="#tab1" class="tab link-color" data-toggle="tab">投稿一覧</a>
+      </li>
+      <li class="tab-item">
+        <a href="#tab2" class="tab link-color" data-toggle="tab">いいねした投稿</a>
+      </li>
+      <% if current_user.id == @user.id %>
+        <li class="tab-item">
+          <a href="#tab3" class="tab link-color" data-toggle="tab">予約一覧</a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="tab-content-inner">
+    <div class="col-12  tab-content">
+      <div id="tab1" class="tab-pane fade in active">
+        <% if @user.posts.any? %>
+          <%= render 'posts', posts: @posts %>
+        <% else %>
+          <p class="text-center mt-3">投稿はありません</p>
+        <% end %>
+      </div>
+      <div id="tab2" class="tab-pane fade">
+        <% if @like_posts.any? %>
+          <%= render 'favorites', like_posts: @like_posts %>
+        <% else %>
+          <p class="text-center mt-3">いいねした投稿はありません</p>
+        <% end %>
+      </div>
+      <% if current_user.id == @user.id %>
+        <div id="tab3" class="tab-pane fade text-center">
+          <%= render 'public/reservations/index', user: @user, reservations: @reservations %>
+        </div>
+      <% end %>
+    </div>
+  </div>
