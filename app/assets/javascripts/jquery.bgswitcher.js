@@ -6,7 +6,8 @@
  * @license  MIT License (https://github.com/rewish/jquery-bgswitcher/blob/master/LICENSE.md)
  * @link     https://github.com/rewish/jquery-bgswitcher
  */
-
+ 
+ /*global $*/
  $(document).ready(function(){
   (function($) {
     'use strict';
@@ -489,6 +490,9 @@
       /**
        * Preload an images
        */
+      
+       /*global Image*/ 
+      
       preload: function() {
         var path,
             length = this.images.length,
@@ -556,6 +560,8 @@
         return this.images.length;
       }
     });
+    
+     /*global jQuery*/
 
     $.BgSwitcher = BgSwitcher;
   }(jQuery));
