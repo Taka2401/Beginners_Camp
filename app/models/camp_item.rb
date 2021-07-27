@@ -4,9 +4,9 @@ class CampItem < ApplicationRecord
   belongs_to :admin
   has_many :camp_item_values, dependent: :destroy
 
-  validates :image,  presence: true
-  validates :name,  presence: true
-  validates :introduction,  presence: true, length: { maximum: 500 }
+  validates :image, presence: true
+  validates :name, presence: true
+  validates :introduction, presence: true, length: { maximum: 500 }
 
   def self.search(search)
     return CampItem.all unless search

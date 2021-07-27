@@ -15,7 +15,7 @@
           <% end %>
         </div>
         <div class="col-md-12 text-center mt-2">
-          <% if current_user.id == @post.user_id %>
+          <% if user_signed_in? && current_user.id == @post.user_id %>
             <%= link_to '削除する', post_path(@post.id), method: :delete, data:{ confirm: '本当に削除しますか？' }, class: 'btn btn-sm btn-danger' %>
           <% end %>
         </div>

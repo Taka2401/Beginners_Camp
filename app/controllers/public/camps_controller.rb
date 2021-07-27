@@ -5,8 +5,4 @@ class Public::CampsController < ApplicationController
     @posts = Post.all.order(id: "DESC")
     @tags = Tag.joins(:tag_relationships).group(:tag_id).order('count(post_id) desc')
   end
-
-  def show
-    @camp_place = CampPlace.find(params[:id])
-  end
 end

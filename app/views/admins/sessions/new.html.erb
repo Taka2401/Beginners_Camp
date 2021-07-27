@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="all-content-inner">
+    <div class="login-inner">
       <div class="row col-12 ml-3">
     　   <h3 class="ml-4">管理者ログイン</h3>
     　</div>
       <%= form_with model: @admin, url: admin_session_path, id: 'new_user', class: 'new_user', local: true do |f|%>
-        <div class="row col-12 mt-3 ml-5">
+        <div class="row col-10 mt-3 ml-5">
           <label class="ml-5">メールアドレス</label>
           <div class="col-10 offset-md-1">
             <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class: 'col-sm-12' %>
           </div>
         </div>
-        <div class="row col-12 mt-3 ml-5">
+        <div class="row col-10 mt-3 ml-5">
           <label class="ml-5">パスワード
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %>文字以上)</em>

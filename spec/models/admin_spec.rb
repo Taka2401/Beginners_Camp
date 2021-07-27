@@ -7,9 +7,10 @@ RSpec.describe Admin, type: :model do
       expect(admin).to be_valid
       admin.save
     end
-    
-  context 'email' do
+
+    context 'email' do
       subject(:admin) { FactoryBot.build(:admin) }
+
       it '空白でないこと' do
         admin.email = ''
         expect(admin).to be_invalid
@@ -27,6 +28,7 @@ RSpec.describe Admin, type: :model do
 
     context 'password' do
       subject(:admin) { FactoryBot.build(:admin) }
+
       it '空白だと登録できないこと' do
         admin.password = ''
         expect(admin).to be_invalid
@@ -47,4 +49,3 @@ RSpec.describe Admin, type: :model do
     end
   end
 end
-

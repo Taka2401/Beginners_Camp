@@ -29,17 +29,18 @@ class Public::ReservationsController < ApplicationController
       render action: :new
     end
 
-    # チェックインの月までを算出し、チェックアウトの日付を計算
+    # チェックインを算出し、チェックアウトの日付を計算
     if @reservation.start_date.present?
       year = @reservation.start_date.year
       month = @reservation.start_date.month
       day = @reservation.start_date.day
+
       if @reservation.day == "２泊３日"
         @camp_place.fee = @camp_place.fee * 2
         @reservation.total_fee = @reservation.total_fee * 2
-        @reservation.end_date = Time.zone.parse("#{year}-#{month}-#{day + 2} 11:00")
+        @reservation.end_date = Time.zone.parse("#{year}-#{month}-#{day} 11:00") + 2.days
       else
-        @reservation.end_date = Time.zone.parse("#{year}-#{month}-#{day + 1} 11:00")
+        @reservation.end_date = Time.zone.parse("#{year}-#{month}-#{day} 11:00") + 1.days
       end
     end
   end

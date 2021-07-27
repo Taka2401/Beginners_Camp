@@ -1,9 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="all-user-inner">
-      <div class="col-12 mx-auto">
-        <h3>ユーザー一覧</h3>
-        <table class="table">
+    <div class=" col-10 all-user-inner">
+        <h5 class="offset-md-2 font-weight-bold mt-2">ユーザー一覧</h5>
+        <table class="table mt-5">
           <thead>
             <tr>
               <th>会員ID</th>
@@ -21,7 +20,6 @@
             <% end %>
           </tbody>
         </table>
-      </div>
       <div class="col-12 mt-4 offset-md-5">
         <%= paginate @users, theme: 'twitter-bootstrap-4' %>
       </div>

@@ -1,4 +1,4 @@
-<div class="tag-inner mt-5">
+<div class="row tag-inner">
   <div class="row mt-4">
     <div class="col-12 ml-4">
       <h3><i class="fas fa-tags"></i> タグから探す</h3>
@@ -6,16 +6,16 @@
   </div>
   <div class="row">
     <% tags.each do |tag| %>
-      <div class="row tag-box mt-4 ml-5">
+      <div class="row tag-box mt-4">
         <%= link_to tag_path(tag.id), class: "link-color" do %>
           <i class="fas fa-hashtag"></i> <%= tag.name %>
         <% end %>
       </div>
     <% end %>
   </div>
-  <div class="row offset-md-7 mt-4">
-    <div class="col-12">
-      <%= link_to "もっと見る>>>", tags_path, class: "float-right link-color" %>
+  <div class="row offset-md-8 mt-4">
+    <div class="col-md-12">
+      <%= link_to "もっと見る>>>", tags_path, class: "link-color tag-all" %>
     </div>
   </div>
 </div>
