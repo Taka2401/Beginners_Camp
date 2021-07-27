@@ -7,6 +7,7 @@
  * @link     https://github.com/rewish/jquery-bgswitcher
  */
 
+ /*global $*/
  $(document).ready(function(){
   (function($) {
     'use strict';
