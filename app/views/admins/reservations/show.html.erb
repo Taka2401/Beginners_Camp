@@ -1,41 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="reservation-inner">
-      <div class="col-6 offset-md-3">
+      <div class="col-12 offset-md-3">
         <h5><%= @reservation.user.name %>さんの予約履歴一覧</h5>
       </div>
-      <div class="col-md-7 offset-md-2 mt-3">
-        <table class="table table-bordered">
-          <tr>
-            <td class="col-xs-2 table-secondary">キャンプ場</td>
-            <td><%= @reservation.camp_place.name %></td>
-          </tr>
-          <tr>
-            <td class="col-xs-2 table-secondary">利用人数(5名様まで)</td>
-            <td><%= @reservation.guest %>名</td>
-          </tr>
-          <tr>
-            <td class="col-xs-2 table-secondary">料金</td>
-            <td>¥<%= @reservation.camp_place.fee %></td>
-          </tr>
-          <tr>
-            <td class="col-xs-2 table-secondary">支払い方法</td>
-            <td><%= @reservation.payment_method %></td>
-          </tr>
-          <tr>
-            <td class="col-xs-2 table-secondary">チェックイン</td>
-            <td><%= l @reservation.start_date %></td>
-          </tr>
-          <tr>
-            <td class="col-xs-2 table-secondary">チェックアウト</td>
-            <td><%= l @reservation.end_date %></td>
-          </tr>
-          <tr>
-            <td class="col-xs-2 table-secondary">合計金額</td>
-            <td>¥<%= @reservation.total_fee =  @reservation.camp_place.fee %></td>
-          </tr>
-        </table>
-      </div>
+      <%= render 'shared/reservations', reservation: @reservation %>
     </div>
   </div>
 </div>

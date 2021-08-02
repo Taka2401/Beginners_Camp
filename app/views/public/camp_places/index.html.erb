@@ -5,18 +5,7 @@
         <h3>キャンプ場一覧</h3>
       </div>
       <% @camp_places.each do |camp_place| %>
-        <% camp_place.post_images.first(1).each  do |post_image| %>
-        <div class="d-flex flex-wrap mt-4">
-          <div class="col-12">
-            <%= link_to camp_place_path(camp_place), class: "link-color" do %>
-              <%= attachment_image_tag(post_image, :image, format: 'jpeg', size: "200x200", class: "rounded") %> <br />
-             <% end %>
-            <div class="col-12">
-              <%= camp_place.name %>
-            </div>
-          </div>
-         </div>
-        <% end %>
+        <%= render 'shared/camp_places', camp_place: camp_place %>
    　  <% end %>
       <div class="col-12 mt-4 offset-md-5">
         <%= paginate @camp_places, theme: 'twitter-bootstrap-4' %>

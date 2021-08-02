@@ -47,11 +47,13 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :edit, :update] do
       resource :relationships, only: [:create, :destroy]
       resources :reservations, only: [:index, :show]
+      member do
+        get 'following'
+        get 'followers'
+        get 'favorites'
+        get 'post'
+      end
     end
-    get 'user/:id/following' => 'users#following', as: 'user_following'
-    get 'user/:id/followers' => 'users#followers', as: 'user_followers'
-    get 'user/:id/favorites' => 'users#favorites', as: 'user_favorites'
-    get 'user/:id/post' => 'users#post', as: 'user_post'
   end
 
   # ========= 管理者(admin)のルーティング ================

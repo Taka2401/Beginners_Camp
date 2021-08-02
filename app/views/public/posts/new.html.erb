@@ -8,15 +8,15 @@
         <div class="row offset-md-3">
           <%= render 'layouts/error_messages', object: f.object %>
         </div>
-       <div class="row mt-4">
-        <div class="row col-md-3 offset-md-1 mt-3">
+       <div class="row offset-md-1">
+        <div class="row col-md-4 mt-3 image-form">
           <%= attachment_image_tag @post, :image, fallback: "no_image.jpeg", id: "preview", class: "preview-form rounded" %>
-          <div class="row image-form mt-4">
+          <div class="row mt-4 image-select">
             <%= f.attachment_field :image %>
             <p class="required-form">※必須</p>
           </div>
         </div>
-        <div class="col-md-7 offset-md-1">
+        <div class="col-md-7">
           <div class="form-group form-inline">
           　<p class="mr-2">タイトル<p class="required-form">※必須</p></p>
             <div class="ml-5"><%= f.text_field :title, size: "30", class: "form-control" %></div>
@@ -25,8 +25,8 @@
           　<p class="mr-4">本文</p>
             <div class="ml-5"><%= f.text_area :review, size: "40x6", class: "form-control" %></div>
           </div>
-          <div class="form-group form-inline">
-            <%= f.label :tag_ids, "タグ" %><span class="form-required form-auto">【 ,】で区切ると複数登録可能</span>
+          <div class="form-group form-inline tag-form">
+            <%= f.label :tag_ids, "タグ", {class: 'tag'} %><span class="form-required form-auto">【 ,】で区切ると複数登録可能</span>
             <%= f.text_field :tag_ids, value: @tag_list, class: "form-control ml-4" %>
           </div>
         </div>

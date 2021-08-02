@@ -1,36 +1,52 @@
 <header class="sticky-top">
   <nav class="navbar navbar-expand-lg navbar-dark">
       <h1 class="navbar-brand font-weight-bold">
-        <%= link_to "Beginner's Camp", root_path, class:"navbar-brand text-dark ml-lg-1" %>
+        <%= link_to root_path do %>
+          <%= image_tag asset_path("Beginner's Camp.logo.png"), class: "header-logo" %>
+        <% end %>
       </h1>
-      <ul class="navbar-nav font-weight-bold">
-        <% if admin_signed_in? %>
-          <!--アドミンがログインしている時 -->
+
+      <button class="navbar-toggler toggler-example humberger" type="button" data-toggle="collapse" data-target="#navbarTabContent" aria-controls="navbarTabContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="dark-blue-text">
+          <i class="fas fa-bars fa-1x"></i>
+        </span>
+      </button>
+
+      <% if admin_signed_in? %>
+      <!--アドミンがログインしている時 -->
+      <div class="collapse navbar-collapse" id="navbarTabContent">
+        <ul class="navbar-nav font-weight-bold">
           <li class="nav-item ml-1"><%= link_to "予約一覧", admins_reservations_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "ユーザー一覧", admins_users_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "キャンプ場投稿履歴", admins_camp_places_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "キャンプ用品投稿履歴", admins_camp_items_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link' %></li>
-
-        <% elsif user_signed_in? %>
-        <!--ユーザーがログインしている時 -->
-          <li class="nav-item text-center mt-1">
+        </ul>
+      </div>
+      <% elsif user_signed_in? %>
+      <!--ユーザーがログインしている時 -->
+        <div class="search-item text-center mt-2">
           <%= render 'layouts/search' %>
-          </li>
-          <li class="nav-item"><%= link_to "ホーム", camps_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to "マイページ", user_path(current_user.id), class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to "ユーザー一覧", users_path, class: 'nav-link' %></li>
-          <li class="nav-item ml-1"><%= link_to "ランキング", ranks_path, class: 'nav-link' %></li>
-          <li class="nav-item ml-1"><%= link_to "みんなのキャンプ", posts_path, class: 'nav-link' %></li>
-          <li class="nav-item ml-1"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
-
-        <% else %>
-          <!-- ログインしていない時 -->
-          <li class="nav-item"><%= link_to "Beginner'sCampとは", about_path, class: 'nav-link' %></li>
-          <li class="nav-item ml-1"><%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %></li>
-          <li class="nav-item ml-1"><%= link_to "ログイン", new_user_session_path, class: 'nav-link' %></li>
-
-        <% end %>
-      </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarTabContent">
+          <ul class="navbar-nav font-weight-bold mt-3">
+            <li class="nav-item"><%= link_to "ホーム", camps_path, class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to "マイページ", user_path(current_user.id), class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to "ユーザー一覧", users_path, class: 'nav-link' %></li>
+            <li class="nav-item ml-1"><%= link_to "ランキング", ranks_path, class: 'nav-link' %></li>
+            <li class="nav-item ml-1"><%= link_to "みんなのキャンプ", posts_path, class: 'nav-link' %></li>
+            <li class="nav-item ml-1"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+          </ul>
+        </div>
+      <% else %>
+      <!-- ログインしていない時 -->
+        <div class="collapse navbar-collapse guest-nav" id="navbarTabContent">
+          <ul class="navbar-nav font-weight-bold">
+            <li class="nav-item"><%= link_to "Beginner'sCampとは", about_path, class: 'nav-link' %></li>
+            <li class="nav-item ml-1"><%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %></li>
+            <li class="nav-item ml-1"><%= link_to "ログイン", new_user_session_path, class: 'nav-link' %></li>
+          </ul>
+        </div>
+      <% end %>
   </nav>
 </header>

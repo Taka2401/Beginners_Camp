@@ -6,4 +6,3 @@ class CampPlaceValue < ApplicationRecord
   validates :review, length: { maximum: 300 }
   validates :rate, presence: true
 end
-
