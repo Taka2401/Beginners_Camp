@@ -38,7 +38,7 @@ window.onpageshow = function(event) {
     $(document).ready(function () {
       $("#slider").skippr({
         transition : 'slide',
-        speed : 1000,
+        speed : 1100,
         easing : 'easeOutQuart',
         navType : 'block',
         childrenElementType : 'div',
