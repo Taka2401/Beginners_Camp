@@ -1,8 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="all-content-inner">
-      <div class="col-12 mt-2">
-        <h3>キャンプ場一覧</h3>
+      <div class="col-4 mt-2">
+        <h3 class="all-camp-place">キャンプ場一覧</h3>
+      </div>
+      <div class="col-7 search-item text-center mt-2">
+        <%= render 'public/camp_places/search' %>
       </div>
       <% @camp_places.each do |camp_place| %>
         <%= render 'shared/camp_places', camp_place: camp_place %>

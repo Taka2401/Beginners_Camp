@@ -237,7 +237,7 @@ footer{
 /* 検索フォーム */
 
 .search-box {
-  width: 200px;
+  width: 500px;
   position: relative;
   border: 1px solid #aaa;
   border-radius: 150px;
@@ -245,7 +245,7 @@ footer{
 }
 
 .search-left {
-  width: 87%;
+  width: 95%;
   height: 30px;
   line-height: 30px;
   background: none;
@@ -258,7 +258,7 @@ footer{
   position: absolute;
   top: 1px;
   right: 1px;
-  width: 30%;
+  width: 60px;
 }
 
 /* タグ関連 */
@@ -579,14 +579,17 @@ footer{
     padding-top: 20px;
   }
 
+  .all-camp-place {
+    width: 220px;
+  }
+
   .search-item {
     padding-top: 10px;
   }
 
   .search-left {
-    width: 60%;
-    margin-right: 20px;
-    font-size: 10px;
+    width: 85%;
+    font-size: 15px;
   }
 
   .search-right {
@@ -594,7 +597,7 @@ footer{
   }
 
   .search-box {
-    width: 120px;
+    width: 220px;
     position: relative;
     border: 1px solid #aaa;
     border-radius: 150px;
