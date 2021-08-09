@@ -60,7 +60,8 @@ window.onpageshow = function(event) {
      /*global moment*/
      $('.datepicker').datetimepicker({
       format: 'YYYY-MM-DD HH:mm',
-      minDate: moment()
+      minDate: moment(),
+      enabledHours: [15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
     });
 
     $('select').change(function () {

@@ -53,6 +53,8 @@ class Public::ReservationsController < ApplicationController
     if @reservation.save
       flash[:notice] = "予約が確定しました！"
       redirect_to camps_path
+    else
+      render action: :confirm
     end
   end
 
