@@ -15,10 +15,4 @@ class Reservation < ApplicationRecord
     start_date && (start_date < Time.now - 1.minutes)
   end
 
-  validate :same_date
-
-  def same_date
-    errors.add(:start_date, '予約が重複しています') if
-    Reservation.exists?(created_at: Time.zone.now.all_day)
-  end
 end
