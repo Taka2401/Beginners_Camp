@@ -25,9 +25,6 @@
       </div>
       <% elsif user_signed_in? %>
       <!--ユーザーがログインしている時 -->
-        <div class="search-item text-center mt-2">
-          <%= render 'layouts/search' %>
-        </div>
         <div class="collapse navbar-collapse" id="navbarTabContent">
           <ul class="navbar-nav font-weight-bold mt-3">
             <li class="nav-item"><%= link_to "ホーム", camps_path, class: 'nav-link' %></li>
