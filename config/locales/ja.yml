@@ -35,6 +35,7 @@ ja:
         comment: コメント
       reservation:
         start_date: チェックインの日付
+        end_date: 同じチェックアウトの日付
       camp_place:
         post_images_images: 画像
         name: キャンプ場
