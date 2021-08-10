@@ -542,6 +542,15 @@ footer{
   box-shadow: 10px 10px 10px -10px;
 }
 
+.page-item.active .page-link {
+  background-color: #33CC00;
+  border-color: #33CC00;
+}
+
+.page-link {
+  color: #33CC00;
+}
+
 
 
 /* レスポンシブ */
