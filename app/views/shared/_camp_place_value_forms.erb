@@ -1,0 +1,14 @@
+  <%= render 'shared/value_forms', f: f %>
+
+  <!-- 評価javascript -->
+  <script>
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    scoreName: 'camp_place_value[rate]',
+    half: true,
+  });
+  </script>
+
