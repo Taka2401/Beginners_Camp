@@ -1,12 +1,12 @@
-<div class="row col-12 offset-md-1 camp-value" id="star-rate2-<%= camp_item.id %>"></div>
-<script>
-$('#star-rate2-<%= camp_item.id %>').raty({
-  size: 30,
-  starOn: "<%= asset_path('star-on.png') %>",
-  starOff: "<%= asset_path('star-off.png') %>",
-  starHalf: "<%= asset_path('star-half.png') %>",
-  half: true,
-  readOnly: true,
-  score: "<%= camp_item.camp_item_values.average(:rate).to_f.round(1) %>",
-});
-</script>
+  <div class="row col-12 offset-md-1 camp-value" id="star-rate2-<%= camp_item.id %>"></div>
+  <script>
+    $('#star-rate2-<%= camp_item.id %>').raty({
+      size: 30,
+      starOn: "<%= asset_path('star-on.png') %>",
+      starOff: "<%= asset_path('star-off.png') %>",
+      starHalf: "<%= asset_path('star-half.png') %>",
+      half: true,
+      readOnly: true,
+      score: "<%= camp_item.camp_item_values.average(:rate).to_f.round(1) %>",
+    });
+  </script>
