@@ -2,7 +2,7 @@ class Public::PostsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @posts = Post.page(params[:page]).per(9).order(id: "DESC")
+    @posts = Post.page(params[:page]).per(6).order(id: "DESC")
   end
 
   def show

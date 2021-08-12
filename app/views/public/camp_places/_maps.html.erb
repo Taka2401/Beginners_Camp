@@ -1,7 +1,7 @@
-<script type="text/javascript">
+  <script type="text/javascript">
     function initMap() {
       //latitude,longitudeから位置を特定
-      var test = {lat: <%= camp_place.latitude %>, lng: <%= camp_place.longitude %>};
+      var test = { lat: <%= camp_place.latitude %>, lng: <%= camp_place.longitude %> };
       var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
                 center: test
