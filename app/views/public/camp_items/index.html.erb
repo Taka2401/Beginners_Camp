@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="all-content-inner mt-5 ml-5">
+    <div class="all-content-inner mt-5">
       <div class="col-12 mt-2">
         <h3>キャンプ用品一覧</h3>
       </div>
       <% @camp_items.each do |camp_item| %>
         <%= render 'shared/camp_items', camp_item: camp_item %>
       <% end %>
-      <div class="col-3 mt-5 paginate">
+      <div class="col-7 mt-5 paginate">
         <%= paginate @camp_items, theme: 'twitter-bootstrap-4' %>
       </div>
     </div>
