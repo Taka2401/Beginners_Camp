@@ -10,7 +10,7 @@
       <% @camp_places.each do |camp_place| %>
         <%= render 'shared/camp_places', camp_place: camp_place %>
    　  <% end %>
-      <div class="col-12 mt-4 offset-md-5">
+      <div class="col-3 mt-5 paginate">
         <%= paginate @camp_places, theme: 'twitter-bootstrap-4' %>
       </div>
     </div>

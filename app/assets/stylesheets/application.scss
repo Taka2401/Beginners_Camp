@@ -551,6 +551,9 @@ footer{
   color: #33CC00;
 }
 
+ .paginate {
+    margin: 15px auto;
+  }
 
 
 /* レスポンシブ */
@@ -931,6 +934,10 @@ footer{
     .table th, .table td {
       padding: 5px;
     }
+  }
+
+  .paginate {
+    margin-left: 60px;
   }
 
 }
