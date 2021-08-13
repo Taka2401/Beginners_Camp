@@ -16,13 +16,12 @@ class Reservation < ApplicationRecord
 
   validate :same_date
   def same_date
-    if Reservation
-      .where(user_id: user.id)
-      .where('start_date < ?', end_date)
-      .where('end_date > ?', start_date)
-      .where.not(id: id).exists?
+    if Reservation.
+        where(user_id: user.id).
+        where('start_date < ?', end_date).
+        where('end_date > ?', start_date).
+        where.not(id: id).exists?
       errors.add(:start_date, 'が重複しています')
     end
   end
-
 end
