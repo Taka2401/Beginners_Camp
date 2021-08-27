@@ -17,12 +17,12 @@ services:
       MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
       MYSQL_ALLOW_EMPTY_PASSWORD: $MYSQL_ALLOW_EMPTY_PASSWORD
     volumes:
-      - ./web:/$WORKDIR:cached
+      - ./web:/Beginners_Camp:cached
     stdin_open: true
     tty: true
     depends_on:
       - db
     ports:
-      - "$API_PORT:$CONTAINER_PORT"
+      - "3000:3000"
 volumes:
   db-data:
