@@ -8,16 +8,15 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: $MYSQL_ALLOW_EMPTY_PASSWORD
     restart: always
     volumes:
-      - db-data:/var/lib/mysql:cached
+      - db-data:/var/lib/mysql
 
   web:
     build: .
-    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     environment:
       MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
       MYSQL_ALLOW_EMPTY_PASSWORD: $MYSQL_ALLOW_EMPTY_PASSWORD
     volumes:
-      - ./web:/Beginners_Camp:cached
+      - .:/Beginners_Camp
     stdin_open: true
     tty: true
     depends_on:
