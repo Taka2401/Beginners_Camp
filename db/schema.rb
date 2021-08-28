@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_06_12_113354) do
 
-  create_table "admins", force: :cascade do |t|
+  create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_113354) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "camp_item_values", force: :cascade do |t|
+  create_table "camp_item_values", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "user_id"
     t.integer "camp_item_id"
     t.float "rate"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_113354) do
     t.text "review"
   end
 
-  create_table "camp_items", force: :cascade do |t|
+  create_table "camp_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "admin_id"
     t.string "name"
     t.text "introduction"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_113354) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "camp_place_values", force: :cascade do |t|
+  create_table "camp_place_values", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "user_id"
     t.integer "camp_place_id"
     t.float "rate"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_113354) do
     t.text "review"
   end
 
-  create_table "camp_places", force: :cascade do |t|
+  create_table "camp_places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "admin_id"
     t.string "name"
     t.text "introduction"
@@ -65,14 +65,14 @@ ActiveRecord::Schema.define(version: 2021_06_12_113354) do
     t.integer "fee"
   end
 
-  create_table "favorites", force: :cascade do |t|
+  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_comments", force: :cascade do |t|
+  create_table "post_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
     t.text "comment"
@@ -80,14 +80,14 @@ ActiveRecord::Schema.define(version: 2021_06_12_113354) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_images", force: :cascade do |t|
+  create_table "post_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "camp_place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_id"
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
     t.text "review"
@@ -96,16 +96,16 @@ ActiveRecord::Schema.define(version: 2021_06_12_113354) do
     t.string "image_id"
   end
 
-  create_table "relationships", force: :cascade do |t|
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "reservations", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "camp_place_id"
+  create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "camp_place_id"
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at", null: false
@@ -118,20 +118,20 @@ ActiveRecord::Schema.define(version: 2021_06_12_113354) do
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
-  create_table "tag_relationships", force: :cascade do |t|
+  create_table "tag_relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "tag_id"
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -146,4 +146,6 @@ ActiveRecord::Schema.define(version: 2021_06_12_113354) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reservations", "camp_places"
+  add_foreign_key "reservations", "users"
 end
