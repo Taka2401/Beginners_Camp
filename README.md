@@ -118,7 +118,8 @@ N＋１問題では、開発当初ページ遷移時の時間が若干遅く、�
 ![PF＿ER図](https://user-images.githubusercontent.com/79072615/122395611-1fd34580-cfb2-11eb-9452-e508cf068dea.png)
 
 ## インフラ構成図
-![PF_最新インフラ構成図](https://user-images.githubusercontent.com/79072615/131212895-02e43383-e77d-4f74-830e-f986d5c965da.png)
+![PF_最新インフラ構成図](https://user-images.githubusercontent.com/79072615/131221620-c709739c-9476-4acc-b545-7cb52dd90524.png)
+
 
 ## 使用素材
 【画像素材】<br />
