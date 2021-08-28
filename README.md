@@ -28,7 +28,7 @@ https://beginners-camp.net/
   - AWS(VPC、ACM、Route53、IAM、ALB、EC2、RDS、S3、CloudFront)
  ## 開発環境
   - VScode
-　- Docker/docker-compose
+  - Docker/docker-compose
 
 ## 工夫・意識した点
 
