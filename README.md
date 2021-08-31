@@ -25,7 +25,10 @@ https://beginners-camp.net/
  ## インフラ
   - MySQL 5.7.22 / Puma / Nginx
   - GitHub Actions(CI/CD)
-  - AWS(Cloud9、VPC、ACM、Route53、IAM、ALB、EC2、RDS、S3、CloudFront)
+  - AWS(VPC、ACM、Route53、IAM、ALB、EC2、RDS、S3、CloudFront)
+ ## 開発環境
+  - VScode
+  - Docker/docker-compose
 
 ## 工夫・意識した点
 
@@ -115,7 +118,8 @@ N＋１問題では、開発当初ページ遷移時の時間が若干遅く、�
 ![PF＿ER図](https://user-images.githubusercontent.com/79072615/122395611-1fd34580-cfb2-11eb-9452-e508cf068dea.png)
 
 ## インフラ構成図
-![PF_インフラ構成図](https://user-images.githubusercontent.com/79072615/122544018-55863600-d067-11eb-813e-96ea1b9d35f9.png)
+![PF_最新インフラ構成図](https://user-images.githubusercontent.com/79072615/131221620-c709739c-9476-4acc-b545-7cb52dd90524.png)
+
 
 ## 使用素材
 【画像素材】<br />

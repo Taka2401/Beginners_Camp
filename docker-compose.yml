@@ -1,0 +1,27 @@
+version: "3.3"
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_ALLOW_EMPTY_PASSWORD: $MYSQL_ALLOW_EMPTY_PASSWORD
+    restart: always
+    volumes:
+      - db-data:/var/lib/mysql
+
+  web:
+    build: .
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_ALLOW_EMPTY_PASSWORD: $MYSQL_ALLOW_EMPTY_PASSWORD
+    volumes:
+      - .:/Beginners_Camp
+    stdin_open: true
+    tty: true
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+volumes:
+  db-data:
