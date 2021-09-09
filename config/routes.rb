@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1, format: 'json' do
-      resources :relationships, only: [create, destroy]
+      resources :relationships, only: [:create, :destroy]
     end
   end
 
