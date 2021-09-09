@@ -37,12 +37,12 @@ export default {
   },
   methods: {
     fetchRelationshipByFollowedId: async function() {
-      const res = await axios.get(`/api/relationships/?followed_id=${this.followedId}`)
+      const res = await axios.get(`/api/v1/relationships/?followed_id=${this.followedId}`)
       if (res.status !== 200) { process.exit() }
       return res.data
     },
     registerRelationship: async function() {
-      const res = await axios.post('/api/relationships', { followed_id: this.followedId })
+      const res = await axios.post('/api/v1/relationships', { followed_id: this.followedId })
       if (res.status !== 201) { process.exit() }
       this.fetchRelationshipByFollowedId().then(result => {
         this.relationshipList = result
@@ -50,7 +50,7 @@ export default {
     },
     deleteRelationship: async function() {
       const relationshipId = this.findRelationshipId()
-      const res = await axios.delete(`/api/relationships/${relationshipId}`)
+      const res = await axios.delete(`/api/v1/relationships/${relationshipId}`)
       if (res.status !== 200) { process.exit() }
       this.relationshipList = this.relationshipList.filter(n => n.id !== relationshipId)
     },
