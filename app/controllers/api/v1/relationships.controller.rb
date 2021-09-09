@@ -6,7 +6,6 @@ module Api
       def create
         @user = User.find(params[:followed_id])
         current_user.active_relationships.create!(relationships_params)
-        @user.create_notification_follow!(current_user)
         head :created
       end
 
