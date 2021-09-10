@@ -7,3 +7,5 @@ document.addEventListener('DOMContentLoaded', () => {
     components: { RelationshipButton }
   })
 });
+
+console.log('Hello World from Webpacker')
