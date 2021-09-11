@@ -1,4 +1,6 @@
 <%= javascript_pack_tag 'relationship' %>
+<%= link_to "#{user.followings.count} フォロー", following_user_path(user), class: "link-color" %><span>　|　</span>
+<%= link_to "#{user.followers.count} フォロワー ", followers_user_path(user), class: "link-color" %>
 <div id="relationship">
   <% if current_user.id != user.id %>
     <Relationship-button :follower-id="<%= current_user.id %>" :followed-id="<%= @user.id %>"></Relationship-button>
