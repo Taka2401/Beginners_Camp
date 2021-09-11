@@ -4,8 +4,6 @@ import RelationshipButton from '../components/RelationshipButton.vue'
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: '#relationship',
-    components: { RelationshipButton }
+    components: { RelationshipButton },
   })
 });
-
-console.log('Hello World from Webpacker')

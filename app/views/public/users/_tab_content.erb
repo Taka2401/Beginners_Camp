@@ -15,7 +15,7 @@
   </div>
   <div class="tab-content-inner">
     <div class="col-12  tab-content">
-      <div id="tab1" class="tab-pane fade in active">
+      <div id="tab1" class="tab-pane fade show active">
         <% if @user.posts.any? %>
           <%= render 'posts', posts: @posts %>
         <% else %>
