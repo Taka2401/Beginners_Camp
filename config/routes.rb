@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   # 追記
   namespace :api do
     namespace :v1, format: 'json' do
-      resources :relationships, only: [:create, :destroy]
+      resources :relationships, only: [:index, :create, :destroy]
     end
   end
 
