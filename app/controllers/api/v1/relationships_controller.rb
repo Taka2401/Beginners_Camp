@@ -1,10 +1,10 @@
 module Api
-  module v1
+  module V1
     class RelationshipsController < ActionController::API
       before_action :authenticate_user!
 
       def create
-        current_user.follow(params[:user_id])
+        current_user.follow(relationships_params)
         head :created
       end
 
@@ -13,11 +13,11 @@ module Api
         head :ok
       end
 
-      # private
+      private
 
-      # def relationships_params
-      #   params.require(:relationship).permit(:followed_id)
-      # end
+      def relationships_params
+        params.require(:relationship).permit(:user_id, :followed_id)
+      end
     end
   end
 end

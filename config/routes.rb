@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
+  # 追記
   namespace :api do
     namespace :v1, format: 'json' do
       resources :relationships, only: [:create, :destroy]
@@ -51,7 +52,7 @@ Rails.application.routes.draw do
     end
 
     resources :users, only: [:index, :show, :edit, :update] do
-      # resource :relationships, only: [:create, :destroy]
+      resource :relationships, only: [:create, :destroy]
       resources :reservations, only: [:index, :show]
       member do
         get 'following'
