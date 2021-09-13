@@ -1,5 +1,7 @@
 <template>
   <div>
+    <!-- <p>{{ followingCount }} フォロー</p>
+    <p>{{ followersCount }} フォロワー</p> -->
     <div v-if="isRelationshiped" @click="deleteRelationship()" class="btn btn-bg follow-followed">
       <i class="fas fa-user-minus"></i> フォロー解除
     </div>
@@ -18,13 +20,21 @@ export default {
   props: ['followerId', 'followedId'],
   data() {
     return {
-      relationshipList: []
+      relationshipList: [],
+      // following: [],
+      // followers: [],
     }
   },
   computed: {
     count() {
       return this.relationshipList.length
     },
+    // followingCount() {
+    //   return this.following.length
+    // },
+    // followersCount() {
+    //   return this.followers.length
+    // },
     isRelationshiped() {
       if (this.relationshipList.length === 0) { return false }
       return Boolean(this.findRelationshipId())
@@ -43,6 +53,7 @@ export default {
     },
     registerRelationship: async function() {
       const res = await axios.post('/api/v1/relationships', { followed_id: this.followedId })
+      // this.following.length += 1;
       if (res.status !== 201) { process.exit() }
       this.fetchRelationshipByFollowedId().then(result => {
         this.relationshipList = result
@@ -51,6 +62,7 @@ export default {
     deleteRelationship: async function() {
       const relationshipId = this.findRelationshipId()
       const res = await axios.delete(`/api/v1/relationships/${relationshipId}`)
+      // this.followers.length -= 1;
       if (res.status !== 200) { process.exit() }
       this.relationshipList = this.relationshipList.filter(n => n.id !== relationshipId)
     },
