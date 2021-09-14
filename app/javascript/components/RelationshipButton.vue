@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>{{ followingCount }} フォロー</p>
-    <p>{{ followersCount }} フォロワー</p>
+    <p>{{ this.followersCount  }} フォロワー</p>
     <div v-if="isRelationshiped" @click="deleteRelationship()" class="btn btn-bg follow-followed">
       <i class="fas fa-user-minus"></i> フォロー解除
     </div>
@@ -27,6 +27,9 @@ export default {
       followersCount: 0
     }
   },
+   mounted() {
+    this.followersCount = JSON.parse(localStorage.getItem('Followers'));
+  },
   computed: {
     count() {
       return this.relationshipList.length
@@ -49,16 +52,12 @@ export default {
     },
     registerRelationship: async function() {
       const res = await axios.post('/api/v1/relationships', { followed_id: this.followedId })
-
       const countUp = this.followersCount += 1;
-
       // localStorageに値を追加
       localStorage.setItem('Followers', countUp);
-
       // 値を取得
-      const totalFollowers = localStorage.getItem('Followers');
-      console.log(totalFollowers);
-
+      const incrementFollowers = localStorage.getItem('Followers');
+      console.log(incrementFollowers);
       if (res.status !== 201) { process.exit() }
       this.fetchRelationshipByFollowedId().then(result => {
         this.relationshipList = result
@@ -67,7 +66,13 @@ export default {
     deleteRelationship: async function() {
       const relationshipId = this.findRelationshipId()
       const res = await axios.delete(`/api/v1/relationships/${relationshipId}`)
-      this.followersCount -= 1;
+      const countDown = this.followersCount -= 1;
+      // localStorageの値を減少
+      localStorage.setItem('Followers', countDown);
+      // 値を取得
+      const decrementFollowers = localStorage.getItem('Followers');
+      console.log(decrementFollowers);
+
       if (res.status !== 200) { process.exit() }
       this.relationshipList = this.relationshipList.filter(n => n.id !== relationshipId)
     },
