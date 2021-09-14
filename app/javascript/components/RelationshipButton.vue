@@ -24,18 +24,7 @@ export default {
     return {
       relationshipList: [],
       followingCount: 0,
-      followersCount: 0,
-      countData: ''
-    }
-  },
-   mounted() {
-    if (localStorage.countData) {
-      this.countData = localStorage.countData;
-    }
-  },
-  watch: {
-    countData(newcountData) {
-      localStorage.countData = newcountData;
+      followersCount: 0
     }
   },
   computed: {
@@ -60,7 +49,16 @@ export default {
     },
     registerRelationship: async function() {
       const res = await axios.post('/api/v1/relationships', { followed_id: this.followedId })
-      this.followersCount += 1;
+
+      const countUp = this.followersCount += 1;
+
+      // localStorageに値を追加
+      localStorage.setItem('Followers', countUp);
+
+      // 値を取得
+      const totalFollowers = localStorage.getItem('Followers');
+      console.log(totalFollowers);
+
       if (res.status !== 201) { process.exit() }
       this.fetchRelationshipByFollowedId().then(result => {
         this.relationshipList = result
