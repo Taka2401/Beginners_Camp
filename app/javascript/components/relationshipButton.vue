@@ -24,7 +24,18 @@ export default {
     return {
       relationshipList: [],
       followingCount: 0,
-      followersCount: 0
+      followersCount: 0,
+      countData: ''
+    }
+  },
+   mounted() {
+    if (localStorage.countData) {
+      this.countData = localStorage.countData;
+    }
+  },
+  watch: {
+    countData(newcountData) {
+      localStorage.countData = newcountData;
     }
   },
   computed: {
