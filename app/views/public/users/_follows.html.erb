@@ -1,9 +1,4 @@
 <%= javascript_pack_tag 'relationship' %>
-<% if current_user.id === user.id %>
-  <%= link_to "#{user.followings.count} フォロー", following_user_path(user), class: "link-color" %>
-  <span>　|　</span>
-  <%= link_to "#{user.followers.count} フォロワー ", followers_user_path(user), class: "link-color" %>
-<% end %>
 <div id="relationship">
   <% if current_user.id != user.id %>
   <keep-alive>
