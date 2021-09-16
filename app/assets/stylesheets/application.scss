@@ -932,7 +932,7 @@ footer{
   }
 
   .following-count {
-    margin: 0 50px;
+    margin: 0 65px;
   }
 
   .my-page-btn {
@@ -942,9 +942,10 @@ footer{
    /* admin関連 */
 
   .all-user-inner {
-    padding: 15px;
+    width: 90%;
+    padding: 10px;
     margin: 20px auto;
-    font-size: 10px;
+    font-size: 12px;
 
     .table th, .table td {
       padding: 5px;
