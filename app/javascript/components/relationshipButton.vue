@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div v-if="isRelationshiped" @click="deleteRelationship()" class="btn btn-bg follow-followed">
-      <i class="fas fa-user-minus"></i> フォロー解除
+    <div v-if="isRelationshiped" @click="deleteRelationship()" class="my-page-btn btn btn-primary">
+      フォロー解除
     </div>
-    <div v-else @click="registerRelationship()" class="btn btn-bg" style="margin:0;">
-      <i class="fas fa-user-plus"></i> フォローする
+    <div v-else @click="registerRelationship()" class="my-page-btn btn btn-success">
+      フォローする
     </div>
   </div>
 </template>
