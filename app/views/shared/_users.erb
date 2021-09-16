@@ -10,7 +10,11 @@
                 <% end %>
               </td>
               <td><%= user.name %></td>
-              </tr>
+              <td>
+                <%= link_to "#{user.followings.count} フォロー", following_user_path(user), class: "link-color following-count" %>
+                <%= link_to "#{user.followers.count} フォロワー ", followers_user_path(user), class: "link-color" %>
+              </td>
+            </tr>
           </tbody>
         <% end %>
       </table>

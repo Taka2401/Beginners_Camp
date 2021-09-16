@@ -367,6 +367,8 @@ footer{
 
 .table td{
   max-width: 200px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .new-comment  {
@@ -386,9 +388,9 @@ footer{
 
 /* マイページ関連 */
 
-.follow-btn {
-  font-size: 6px;
-  margin-left: 30px;
+.my-page-btn {
+  width: 150px;
+  font-size: 14px;
 }
 
 .user-inner {
@@ -442,12 +444,16 @@ footer{
 }
 
 .follow-inner {
-  width: 100%;
+  width: 70%;
   margin: 30px auto;
   border: 1px solid #000000;
   border-radius: 5px;
   background-color: #FFFFFF;
   box-shadow: 10px 10px 10px -10px;
+}
+
+.following-count {
+  margin-right: 20px;
 }
 
 /* ランキング関連 */
@@ -915,6 +921,7 @@ footer{
   }
 
   .follow-inner {
+    width: 100%;
     margin: 20px;
     padding: 10px;
   }
@@ -924,12 +931,21 @@ footer{
     font-weight: 1000;
   }
 
+  .following-count {
+    margin: 0 65px;
+  }
+
+  .my-page-btn {
+    font-size: 14px;
+  }
+
    /* admin関連 */
 
   .all-user-inner {
-    padding: 15px;
+    width: 90%;
+    padding: 10px;
     margin: 20px auto;
-    font-size: 10px;
+    font-size: 12px;
 
     .table th, .table td {
       padding: 5px;
