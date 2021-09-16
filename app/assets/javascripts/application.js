@@ -34,19 +34,18 @@ window.onpageshow = function(event) {
       images: ['img/camp_image.10.jpg','img/camp_image.11.jpg','img/camp_image.12.jpg'],
     });
 
-    $(document).ready(function () {
-      $("#slider").skipper({
-        transition : 'slide',
-        speed : 1000,
-        easing : 'easeOutQuart',
-        navType : 'block',
-        childrenElementType : 'div',
-        arrows : true,
-        autoPlay : true,
-        autoPlayDuration : 3000,
-        keyboardOnAlways : true,
-        hidePrevious : false
-      });
+    $("#slider").skippr({
+      transition : 'slide',
+      speed : 1000,
+      easing : 'easeOutQuart',
+      navType : 'block',
+      childrenElementType : 'div',
+      arrows : true,
+      autoPlay : true,
+      autoPlayDuration : 3000,
+      keyboardOnAlways : true,
+      hidePrevious : false
+    });
 
     $('#post_image').on('change', function (e) {
       var reader = new FileReader();
@@ -84,7 +83,6 @@ window.onpageshow = function(event) {
         $('#total_fee')[0].innerText = `¥${changedfee}`;
       }
     });
-  });
 };
 
 
