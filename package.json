@@ -2,7 +2,11 @@
   "name": "Beginners_Camp",
   "private": true,
   "dependencies": {
+    "@rails/ujs": "^6.1.4-1",
     "@rails/webpacker": "5.4.2",
+    "axios": "^0.21.4",
+    "jquery": "^3.6.0",
+    "rails-ujs": "^5.2.6",
     "vue": "^2.6.14",
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.6.14",

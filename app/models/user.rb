@@ -13,8 +13,8 @@ class User < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   has_many :camp_item_values, dependent: :destroy
   has_many :camp_place_values, dependent: :destroy
-  has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+  has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :reverse_of_relationships, source: :follower
   has_many :followings, through: :relationships, source: :followed
 
