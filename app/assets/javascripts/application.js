@@ -29,6 +29,7 @@ window.onpageshow = function(event) {
       window.location.reload(true);
   }
     /*global $*/
+  $(document).ready(function () {
 
     $('.bg-slider').bgSwitcher({
       images: ['img/camp_image.10.jpg','img/camp_image.11.jpg','img/camp_image.12.jpg'],
@@ -83,6 +84,7 @@ window.onpageshow = function(event) {
         $('#total_fee')[0].innerText = `¥${changedfee}`;
       }
     });
+  });
 };
 
 

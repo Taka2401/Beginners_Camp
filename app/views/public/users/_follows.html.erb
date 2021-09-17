@@ -1,8 +1,6 @@
 <%= javascript_pack_tag 'relationship' %>
 <div id="relationship">
   <% if current_user.id != user.id %>
-  <keep-alive>
     <Relationship-button :follower-id="<%= current_user.id %>" :followed-id="<%= @user.id %>"></Relationship-button>
-  </keep-alive>
   <% end %>
 </div>
