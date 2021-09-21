@@ -17,6 +17,7 @@ https://beginners-camp.net/
   - HTML/CSS
   - Javascript
   - Bootstrap 4.5
+  - Vue.js 2.6.14
  ## バックエンド
   - Ruby 2.6.3
   - Ruby on Rails 5.2.6
