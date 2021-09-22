@@ -3,7 +3,7 @@ import BookmarkButton from '../components/BookmarkButton.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
-    el: '#Bookmark',
+    el: '#bookmark',
     components: { BookmarkButton },
   })
 });
