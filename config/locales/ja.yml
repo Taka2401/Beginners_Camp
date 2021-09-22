@@ -25,7 +25,8 @@ ja:
       user: ユーザー
     attributes:
       user:
-        name: 名前
+        name: ユーザー名
+        email: メールアドレス
         introduction: 自己紹介
       post:
         title: タイトル
