@@ -59,6 +59,7 @@ Rails.application.routes.draw do
         get 'followers'
         get 'favorites'
         get 'post'
+        get 'bookmarks'
       end
     end
   end

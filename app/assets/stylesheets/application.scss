@@ -535,6 +535,14 @@ footer{
   box-shadow: 10px 10px 10px -10px;
 }
 
+.reserve-btn {
+  padding: 8px 160px;
+}
+
+.camp-place-bookmark {
+  display: inline-block;
+}
+
 /* 管理者投稿ページ */
 
 .new-content-inner {
@@ -735,6 +743,9 @@ footer{
     text-align: center;
   }
 
+  .reserve-btn {
+    padding: 8px 70px;
+  }
   #map {
     width: 100%;
   }

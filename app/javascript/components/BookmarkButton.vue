@@ -1,12 +1,10 @@
 <template>
-  <div>
     <div v-if="isBookmarked" @click="deleteBookmark()" class="btn btn-primary">
-      ブックマーク中
+      気になる{{ count }}
     </div>
     <div v-else @click="registerBookmark()" class="btn btn-success">
-      ブックマーク
+      気になる{{ count }}
     </div>
-  </div>
 </template>
 
 <script>
