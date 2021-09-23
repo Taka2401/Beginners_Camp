@@ -4,7 +4,7 @@
       <div class="col-md-6 offset-md-3 mt-3">
         <h5 class="follw-title"><%= @user.name %>さんがフォローしているユーザー</h5>
       </div>
-      <%= render 'shared/users', users: @users %>
+        <%= render 'shared/users', users: @users, class: "relationship-count" %>
       <div class="col-12 mt-4 offset-md-5">
         <%= paginate @users, theme: 'twitter-bootstrap-4' %>
       </div>
