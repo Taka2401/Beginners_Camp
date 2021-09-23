@@ -390,6 +390,7 @@ footer{
 
 .my-page-btn {
   width: 150px;
+  margin-top: 15px;
   font-size: 14px;
 }
 
@@ -450,10 +451,6 @@ footer{
   border-radius: 5px;
   background-color: #FFFFFF;
   box-shadow: 10px 10px 10px -10px;
-}
-
-.following-count {
-  margin-right: 20px;
 }
 
 /* ランキング関連 */
@@ -536,7 +533,7 @@ footer{
 }
 
 .reserve-btn {
-  padding: 8px 160px;
+  padding: 8px 165px;
 }
 
 .camp-place-bookmark {
@@ -935,6 +932,7 @@ footer{
     width: 100%;
     margin: 20px;
     padding: 10px;
+    font-size: 12px;
   }
 
   .follw-title {
@@ -942,8 +940,14 @@ footer{
     font-weight: 1000;
   }
 
-  .following-count {
-    margin: 0 65px;
+  .relationship-count {
+    margin-right: 50px;
+  }
+
+  .table td{
+    max-width: 140px;
+    text-align: center;
+    vertical-align: middle;
   }
 
   .my-page-btn {

@@ -1,9 +1,9 @@
 <template>
-    <div v-if="isBookmarked" @click="deleteBookmark()" class="btn btn-primary">
-      気になる{{ count }}
+    <div v-if="isBookmarked" @click="deleteBookmark()" class="btn btn-outline-success">
+      気になる {{ count }}
     </div>
-    <div v-else @click="registerBookmark()" class="btn btn-success">
-      気になる{{ count }}
+    <div v-else @click="registerBookmark()" class="btn btn-outline-success">
+      気になる {{ count }}
     </div>
 </template>
 
