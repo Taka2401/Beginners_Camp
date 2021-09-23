@@ -9,9 +9,11 @@
       </div>
       <div class="col-md-9 mt-2">
         <div>
-          <%= render 'follows', user: @user %>
           <% if current_user.id == @user.id %>
             <%= link_to '編集する', edit_user_path(@user.id), class: 'my-page-btn btn btn-success' %>
+            <%= render 'bookmarks', user: @user %>
+          <%   else %>
+            <%= render 'follows', user: @user %>
           <% end %>
         </div>
         <div class="col-12 mt-3">
