@@ -52,14 +52,14 @@ Rails.application.routes.draw do
     end
 
     resources :users, only: [:index, :show, :edit, :update] do
-      resource :relationships, only: [:create, :destroy]
+      resources :bookmarks, only: [:index]
       resources :reservations, only: [:index, :show]
+      resource :relationships, only: [:create, :destroy]
       member do
         get 'following'
         get 'followers'
         get 'favorites'
         get 'post'
-        get 'bookmarks'
       end
     end
   end
