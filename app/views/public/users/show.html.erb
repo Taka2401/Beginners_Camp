@@ -9,9 +9,11 @@
       </div>
       <div class="col-md-9 mt-2">
         <div>
-          <%= link_to "#{@user.followings.count} フォロー", following_user_path(@user), class: "link-color" %>
-          <span>　|　</span>
-          <%= link_to "#{@user.followers.count} フォロワー ", followers_user_path(@user), class: "link-color" %>
+          <% if current_user.id == @user.id %>
+            <%= link_to "#{@user.followings.count} フォロー", following_user_path(@user), class: "link-color" %>
+            <span>　|　</span>
+            <%= link_to "#{@user.followers.count} フォロワー ", followers_user_path(@user), class: "link-color" %>
+          <% end %>
         </div>
         <div>
           <% if current_user.id == @user.id %>
