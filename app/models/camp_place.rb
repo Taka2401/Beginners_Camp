@@ -1,7 +1,8 @@
 class CampPlace < ApplicationRecord
   belongs_to :admin
 
-  has_many :reservations
+  has_many :bookmarks, dependent: :destroy
+  has_many :reservations, dependent: :destroy
   has_many :camp_place_values, dependent: :destroy
   has_many :post_images, dependent: :destroy
 
