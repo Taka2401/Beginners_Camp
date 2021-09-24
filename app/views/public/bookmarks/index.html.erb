@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="camp-place-inner mt-5">
+      <div class="col-12 ml-2">
+        <h3>ブックマーク一覧</h3>
+      </div>
+      <% @bookmarks.each do |bookmark| %>
+        <%= render 'shared/camp_places', camp_place: bookmark %>
+      <% end %>
+      <div class="col-7 mt-5 paginate">
+        <%= paginate @bookmarks, theme: 'twitter-bootstrap-4' %>
+      </div>
+    </div>
+  </div>
+</div>

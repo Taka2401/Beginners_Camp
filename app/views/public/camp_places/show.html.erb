@@ -32,9 +32,12 @@
           </table>
         </div>
         <div class="col-12 text-center">
-          <%= link_to "予約する", new_camp_place_reservation_path(@camp_place), class: 'glyphicon glyphicon-home btn btn-danger' %>
+          <%= link_to "予約する", new_camp_place_reservation_path(@camp_place), class: 'reserve-btn glyphicon glyphicon-home btn btn-danger' %>
+        </div>
+        <div class="col-12 text-center mt-2">
           <%= link_to "口コミを投稿する", new_camp_place_camp_place_value_path(@camp_place), class: 'glyphicon glyphicon-home btn btn-success' %>
           <%= link_to "口コミを見る", camp_place_camp_place_values_path(@camp_place), class: 'glyphicon glyphicon-home btn btn-primary' %>
+          <%= render 'bookmark', user: @user, camp_place: @camp_place %>
           <%= render 'maps', camp_place: @camp_place %>
         </div>
       </div>
