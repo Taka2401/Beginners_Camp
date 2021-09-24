@@ -121,6 +121,8 @@ N＋１問題では、開発当初ページ遷移時の時間が若干遅く、�
 ## インフラ構成図
 ![PF_最新インフラ構成図](https://user-images.githubusercontent.com/79072615/131221620-c709739c-9476-4acc-b545-7cb52dd90524.png)
 
+## Qiitaで外部発信もしています。
+https://qiita.com/tkht2401
 
 ## 使用素材
 【画像素材】<br />
