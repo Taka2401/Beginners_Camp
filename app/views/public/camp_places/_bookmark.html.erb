@@ -1,4 +1,6 @@
 <%= javascript_pack_tag 'bookmark' %>
 <div class="camp-place-bookmark" id="bookmark">
-  <bookmark-button :user-id="<%= current_user.id %>" :camp-place-id="<%= @camp_place.id %>"></bookmark-button>
+  <% if user_signed_in? %>
+    <bookmark-button :user-id="<%= current_user.id %>" :camp-place-id="<%= @camp_place.id %>"></bookmark-button>
+  <% end %>
 </div>
