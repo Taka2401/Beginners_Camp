@@ -117,7 +117,6 @@ footer{
   margin: 20px auto;
   flex-wrap: wrap;
   display: flex;
-  text-align: center;
   border: 1px solid #000000;
   border-radius: 5px;
   background-color: #FFFFFF;
@@ -125,6 +124,7 @@ footer{
 }
 
 .camp-place-detail {
+  text-align: center;
   margin: 0 auto;
 }
 
