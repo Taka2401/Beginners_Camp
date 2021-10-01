@@ -117,10 +117,15 @@ footer{
   margin: 20px auto;
   flex-wrap: wrap;
   display: flex;
+  text-align: center;
   border: 1px solid #000000;
   border-radius: 5px;
   background-color: #FFFFFF;
   box-shadow: 10px 10px 10px -10px;
+}
+
+.camp-place-detail {
+  margin: 0 auto;
 }
 
 .camp-item-inner {
@@ -365,11 +370,11 @@ footer{
   border-radius: 150px;
 }
 
-.table td{
-  max-width: 200px;
-  text-align: center;
-  vertical-align: middle;
-}
+// .table td{
+//   max-width: 200px;
+//   text-align: center;
+//   vertical-align: middle;
+// }
 
 .new-comment  {
   padding-left: 25px;
@@ -415,6 +420,13 @@ footer{
   border-radius: 5px;
   background-color: #FFFFFF;
   box-shadow: 10px 10px 10px -10px;
+
+  .table td{
+    max-width: 200px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
 }
 
 .user-post {
