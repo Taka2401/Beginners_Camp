@@ -220,7 +220,7 @@ footer{
 }
 
 #error_explanation {
-  width: 500px;
+  width: 450px;
   background-color: #fcf8e3;
   border: 2px solid #faebcc;
   border-radius: 4px;
@@ -639,8 +639,8 @@ footer{
   /* エラーメッセージ */
 
   #error_explanation {
-    width: 100%;
-    margin: 10px;
+    width: 280px;
+    margin: 10px auto;
     font-size: 11px;
     font-weight: 1000;
   }
