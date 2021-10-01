@@ -117,10 +117,15 @@ footer{
   margin: 20px auto;
   flex-wrap: wrap;
   display: flex;
+  text-align: center;
   border: 1px solid #000000;
   border-radius: 5px;
   background-color: #FFFFFF;
   box-shadow: 10px 10px 10px -10px;
+}
+
+.camp-place-detail {
+  margin: 0 auto;
 }
 
 .camp-item-inner {
@@ -365,12 +370,6 @@ footer{
   border-radius: 150px;
 }
 
-.table td{
-  max-width: 200px;
-  text-align: center;
-  vertical-align: middle;
-}
-
 .new-comment  {
   padding-left: 25px;
   width: 70px;
@@ -415,6 +414,13 @@ footer{
   border-radius: 5px;
   background-color: #FFFFFF;
   box-shadow: 10px 10px 10px -10px;
+
+  .table td{
+    max-width: 200px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
 }
 
 .user-post {
@@ -505,10 +511,10 @@ footer{
 }
 
 .all-value-inner {
-  width: 600px;
   padding: 20px;
   margin: 50px auto;
   word-wrap: break-word;
+  text-align: center;
   border: 1px solid #000000;
   border-radius: 5px;
   background-color: #FFFFFF;
@@ -516,7 +522,6 @@ footer{
 }
 
 .value-detail {
-  width: 250px;
   word-wrap: break-word;
 }
 
@@ -787,11 +792,10 @@ footer{
 
   .all-value-inner {
     width: 350px;
-    padding: 10px;
+    padding: 10px 20px 10px 0px;
     margin: 15px auto;
     font-size: 12px;
     font-weight: 1000;
-    text-align: center;
 
     .table th, .table td {
       padding: 5px;
@@ -799,15 +803,16 @@ footer{
   }
 
   .form-label {
-    padding: 9px 0 0 30px;
+    margin-top: 8px;
+  }
+
+  .value-detail {
+    margin-right: 30px;
   }
 
   .form-control {
-    width: 90%;
-  }
-
-  .value-content {
-    padding-left: 110px;
+    margin: 0 auto;
+    width: 265px
   }
 
   .required-form {

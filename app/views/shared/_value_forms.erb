@@ -3,7 +3,7 @@
   </div>
   <div class="col-12 mt-2">
     <div class="form-group form-inline">
-    　<p class="value-content">タイトル</p><p class="required-form">※必須</p>
+    　<p>タイトル</p><p class="required-form">※必須</p>
       <div class="ml-5"><%= f.text_field :title, size: "20", class: "form-control" %></div>
     </div>
     <div class="form-group form-inline ml-3" id="star">
@@ -14,10 +14,10 @@
       </div>
     </div>
     <div class="form-group form-inline">
-    　<p class="value-content">本文</p>
+    　<p class="value-detail">本文</p>
       <div class="ml-5"><%= f.text_area :review, size: "40x6", class: "form-control" %></div>
     </div>
-    <div class="col-md-12 mt-5 offset-md-5">
+    <div class="col-md-12 mt-5">
       <%= f.submit '投稿する', class:"btn btn-success" %>
     </div>
   </div>
