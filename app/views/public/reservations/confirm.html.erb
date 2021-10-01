@@ -40,7 +40,7 @@
       <div class="row mt-4">
         <div class="col-12 text-center">
           <%= form_with(model: @reservation, url: camp_place_reservations_path, local: true) do |f| %>
-            <div class="row col-12 offset-md-3">
+            <div class="row offset-md-3">
               <%= render 'layouts/error_messages', object: f.object %>
             </div>
             <%= f.hidden_field :day, :value => @reservation.day %>
