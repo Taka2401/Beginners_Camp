@@ -1,5 +1,5 @@
 import Vue from 'vue/dist/vue.esm.js'
-import RelationshipButton from '../components/RelationshipButton.vue'
+import RelationshipButton from '../components/Relationship/RelationshipButton.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
