@@ -6,7 +6,7 @@
       </div>
       <%= form_with model:@post, local:true do |f| %>
         <div class="row offset-md-3">
-          <%= render 'layouts/error_messages', object: f.object %>
+          <%= render 'shared/error_messages', object: f.object %>
         </div>
        <div class="row offset-md-1">
         <div class="row col-md-4 mt-3 image-form">

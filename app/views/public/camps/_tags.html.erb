@@ -7,7 +7,7 @@
   <div class="row">
     <% tags.each do |tag| %>
       <div class="row tag-box mt-4">
-        <%= link_to tag_path(tag.id), class: "link-color" do %>
+        <%= link_to tag_path(tag.id) do %>
           <i class="fas fa-hashtag"></i> <%= tag.name %>
         <% end %>
       </div>
@@ -15,7 +15,7 @@
   </div>
   <div class="row offset-md-8 mt-4">
     <div class="col-md-12">
-      <%= link_to "もっと見る>>>", tags_path, class: "link-color tag-all" %>
+      <%= link_to "もっと見る>>>", tags_path, class: "tag-all" %>
     </div>
   </div>
 </div>

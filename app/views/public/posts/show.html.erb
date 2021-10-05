@@ -8,7 +8,7 @@
         <div class="row mt-2">
           <% @post.tags.each do |tag| %>
             <div class="row post-tag-box mt-2 ml-4">
-              <%= link_to tag_path(tag.id), class: "link-color" do %>
+              <%= link_to tag_path(tag.id) do %>
                 <i class="fas fa-hashtag"></i> <%= tag.name %>
               <% end %>
             </div>
@@ -33,7 +33,7 @@
       </div>
       <div class="col-md-5 offset-md-4">
         <div id="comments_error">
-          <%= render 'layouts/error_messages', object: @post_comment %>
+          <%= render 'shared/error_messages', object: @post_comment %>
         </div>
       </div>
       <div class="row">
