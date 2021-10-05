@@ -18,7 +18,7 @@
               <tr>
                 <td><%= camp_item_value.user.name %>さん</td>
                 <td>
-                  <%= link_to camp_item_camp_item_value_path(@camp_item, camp_item_value), class: "link-color" do %>
+                  <%= link_to camp_item_camp_item_value_path(@camp_item, camp_item_value) do %>
                     <%= camp_item_value.title %>
                   <% end %>
                </td>
