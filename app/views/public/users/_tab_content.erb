@@ -1,14 +1,14 @@
   <div class="row">
     <ul class="nav tab-inner">
       <li class="tab-item">
-        <a id="tab-target-1" href="#tab1" class="tab link-color" data-toggle="tab">投稿一覧</a>
+        <a id="tab-target-1" href="#tab1" class="tab" data-toggle="tab">投稿一覧</a>
       </li>
       <li class="tab-item">
-        <a href="#tab2" class="tab link-color" data-toggle="tab">いいねした投稿</a>
+        <a href="#tab2" class="tab" data-toggle="tab">いいねした投稿</a>
       </li>
       <% if current_user.id == @user.id %>
         <li class="tab-item">
-          <a href="#tab3" class="tab link-color" data-toggle="tab">予約一覧</a>
+          <a href="#tab3" class="tab" data-toggle="tab">予約一覧</a>
         </li>
       <% end %>
     </ul>

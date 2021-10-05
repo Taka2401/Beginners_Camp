@@ -11,8 +11,8 @@
               </td>
               <td><%= user.name %></td>
               <td>
-                <%= link_to "#{user.followings.count} フォロー", following_user_path(user), class: "link-color" %>
-                <%= link_to "#{user.followers.count} フォロワー ", followers_user_path(user), class: "link-color" %>
+                <%= link_to "#{user.followings.count} フォロー", following_user_path(user) %>
+                <%= link_to "#{user.followers.count} フォロワー ", followers_user_path(user) %>
               </td>
             </tr>
           </tbody>
