@@ -14,8 +14,8 @@ https://beginners-camp.net/
 
 ## 使用技術
  ## フロントエンド
-  - HTML/CSS
-  - JavaScript/jQuery
+  - HTML / CSS
+  - JavaScript / jQuery
   - Bootstrap 4.5
   - Vue.js 2.6.14
  ## バックエンド
