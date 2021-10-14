@@ -31,7 +31,7 @@ https://beginners-camp.net/
   - VScode
   - Docker/docker-compose
 
-## 工夫・意識した点
+## 特に工夫・意識した点
 
 ### ①直感的に操作しやすいUI/UX
 欲しい情報がすぐ見つかるように、ボタンの配置を意識しました。<br />
@@ -147,8 +147,9 @@ https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HW
 ・レスポンシブ対応（スマホのみ）<br />
 ・多言語化（flash、エラーメッセージをi18nにより日本語化）<br />
 
-### 工夫した点<br />
+### その他工夫した点<br />
 ・bulletでN+1問題を検出<br />
+・WBSで作業工程の管理<br />
 ・GitHub Actionsを使った自動デプロイ<br />
 ・予約機能（重複予約、過去日付の予約不可、予約時間の制限、利用日数に応じて料金の計算）
 
