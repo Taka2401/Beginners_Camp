@@ -1,7 +1,7 @@
-  <div class="row offset-md-1">
+  <div class="row offset-md-2">
    <%= render 'shared/error_messages', object: f.object %>
   </div>
-  <div class="col-12 mt-2">
+  <div class="col-12 mt-2 offset-md-1">
     <div class="form-group form-inline">
     　<p>タイトル</p><p class="required-form">※必須</p>
       <div class="ml-5"><%= f.text_field :title, size: "20", class: "form-control" %></div>
@@ -17,7 +17,7 @@
     　<p class="value-detail">本文</p>
       <div class="ml-5"><%= f.text_area :review, size: "40x6", class: "form-control" %></div>
     </div>
-    <div class="col-md-12 mt-5">
-      <%= f.submit '投稿する', class:"btn btn-success" %>
-    </div>
+  </div>
+  <div class="col-md-12 mt-5">
+    <%= f.submit '投稿する', class:"btn btn-success" %>
   </div>
