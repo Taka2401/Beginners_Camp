@@ -26,7 +26,7 @@ https://beginners-camp.net/
  ## インフラ
   - MySQL 5.7.22 / Puma / Nginx
   - GitHub Actions(CI/CD)
-  - AWS(VPC、ACM、Route53、IAM、ALB、EC2、RDS、S3、CloudFront)
+  - AWS(VPC、ACM、Route53、IAM、ALB、RDS、S3、CloudFront、EC2、ECS(Fargate))
  ## 開発環境
   - VScode
   - Docker/docker-compose
