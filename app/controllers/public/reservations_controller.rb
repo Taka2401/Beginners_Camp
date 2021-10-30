@@ -19,7 +19,7 @@ class Public::ReservationsController < ApplicationController
 
   def confirm
     @camp_place = CampPlace.find(params[:camp_place_id])
-    @reservation = Reservation.new(reservation_params)
+    @reservation = Reservation.new
     @reservation.user_id = current_user.id
     @reservation.camp_place_id = @camp_place.id
     @reservation.total_fee = @camp_place.fee
@@ -29,7 +29,7 @@ class Public::ReservationsController < ApplicationController
       render action: :new
     end
 
-    # チェックインを算出し、チェックアウトの日付を計算
+    # チェックインの日付を取得して、チェックアウトの日付を計算
     if @reservation.start_date.present?
       year = @reservation.start_date.year
       month = @reservation.start_date.month
