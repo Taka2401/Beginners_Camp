@@ -572,9 +572,8 @@ a {
 
 /* README */
 
-p {
-  margin-block-start:7px;
-  margin-block-end:7px;
+.markdown-body li>p {
+  margin: 0;
 }
 
 /* レスポンシブ */
