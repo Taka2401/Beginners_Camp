@@ -34,7 +34,7 @@ https://beginners-camp.net/
  ## 開発環境
   - HTML / CSS
     - JavaScript / jQuery
-  - Bootstrap 4.5
+    - Bootstrap 4.5
     - Vue.js 2.6.14
 
 ## 特に工夫・意識した点
