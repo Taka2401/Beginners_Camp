@@ -31,11 +31,11 @@ https://beginners-camp.net/
   - VScode
   - Docker/docker-compose
 
-- フロントエンド
-  - HTML / CSS
-  - JavaScript / jQuery
-  - Bootstrap 4.5
-  - Vue.js 2.6.14
+  - フロントエンド
+    - HTML / CSS
+    - JavaScript / jQuery
+    - Bootstrap 4.5
+    - Vue.js 2.6.14
 
 ## 特に工夫・意識した点
 
