@@ -14,7 +14,7 @@ https://beginners-camp.net/
 
 ## 使用技術
  ## フロントエンド
-- HTML / CSS
+  - HTML / CSS
   - JavaScript / jQuery
   - Bootstrap 4.5
   - Vue.js 2.6.14
@@ -30,14 +30,6 @@ https://beginners-camp.net/
  ## 開発環境
   - VScode
   - Docker/docker-compose
-
-## 設計書
-
-## ER図
-![PF_最新_ER図](https://user-images.githubusercontent.com/79072615/134756537-cb18cc8f-ae09-4863-9b0a-be9b50233e2c.png)
-
-## インフラ構成図
-![PF_最新インフラ構成図](https://user-images.githubusercontent.com/79072615/131221620-c709739c-9476-4acc-b545-7cb52dd90524.png)
 
 ## 特に工夫・意識した点
 
@@ -90,11 +82,6 @@ https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HW
   - ゲストログイン機能
   - マイページで下記表示可能<br />
 （フォロー・フォロワー一覧、投稿一覧、いいねした投稿、予約一覧、ブックマーク一覧）
-
-- HTML / CSS
-  - JavaScript / jQuery
-  - Bootstrap 4.5
-  - Vue.js 2.6.14
 
 - 投稿機能（みんなのキャンプ）
   - キャンプ情報投稿一覧、詳細表示、記事投稿、編集、削除機能
@@ -164,6 +151,14 @@ https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HW
   - WBSで作業工程の管理<br />
   - GitHub Actionsを使った自動デプロイ<br />
   - 予約機能（重複予約、過去日付の予約不可、予約時間の制限、利用日数に応じて料金の計算）
+
+## 設計書
+
+## ER図
+![PF_最新_ER図](https://user-images.githubusercontent.com/79072615/134756537-cb18cc8f-ae09-4863-9b0a-be9b50233e2c.png)
+
+## インフラ構成図
+![PF_最新インフラ構成図](https://user-images.githubusercontent.com/79072615/131221620-c709739c-9476-4acc-b545-7cb52dd90524.png)
 
 ## Qiitaで外部発信もしています。
 https://qiita.com/tkht2401
