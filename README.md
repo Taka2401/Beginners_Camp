@@ -31,7 +31,9 @@ https://beginners-camp.net/
   - VScode
   - Docker/docker-compose
 
+
   - HTML / CSS
+
     - JavaScript / jQuery
     - Bootstrap 4.5
     - Vue.js 2.6.14
