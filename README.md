@@ -77,12 +77,27 @@ https://docs.google.com/spreadsheets/d/1MpyaG61adD7yL64vpLip-1SAqMoH9yT4X5OxsGIv
 多角的に情報を共有でき、時間を短縮させます。<br />
 その結果、サイトとユーザーが、より質の高いキャンプ情報を提供できるサービスになればと考えました。<br />
 
-## 開発環境
-  - HTML / CSS
-    - JavaScript / jQuery
-    - Bootstrap 4.5
-    - Vue.js 2.6.14
+## 機能一覧まとめ
+https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HWk_Q/edit#gid=0
 
+## 設計書
+
+## ER図
+![PF_最新_ER図](https://user-images.githubusercontent.com/79072615/134756537-cb18cc8f-ae09-4863-9b0a-be9b50233e2c.png)
+
+## インフラ構成図
+![PF_最新インフラ構成図](https://user-images.githubusercontent.com/79072615/131221620-c709739c-9476-4acc-b545-7cb52dd90524.png)
+
+## Qiitaで外部発信もしています。
+https://qiita.com/tkht2401
+
+## 使用素材
+【画像素材】<br />
+https://o-dan.net/ja/<br />
+https://www.pakutaso.com/<br />
+https://morguefile.com/photos/morguefile/1/camp/pop
+
+## 【機能詳細】
 - **ユーザー基本機能**
   - ユーザー新規登録 / ログイン
   - ユーザー一覧、編集、詳細
@@ -158,24 +173,3 @@ https://docs.google.com/spreadsheets/d/1MpyaG61adD7yL64vpLip-1SAqMoH9yT4X5OxsGIv
   - WBSで作業工程の管理<br />
   - GitHub Actionsを使った自動デプロイ<br />
   - 予約機能（重複予約、過去日付の予約不可、予約時間の制限、利用日数に応じて料金の計算）
-
-## 機能一覧まとめ
-https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HWk_Q/edit#gid=0
-
-## 設計書
-
-## ER図
-![PF_最新_ER図](https://user-images.githubusercontent.com/79072615/134756537-cb18cc8f-ae09-4863-9b0a-be9b50233e2c.png)
-
-## インフラ構成図
-![PF_最新インフラ構成図](https://user-images.githubusercontent.com/79072615/131221620-c709739c-9476-4acc-b545-7cb52dd90524.png)
-
-## Qiitaで外部発信もしています。
-https://qiita.com/tkht2401
-
-## 使用素材
-【画像素材】<br />
-https://o-dan.net/ja/<br />
-https://www.pakutaso.com/<br />
-https://morguefile.com/photos/morguefile/1/camp/pop
-
