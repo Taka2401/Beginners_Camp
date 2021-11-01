@@ -84,11 +84,11 @@ https://docs.google.com/spreadsheets/d/1MpyaG61adD7yL64vpLip-1SAqMoH9yT4X5OxsGIv
 ## 機能一覧まとめ
 https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HWk_Q/edit#gid=0
 
-- ユーザー基本機能
+- **ユーザー基本機能**
   - ユーザー新規登録 / ログイン
   - ユーザー一覧、編集、詳細
   - ゲストログイン機能
-  - マイページで下記表示可能
+  - マイページで下記表示可能<br />
 （フォロー・フォロワー一覧、投稿一覧、いいねした投稿、予約一覧、ブックマーク一覧）
 
 - 投稿機能（みんなのキャンプ）
@@ -108,7 +108,7 @@ https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HW
 - ランキング機能
   - みんなのキャンプのいいね数、キャンプ場、キャンプ用品はraty.jsの平均点のTOP3を表示<br />
 
-### キャンプ場に関する機能
+**キャンプ場に関する機能**
   - キャンプ場一覧、詳細表示
 
 - 予約機能
@@ -132,14 +132,14 @@ https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HW
   - Google Maps API
 （管理者が投稿した住所をgeocoderで緯度経度を読み取り、キャンプ場の地図を表示）<br />
 
-### キャンプ用品に関する機能
+**キャンプ用品に関する機能**
 - キャンプ用品一覧、詳細表示
 
 - 口コミ機能
   - 口コミ機能投稿、一覧、詳細（raty.js）<br />
   - TOP画面のみ、ユーザーが評価した平均点を表示<br />
 
-### 管理者機能
+**管理者機能**
 
 - キャンプ場投稿<br />
   - キャンプ場投稿一覧、詳細、編集、削除<br />
