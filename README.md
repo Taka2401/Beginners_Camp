@@ -84,7 +84,7 @@ https://docs.google.com/spreadsheets/d/1MpyaG61adD7yL64vpLip-1SAqMoH9yT4X5OxsGIv
 ### 機能一覧まとめ
 https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HWk_Q/edit#gid=0
 
-  - ### ユーザー基本機能
+  - ユーザー基本機能
     - ユーザー新規登録 / ログイン
     - ユーザー一覧、編集、詳細
     - ゲストログイン機能
