@@ -88,12 +88,15 @@ https://docs.google.com/spreadsheets/d/1MpyaG61adD7yL64vpLip-1SAqMoH9yT4X5OxsGIv
     - JavaScript
     - Bootstrap
 
+## test
 - **ユーザー基本機能**
   - ユーザー新規登録 / ログイン
   - ユーザー一覧、編集、詳細
   - ゲストログイン機能
   - マイページで下記表示可能<br />
 （フォロー・フォロワー一覧、投稿一覧、いいねした投稿、予約一覧、ブックマーク一覧）
+
+## test
 
 - 投稿機能（みんなのキャンプ）
   - キャンプ情報投稿一覧、詳細表示、記事投稿、編集、削除機能
