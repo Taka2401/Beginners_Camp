@@ -31,12 +31,11 @@ https://beginners-camp.net/
   - VScode
   - Docker/docker-compose
 
-- **ユーザー基本機能**
-- ユーザー新規登録 / ログイン
-- ユーザー一覧、編集、詳細
-- ゲストログイン機能
-- マイページで下記表示可能<br />
-（フォロー・フォロワー一覧、投稿一覧、いいねした投稿、予約一覧、ブックマーク一覧）
+- フロントエンド
+  - HTML / CSS
+  - JavaScript / jQuery
+  - Bootstrap 4.5
+  - Vue.js 2.6.14
 
 ## 特に工夫・意識した点
 
