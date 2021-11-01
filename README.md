@@ -135,7 +135,7 @@ https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HW
     - 複数画像アップロード（refile）
   - キャンプ用品投稿
     - キャンプ用品投稿一覧、詳細、編集、削除
-### その他機能
+  - ### その他機能
     - ページング機能
     - BgSwitcher（画面スライダー）
     - レスポンシブ対応（スマホのみ）
