@@ -104,7 +104,6 @@ https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HW
   - ランキング機能
     - みんなのキャンプのいいね数、キャンプ場、キャンプ用品はraty.jsの平均点のTOP3を表示
   - ### キャンプ場に関する機能
-    - キャンプ場一覧、詳細表示
   - 予約機能
     - DatetimePicker使用（カレンダーで予約日時を選択）
     - 過去の日付を選択できない（カレンダー、手入力も不可）
@@ -122,7 +121,6 @@ https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HW
     - Google Maps API
 （管理者が投稿した住所をgeocoderで緯度経度を読み取り、地図を表示）
   - ### キャンプ用品に関する機能
-    - キャンプ用品一覧、詳細表示
   - 口コミ機能
     - 口コミ機能投稿、一覧、詳細（raty.js）
     - TOP画面のみ、ユーザーが評価した平均点を表示
