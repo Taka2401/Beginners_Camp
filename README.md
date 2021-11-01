@@ -84,11 +84,6 @@ https://docs.google.com/spreadsheets/d/1MpyaG61adD7yL64vpLip-1SAqMoH9yT4X5OxsGIv
     - Vue.js 2.6.14
 
 ## 【機能一覧 / 詳細】
-
-## 機能一覧まとめ
-https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HWk_Q/edit#gid=0
-
-## 開発環境
   - HTML / CSS
     - JavaScript / jQuery
     - Bootstrap 4.5
@@ -169,6 +164,9 @@ https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HW
   - WBSで作業工程の管理<br />
   - GitHub Actionsを使った自動デプロイ<br />
   - 予約機能（重複予約、過去日付の予約不可、予約時間の制限、利用日数に応じて料金の計算）
+
+## 機能一覧まとめ
+https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HWk_Q/edit#gid=0
 
 ## 設計書
 
