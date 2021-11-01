@@ -84,11 +84,11 @@ https://docs.google.com/spreadsheets/d/1MpyaG61adD7yL64vpLip-1SAqMoH9yT4X5OxsGIv
 ### 機能一覧まとめ
 https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HWk_Q/edit#gid=0
 
-  - **ユーザー基本機能**
+  - ### ユーザー基本機能
     - ユーザー新規登録 / ログイン
     - ユーザー一覧、編集、詳細
     - ゲストログイン機能
-    - マイページで下記表示可能
+    - マイページで下記表示可能<br />
 （フォロー・フォロワー一覧、投稿一覧、いいねした投稿、予約一覧、ブックマーク一覧）
   - 投稿機能（みんなのキャンプ）
     - キャンプ情報投稿一覧、詳細表示、記事投稿、編集、削除機能
@@ -103,7 +103,7 @@ https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HW
     - タグをクリックすると、同じタグの投稿一覧が表示されます
   - ランキング機能
     - みんなのキャンプのいいね数、キャンプ場、キャンプ用品はraty.jsの平均点のTOP3を表示
-  - **キャンプ場に関する機能**
+  - ### キャンプ場に関する機能
     - キャンプ場一覧、詳細表示
   - 予約機能
     - DatetimePicker使用（カレンダーで予約日時を選択）
@@ -121,7 +121,7 @@ https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HW
   - Google Maps
     - Google Maps API
 （管理者が投稿した住所をgeocoderで緯度経度を読み取り、キャンプ場の地図を表示）
-  - **キャンプ用品に関する機能**
+  - ### キャンプ用品に関する機能
     - キャンプ用品一覧、詳細表示
   - 口コミ機能
     - 口コミ機能投稿、一覧、詳細（raty.js）
@@ -135,7 +135,7 @@ https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HW
     - 複数画像アップロード（refile）
   - キャンプ用品投稿
     - キャンプ用品投稿一覧、詳細、編集、削除
-  - ### その他機能
+  - その他機能
     - ページング機能
     - BgSwitcher（画面スライダー）
     - レスポンシブ対応（スマホのみ）
