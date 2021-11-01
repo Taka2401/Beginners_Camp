@@ -13,7 +13,7 @@
 https://beginners-camp.net/
 
 ## 使用技術
- ## フロントエンド
+- フロントエンド
   - HTML / CSS
   - JavaScript / jQuery
   - Bootstrap 4.5
