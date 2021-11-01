@@ -31,7 +31,7 @@ https://beginners-camp.net/
   - VScode
   - Docker/docker-compose
 
-  - フロントエンド
+ ## 開発環境
     - HTML / CSS
     - JavaScript / jQuery
     - Bootstrap 4.5
