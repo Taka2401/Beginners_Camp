@@ -12,7 +12,7 @@
 ## URL
 https://beginners-camp.net/
 
-## 使用技術
+# 使用技術
  ## フロントエンド
   - HTML / CSS
   - JavaScript / jQuery
@@ -136,7 +136,7 @@ https://docs.google.com/spreadsheets/d/1OdpAQK21FwGG-HCSthLstctx_0l4XZ8ub2DcF6HW
   - その他機能
     - ページング機能
     - BgSwitcher（画面スライダー）
-    - レスポンシブ対応（スマホのみ）
+    - レスポンシブ対応（PC、スマホ）
     - 多言語化（flash、エラーメッセージをi18nにより日本語化）
   - その他工夫した点
     - bulletでN+1問題を検出
