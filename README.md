@@ -12,7 +12,7 @@
 ## URL
 https://beginners-camp.net/
 
-# 使用技術
+## 使用技術
  ## フロントエンド
   - HTML / CSS
   - JavaScript / jQuery
