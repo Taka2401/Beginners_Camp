@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-10 offset-md-6">
+        <div class="col-md-10 offset-md-7">
           <% if user_signed_in? %>
             <div id="comment_buttons_<%= @post.id %>">
               <%= render partial: 'public/post_comments/comment', locals: {post: @post, post_comment: @post_comment} %>
