@@ -7,7 +7,7 @@
       <%= post.title %>
     </div>
     <div class="row post-active">
-      <i class="far fa-comment-dots comment-active"><%= post.post_comments.count %></i>
+      <i class="far fa-comment-dots comment-active"> <%= post.post_comments.count %></i>
       <div id="favorites_buttons_<%= post.id %>">
         <%= render partial: 'public/favorites/favorite', locals: {post: post} %>
       </div>
