@@ -18,7 +18,7 @@
         <div>
           <% if current_user.id == @user.id %>
             <%= link_to '編集する', edit_user_path(@user.id), class: 'my-page-btn btn btn-outline-success' %>
-            <%= link_to 'ブックマーク', user_bookmarks_path(@user.id), class: 'my-page-btn btn btn-outline-success' %>
+            <%= link_to '気になる', user_bookmarks_path(@user.id), class: 'my-page-btn btn btn-outline-success' %>
           <%   else %>
             <%= render 'follows', user: @user %>
           <% end %>
