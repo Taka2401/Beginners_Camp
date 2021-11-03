@@ -10,13 +10,9 @@
       </thead>
       <tbody>
         <% reservations.each do |reservation| %>
-          <tr>
+          <tr onclick='window.location="<%= user_reservation_path(user, reservation) %>"' role="link">
             <td><%= reservation.camp_place.name %></td>
-            <td>
-              <%= link_to user_reservation_path(user, reservation) do %>
-                <%= l reservation.created_at %>
-               <% end %>
-            </td>
+            <td><%= l reservation.created_at %></td>
             <td><%= l reservation.start_date %></td>
             <td><%= l reservation.end_date %></td>
           </tr>

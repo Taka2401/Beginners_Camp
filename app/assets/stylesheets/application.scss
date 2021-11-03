@@ -82,6 +82,10 @@ a {
   text-decoration: none !important;
 }
 
+tr {
+  cursor: pointer;
+}
+
 /* 登録画面 */
 
 .login-inner {
@@ -305,6 +309,19 @@ a {
   color: #000000;
 }
 
+.mypage-post-btn {
+  height: 100px;
+  width: 100px;
+  line-height: 120px;
+  padding-left: 25px;
+  margin: 60px;
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 10px -10px;
+}
+
 .favorite-btn {
   color: #33CC00;
   padding-top: 50px;
@@ -361,11 +378,6 @@ a {
   margin-right: 3px;
 }
 
-// .comment-form {
-//   padding-left: 35px;
-
-// }
-
 .preview-form {
   height: 190px;
   width: 200px;
@@ -400,11 +412,12 @@ a {
 }
 
 .user-inner {
-  width: 550px;
+  width: 500px;
   flex-wrap: wrap;
   display: flex;
+  text-align: center;
   padding: 20px;
-  margin: 30px auto;
+  margin: 30px 0 30px 300px;
   word-wrap: break-word;
   border: 1px solid #000000;
   border-radius: 5px;
@@ -833,6 +846,10 @@ a {
 
   .post-btn {
     margin: 0 120px;
+  }
+
+  .mypage-post-btn {
+    margin: 40px auto;
   }
 
   .post-content-inner {
