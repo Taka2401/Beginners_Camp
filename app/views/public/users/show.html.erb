@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="user-inner text-center">
+    <div class="user-inner">
       <div class="col-md-3">
         <%= attachment_image_tag(@user, :profile_image, format: 'jpeg', fallback: "user_image.jpg", size:'100x100', class: "user-image") %>
-        <div class="col-md-12 mt-2">
+        <div class="col-md-12 mt-2 ml-1">
           <%= @user.name %>
         </div>
       </div>
@@ -18,7 +18,7 @@
         <div>
           <% if current_user.id == @user.id %>
             <%= link_to '編集する', edit_user_path(@user.id), class: 'my-page-btn btn btn-outline-success' %>
-            <%= link_to 'ブックマーク', user_bookmarks_path(@user.id), class: 'my-page-btn btn btn-outline-success' %>
+            <%= link_to '気になる', user_bookmarks_path(@user.id), class: 'my-page-btn btn btn-outline-success' %>
           <%   else %>
             <%= render 'follows', user: @user %>
           <% end %>
@@ -28,6 +28,13 @@
         </div>
       </div>
     </div>
+    <% if current_user.id == @user.id %>
+      <div class="mypage-post-btn">
+        <%= link_to new_post_path do %>
+          <i class="far fa-edit fa-3x"></i>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <%= render 'tab_content', posts: @posts, like_posts: @like_posts, user: @user, reservations: @reservations %>
 </div>

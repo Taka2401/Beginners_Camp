@@ -1,6 +1,6 @@
 <div class="col-12">
   <%= form_with(model:[post, post_comment], remote: true) do |f| %>
-    <%= f.text_area :comment, rows:'5', placeholder: "コメントをここに", :size =>'55x4', class: "comment-form" %>
+    <%= f.text_area :comment, rows:'5', placeholder: "コメントをここに", :size =>'52x4', class: "comment-form" %>
     <div class="new-comment float-right">
       <%= f.submit "送信する" %>
     </div>

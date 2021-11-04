@@ -1,13 +1,11 @@
 <% posts.includes([:favorites]).each do |post| %>
   <div class="post-inner offset-md-1 mt-5">
-    <%= link_to  post_path(post.id) do %>
-      <%= attachment_image_tag post, :image, format: 'jpeg', size: "180x180", class: "rounded" %>
-    <% end %>
+    <%= link_to attachment_image_tag(post, :image, format: 'jpeg', size: "180x180", class: "rounded"), post_path(post.id) %>
     <div class="post-title col-12 mt-1">
       <%= post.title %>
     </div>
     <div class="row post-active">
-      <i class="far fa-comment-dots comment-active"><%= post.post_comments.count %></i>
+      <i class="far fa-comment-dots comment-active"> <%= post.post_comments.count %></i>
       <div id="favorites_buttons_<%= post.id %>">
         <%= render partial: 'public/favorites/favorite', locals: {post: post} %>
       </div>
