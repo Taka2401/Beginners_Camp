@@ -394,9 +394,17 @@ tr {
 }
 
 .post-comment {
-  width: 630px;
+  width: 500px;
   word-wrap: break-word;
   font-size: 13px;
+}
+
+.comment-error {
+  margin-left: 380px;
+}
+
+.comment-delete {
+  margin-left: auto;
 }
 
 .btn-sm {
