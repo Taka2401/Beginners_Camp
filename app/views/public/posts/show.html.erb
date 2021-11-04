@@ -34,10 +34,8 @@
           </tbody>
         </table>
       </div>
-      <div class="col-md-5 offset-md-4">
-        <div id="comments_error">
-          <%= render 'shared/error_messages', object: @post_comment %>
-        </div>
+      <div id="comments_error" class="col-12 comment-error">
+        <%= render 'shared/error_messages', object: @post_comment %>
       </div>
       <div class="row">
         <div class="col-md-10 offset-md-7">

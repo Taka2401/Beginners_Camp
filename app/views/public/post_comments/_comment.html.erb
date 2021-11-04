@@ -17,13 +17,13 @@
         <%= post_comment.user.name %>
       <% end %>
     </div>
-    <div class="col-md-8 mt-3 comment">
+    <div class="col-md-8 mt-1 comment">
       <%= post_comment.comment %>
-      <div class="float-right">
-        <% if post_comment.user == current_user %>
-          <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete, remote: true, class: 'btn btn-sm btn-danger' %><br>
-        <% end %>
-      </div>
+    </div>
+    <div class="comment-delete mt-2">
+      <% if post_comment.user == current_user %>
+        <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete, remote: true, class: 'btn btn-sm btn-danger' %><br>
+      <% end %>
     </div>
   </div>
 <% end %>
