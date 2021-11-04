@@ -15,13 +15,9 @@
           </thead>
           <tbody>
             <% @camp_items.each do |camp_item_value| %>
-              <tr>
+              <tr onclick='window.location="<%= camp_item_camp_item_value_path(@camp_item, camp_item_value) %>"' role="link">
                 <td><%= camp_item_value.user.name %>さん</td>
-                <td>
-                  <%= link_to camp_item_camp_item_value_path(@camp_item, camp_item_value) do %>
-                    <%= camp_item_value.title %>
-                  <% end %>
-               </td>
+                <td><%= camp_item_value.title %></td>
                 <td id="star-rate2-<%= camp_item_value.id %>"></td>
                 <script>
                 $('#star-rate2-<%= camp_item_value.id %>').raty({
