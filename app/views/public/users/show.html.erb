@@ -28,11 +28,13 @@
         </div>
       </div>
     </div>
-    <div class="mypage-post-btn">
-      <%= link_to new_post_path do %>
-        <i class="far fa-edit fa-3x"></i>
-      <% end %>
-    </div>
+    <% if current_user.id == @user.id %>
+      <div class="mypage-post-btn">
+        <%= link_to new_post_path do %>
+          <i class="far fa-edit fa-3x"></i>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <%= render 'tab_content', posts: @posts, like_posts: @like_posts, user: @user, reservations: @reservations %>
 </div>
