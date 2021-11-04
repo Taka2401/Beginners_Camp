@@ -3,7 +3,7 @@
     <div class="user-inner">
       <div class="col-md-3">
         <%= attachment_image_tag(@user, :profile_image, format: 'jpeg', fallback: "user_image.jpg", size:'100x100', class: "user-image") %>
-        <div class="col-md-12 mt-2">
+        <div class="col-md-12 mt-2 ml-1">
           <%= @user.name %>
         </div>
       </div>
