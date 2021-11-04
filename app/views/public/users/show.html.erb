@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="user-inner">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <%= attachment_image_tag(@user, :profile_image, format: 'jpeg', fallback: "user_image.jpg", size:'100x100', class: "user-image") %>
-        <div class="col-md-12 mt-2 ml-1">
+        <div>
           <%= @user.name %>
         </div>
       </div>
-      <div class="col-md-9 mt-2">
+      <div class="col-md-8 mt-2">
         <div>
           <% if current_user.id == @user.id %>
             <%= link_to "#{@user.followings.count} フォロー", following_user_path(@user) %>
