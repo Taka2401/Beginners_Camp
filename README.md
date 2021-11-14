@@ -20,7 +20,7 @@ https://beginners-camp.net/
   - Vue.js 2.6.14
  ## バックエンド
   - Ruby 2.6.3
-  - Ruby on Rails 5.2.6（フレームワーク）
+  - Ruby on Rails 5.2.6（一部APIモード）
   - Rubocop（コード解析ツール）
   - Rspec（テスト）
  ## インフラ
