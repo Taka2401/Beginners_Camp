@@ -10,7 +10,8 @@
 ![Beginner's Camp top](https://user-images.githubusercontent.com/79072615/123040710-24bf4b80-d42f-11eb-9719-e5d74f7a1b10.png)
 
 ## URL
-https://beginners-camp.net/
+~~https://beginners-camp.net/~~<br />
+※2021/12/23に配信停止しました。
 
 ## 使用技術
  ## フロントエンド
